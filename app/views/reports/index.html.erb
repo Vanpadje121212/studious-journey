@@ -1,0 +1,9 @@
+<% if @reports.any? %>
+  <% @reports.each_with_index do |report, i| %>
+    <section class="report-list-item">
+      <%= render partial: report, locals: { i: i } %>
+    </section>
+  <% end %>
+<% else %>
+  <p>There are currently no pending reports.</p>
+<% end %>

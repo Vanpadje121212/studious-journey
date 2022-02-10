@@ -1,0 +1,2 @@
+class SensitiveSite < ApplicationRecord
+end

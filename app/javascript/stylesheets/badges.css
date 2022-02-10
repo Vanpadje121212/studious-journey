@@ -1,0 +1,37 @@
+.badge {
+  margin-left: 1ex;
+  border-radius: 10%/25%;
+  font-size: 70%;
+  padding: 0 0.5ex;
+  text-transform: uppercase;
+  position: relative;
+  top: -0.2ex;
+}
+.badge-banned {
+  background-color: rgba(255, 0, 0, 0.9);
+  color: white;
+}
+.badge-moderator {
+  background-color: rgba(26, 29, 168, 0.9);
+  color: white;
+}
+.badge-author {
+  background-color: rgba(30, 151, 30, 0.9);
+  color: white;
+}
+
+.badge-js {
+  background-color: #efd81d;
+  color: black;
+}
+.badge-css {
+  background-color: #254bdd;
+  color: white;
+}
+
+.badge-js, .badge-css {
+  display: none;
+}
+.showing-all-languages .badge-js, .showing-all-languages .badge-css {
+  display: inline;
+}

@@ -1,0 +1,176 @@
+.comment {
+  margin-bottom: 20px;
+}
+.comment-entry {
+  width: 100%;
+  height: 10em;
+}
+.discussion-meta, .comment-meta {
+  display: flex;
+  align-items: flex-end;
+}
+.discussion-meta {
+  font-size: 11px;
+}
+.comment-meta {
+  font-size: smaller;
+  margin-bottom: 2px;
+}
+.comment-meta-item-main {
+  font-size: medium;
+  font-weight: bold;
+}
+.comment-meta-item + .comment-meta-item {
+  margin-left: 15px;
+}
+.discussion-meta-item {
+  flex: 1;
+  text-align: left;
+}
+.discussion-meta-item:not(:first-child) {
+  margin-left: 8px;
+}
+.discussion-meta-item:not(:last-child) {
+  margin-right: 8px;
+}
+.discussion-meta-item:last-child {
+  text-align: right;
+}
+.comment-meta-spacer {
+  flex: 1;
+}
+.post-reply {
+  margin-top: 20px;
+}
+.post-reply h3, .edit-comment-form h3 {
+  margin-bottom: 0;
+}
+.post-reply input[type=submit], .edit-comment-form input[type=submit] {
+  margin-top: 5px;
+}
+.discussion-up-level {
+  font-size: smaller;
+  margin-top: 0;
+}
+.edit-comment-form {
+  display: none;
+}
+.edit-comment-mode .edit-comment-form {
+  display: block;
+}
+.edit-comment-mode .user-content, .edit-comment-mode .comment-meta {
+  display: none;
+}
+.discussion-rating {
+  margin-top: 10px;
+}
+.discussion-list {
+  padding-bottom: 0;
+}
+.discussion-list-item {
+  padding-top: 10px;
+  border-top: 1px solid #CCC;
+}
+.discussion-list-container:first-child .discussion-list-item {
+  border-top: 0;
+}
+.discussion-list-logged-in .discussion-read {
+  background-color: #F5F5F5;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.script-discussion-list .discussion-list-item:last-child {
+  border-bottom: 1px solid #CCC;
+}
+a.discussion-title {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 4px 0 14px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.discussion-title {
+  vertical-align: middle;
+}
+.discussion-title:hover {
+  color: #333;
+}
+.rating-icon {
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 2px 5px;
+  margin-right: 5px;
+  display: inline-block;
+  text-align: center;
+  min-width: 45px;
+  position: relative;
+  top: -1px;
+}
+.rating-icon-good {
+  border-color: rgb(77,166,77);
+  background-color: rgb(230, 242, 230);
+  color: rgb(0, 128, 0);
+}
+.rating-icon-ok {
+  border-color: rgb(211, 211, 77);
+  background-color: rgb(255, 255, 230);
+  color: rgb(192, 192, 0);
+}
+.rating-icon-bad {
+  border-color: rgb(255, 77, 77);
+  background-color: rgb(255, 230, 230);
+  color: rgb(255, 0, 0);
+}
+.discussion-list-main-content {
+  overflow-x: hidden;
+}
+.discussion-meta-item-script-name {
+  overflow: hidden;
+}
+.discussion-meta-item-script-name a {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+}
+.comment .user-content > *:first-child {
+  margin-top: 0;
+}
+.comment-screenshot-control {
+  font-size: smaller;
+  padding: 0.5em 0;
+}
+.discussion-header, .discussion-list-header {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.discussion-header-no-script {
+  margin-top: 16px;
+}
+.discussion-header > *:first-child, .discussion-list-header h2 {
+  flex: 1;
+  margin: 0 !important;
+}
+.discussion-header h2, .discussion-header .discussion-up-level {
+  margin: 0;
+}
+.discussion-actions {
+  font-size: smaller;
+}
+.discussion-subscribed .discussion-subscribe {
+  display: none;
+}
+.discussion-not-subscribed .discussion-unsubscribe {
+  display: none;
+}
+.post-discussion label:not(.radio-label), .post-reply label:not(.radio-label), .post-discussion .form-note, .post-reply .form-note {
+  font-size: smaller;
+}

@@ -1,0 +1,32 @@
+/* Use of 3.5px is half of the overlapping border of the active item. */
+.tabs {
+  list-style: none;
+  padding: 0 1em;
+  margin: 0 -1em 0;
+  display: flex;
+  position: relative;
+  top: -3.5px;
+}
+.tabs > * {
+  align-items: stretch;
+}
+.tabs > * > * {
+  padding: 0.25em .5em .5em;
+  display: block;
+}
+.tabs a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.tabs .current, .tabs > *:not(.current) a:hover, .tabs > *:not(.current) a:focus {
+  background: rgba(0, 0, 0, 0.03);
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.1), inset -1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px rgba(0, 0, 0, 0.1);
+}
+.tabs .current {
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.1), inset -1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px rgba(0, 0, 0, 0.1);
+  border-top: 7px solid #990000;
+}
+.tabs > *:not(.current) a {
+  margin-top: 3.5px;
+  padding-top: calc(0.25em + 3.5px);
+}

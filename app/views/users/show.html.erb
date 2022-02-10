@@ -1,0 +1,267 @@
+<%- title @user.name %>
+<%- description "Greasy Fork profile for #{@user.name}" %>
+
+<section id="about-user" class="text-content reportable">
+  <%= link_to(t('reports.report_user'), new_report_path(item_class: 'user', item_id: @user.id), class: 'report-link report-link-abs') unless @user.banned? %>
+
+  <h2><%= render_user(@user, @user.id, skip_link: true) %></h2>
+
+  <% if @user.profile.present? && (current_user&.moderator? || (!@user.banned? && @user.allow_posting_profile?))  %>
+    <section id="user-profile" class="user-content">
+      <%= format_user_text(@user.profile, @user.profile_markup, mentions: @user.mentions) %>
+    </section>
+  <% end %>
+
+  <% if current_user && !@same_user %>
+    <p>
+      <% conversation = current_user.existing_conversation_with([@user]) %>
+      <% if conversation %>
+        <%= link_to t('conversations.send_message'), user_conversation_path(current_user, conversation) %>
+      <% else %>
+        <%= link_to t('conversations.send_message'), new_user_conversation_path(current_user, other_user: @user.name) %>
+      <% end %>
+    </p>
+  <% end %>
+
+  <% if @same_user %>
+    <section id="control-panel">
+      <header>
+        <h3><%=t('users.control_panel')%></h3>
+      </header>
+      <ul id="user-control-panel">
+        <li><%= link_to t('scripts.new'), new_script_version_path%></li>
+        <li><%= link_to t('scripts.new_css'), new_script_version_path(language: 'css')%></li>
+        <li><%= link_to 'New script set', new_user_script_set_path(@user)%></li>
+        <li><%= link_to t('scripts.import'), import_start_path%></li>
+        <li><%= link_to t('users.set_up_webhook'), user_webhook_info_path%></li>
+        <li><%= link_to t('users.edit'), edit_user_registration_path%></li>
+        <li><%= link_to t('users.edit_sign_in'), user_edit_sign_in_path%></li>
+        <li><%= link_to t('users.edit_notifications'), notifications_user_path(@user) %></li>
+        <li><%= link_to t('users.delete_link'), user_delete_info_path%></li>
+        <li><%= link_to t('users.sign_out'), destroy_user_session_path, :method => :delete %></li>
+      </ul>
+    </section>
+  <% end %>
+</section>
+
+<% if @same_user && @user.scripts.any?
+     dosr = @user.discussions_on_scripts_written  %>
+  <section id="user-discussions-on-scripts-written">
+    <header>
+      <h3><%= t('users.discussions_on_scripts') %></h3>
+    </header>
+    <section class="text-content">
+      <% if dosr.empty? %>
+        <p><%=t('users.discussions_on_scripts_none')%></p>
+      <% else %>
+        <%= render collection: dosr.first(10), partial: 'discussions/discussion', locals: { show_script: true } %>
+        <% if dosr.length > 10 %>
+          <%= link_to t('users.discussions_on_scripts_more'), discussions_path(me: 'script') %>
+        <% end %>
+      <% end %>
+    </section>
+  </section>
+<% end %>
+
+<% if current_user&.moderator? && !@user.moderator? %>
+  <section id="moderator-user-control-panel">
+    <header>
+      <h3>Moderator control panel</h3>
+    </header>
+    <section class="text-content">
+      <p>
+        <% if @user.banned? %>
+          <% if @user.non_locked_scripts.any? %>
+            User has been banned, but has non-locked scripts. <%= link_to 'Delete all', user_ban_path(@user) %>
+          <% else %>
+            User has been banned.
+          <% end %>
+        <% else %>
+          <%= link_to 'Ban', user_ban_path(@user) %>
+        <% end %>
+      </p>
+      <p>
+        <% if @user.email_domain %>
+          Email domain: <%= link_to @user.email_domain, users_path(email_domain: @user.email_domain) %><br>
+        <% end %>
+        <%= link_to 'Users with the same IP', users_path(same_ip: @user.id) %>
+      </p>
+      <% report_count = @user.reports_as_reporter.count %>
+      <p>This user has filed <%= report_count %> <%= 'report'.pluralize(report_count) %>.</p>
+      <% if report_count > 0 %>
+        <ul>
+          <% @user.reports_as_reporter.each do |report| %>
+            <li>
+              <%= render partial: 'reports/report', locals: { report: report } %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </section>
+  </section>
+<% end %>
+
+<section id="user-discussions">
+  <header>
+    <h3>
+      <%= t('discussions.user_activity.title') %>
+    </h3>
+  </header>
+  <section class="text-content">
+    <% recent_comments = @user.comments.not_deleted.joins(:discussion).merge(Discussion.visible).where(created_at: 1.month.ago..).includes(discussion: :script).order(created_at: :desc).limit(10).load %>
+    <% if recent_comments.any? %>
+      <ul>
+        <% recent_comments.each do |comment| %>
+          <li><%= link_to user_activity_title(comment.discussion, post: comment.first_comment?), comment.path %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>
+        <%= t('discussions.user_activity.no_recent_activity') %>
+      </p>
+    <% end %>
+    <% if @user.comments.not_deleted.any? %>
+      <p>
+        <%= link_to t('discussions.user_activity.see_all_activity'), discussions_path(user: @user.id) %>
+      </p>
+    <% end %>
+  </section>
+</section>
+
+<% if @same_user %>
+  <section id="user-conversations">
+    <header>
+      <h3><%= t('conversations.recent.title') %></h3>
+    </header>
+    <section class="text-content">
+      <% if @recent_conversations.any? %>
+        <ul>
+          <% @recent_conversations.each do |conversation| %>
+            <li>
+              <% other_users = (conversation.users - [@user]) %>
+              <%= link_to t('conversations.conversation_link_html', users: other_users.map { |u| render_user(u, u.id, skip_link: true) }.to_sentence.html_safe, count: other_users.count), user_conversation_path(@user, conversation) %>
+              <%= t('conversations.conversation_info_html', date: markup_date(conversation.stat_last_message_date), user: render_user(conversation.stat_last_poster, conversation.stat_last_poster_id, skip_link: true)) %>
+            </li>
+          <% end %>
+        </ul>
+        <% if @more_conversations %>
+          <p><%= link_to t('conversations.recent.more'), user_conversations_path(current_user) %></p>
+        <% end %>
+      <% elsif @more_conversations %>
+        <p>
+          <%= t('conversations.no_recent_conversations') %>
+          <%= link_to t('conversations.recent.more'), user_conversations_path(current_user) %>
+        </p>
+      <% else %>
+        <p>
+          <%= t('conversations.no_conversations') %>
+        </p>
+      <% end %>
+      <p><%= link_to t('conversations.new_link'), new_user_conversation_path(current_user) %></p>
+    </section>
+  </section>
+<% end %>
+
+<% if @same_user || (@user.script_sets.any? && (current_user&.moderator? || (!@user.banned? && @user.allow_posting_profile?)))  %>
+  <section id="user-script-sets-section">
+    <header>
+      <h3>Script Sets</h3>
+    </header>
+    <section class="text-content">
+      <ul id="user-script-sets">
+        <% favorites_set = @user.script_sets.find{|ss| ss.favorite}
+        if !favorites_set.nil? %>
+          <li><%= t('script_sets.favorites_name') %> <%= link_to 'View scripts', scripts_path(set: favorites_set.id), rel: :nofollow %> <% if @same_user %><%=link_to 'Edit', edit_user_script_set_path(@user, favorites_set)%><% end %></li>
+        <% elsif @same_user %>
+          <li><%=t('script_sets.favorites_name')%> <%=link_to 'Edit', new_user_script_set_path(@user, :fav =>  1)%></li>
+        <% end
+        @user.script_sets.order(:name).select{|ss| !ss.favorite}.each do |ss| %>
+          <li><%=ss.name%>: <%=ss.description%> <%= link_to 'View scripts', scripts_path(set: ss.id), rel: :nofollow %> <% if @same_user %><%=link_to 'Edit', edit_user_script_set_path(@user, ss)%><% end %></li>
+        <% end %>
+      </ul>
+    </section>
+  </section>
+<% end %>
+
+<div class="sidebarred">
+  <div class="sidebarred-main-content">
+    <% if @user_has_scripts %>
+      <div class="open-sidebar sidebar-collapsed">
+        ☰
+      </div>
+    <% end %>
+
+    <% # Show non-public in a separate section if we're going to show any
+    deleted_script_list = @scripts.select(&:deleted?)
+    unlisted_script_list = @scripts.select(&:unlisted?)
+    library_script_list = @scripts.select(&:library?)
+    script_list = @scripts.where.not(id: (deleted_script_list + unlisted_script_list + library_script_list).map(&:id)) %>
+    <section id="user-script-list-section">
+      <header>
+        <h3><%=t('users.script_list')%></h3>
+      </header>
+      <% if !@user_has_scripts
+        if @same_user %>
+          <p><%=t('users.script_list_none_same_user_html', script_list_none_same_user_info_link: link_to(t('users.script_list_none_same_user_info_link_text'), help_writing_user_scripts_path))%></p>
+        <% else %>
+          <p><%=t('users.script_list_none')%></p>
+        <% end
+      elsif script_list.empty? %>
+        <p><%=t('users.script_list_none_for_filter')%></p>
+      <% else %>
+        <ol id="user-script-list" class="script-list <%= 'showing-all-languages' if params[:language].nil? %>">
+          <%= render partial: 'scripts/script', collection: script_list, locals: {show_author_details: true}, cached: params[:locale_override].nil? ? ->(script) { ['user', script, I18n.locale] } : false %>
+        </ol>
+      <% end %>
+
+      <%= will_paginate script_list %>
+    </section>
+
+    <% unless unlisted_script_list.empty? %>
+      <section id="user-unlisted-script-list-section">
+        <header>
+          <h3><%= t('users.unlisted_script_list') %></h3>
+        </header>
+        <ol id="user-unlisted-script-list" class="script-list">
+          <%= render partial: 'scripts/script', collection: unlisted_script_list %>
+        </ol>
+      </section>
+    <% end %>
+
+    <% unless library_script_list.empty? %>
+      <section id="user-library-list-section">
+        <header>
+          <h3><%= t('scripts.libraries_title') %></h3>
+        </header>
+        <ol id="user-library-script-list" class="script-list">
+          <%= render partial: 'scripts/script', collection: library_script_list %>
+        </ol>
+      </section>
+    <% end %>
+
+    <% unless deleted_script_list.empty? %>
+      <section id="user-deleted-script-list-section">
+        <header>
+          <h3><%=t('users.deleted_script_list')%></h3>
+        </header>
+        <ol id="user-deleted-script-list" class="script-list">
+          <%= render partial: 'scripts/script', collection: deleted_script_list %>
+        </ol>
+      </section>
+    <% end %>
+
+    <% if @other_site_scripts > 0 %>
+      <p><%=link_to(t('users.greasy_fork_scripts_link', user_name: @user.name, count: @other_site_scripts), user_url(@user, host: 'greasyfork.org'))%></p>
+    <% end %>
+  </div>
+
+  <% if @user_has_scripts %>
+    <div class="sidebar collapsed">
+      <div class="close-sidebar">
+        <div class="sidebar-title"><%= t('common.listing_options_title') %></div>
+        <div>☰</div>
+      </div>
+      <%= render partial: 'scripts/list_options', locals: { by_sites: @by_sites, scripts: script_list, skip_all_sites_link: true } %>
+    </div>
+  <% end %>
+</div>

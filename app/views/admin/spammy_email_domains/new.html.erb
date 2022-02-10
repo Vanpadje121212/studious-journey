@@ -1,0 +1,13 @@
+<%= form_with(model: [:admin, @spammy_email_domain]) do |f| %>
+  <div class="form-control">
+    <%= f.label :domain %>
+    <%= f.text_field :domain, required: true %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :block_type %>
+    <%= f.select :block_type, [SpammyEmailDomain::BLOCK_TYPE_CONFIRMATION, SpammyEmailDomain::BLOCK_TYPE_SCRIPT, SpammyEmailDomain::BLOCK_TYPE_REGISTER] %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
