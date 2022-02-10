@@ -1,0 +1,62 @@
+one:
+  id: 1
+  name: Timmy O'Toole
+  email: timmy@example.com
+  webhook_secret: 31dc177d015ad5668f34698209b13ef9edc3f877
+  confirmed_at: 2018-01-01
+  disposable_email: false
+  canonical_email: timmy@example.com
+  created_at: <%= 2.months.ago %>
+
+consumer:
+  id: 2
+  email: consumer@example.com
+  name: Gordon J. Canada
+  canonical_email: consumer@example.com
+  created_at: <%= 2.months.ago %>
+
+geoff:
+  id: 3
+  email: geoff@example.com
+  name: Geoffrey
+  canonical_email: geoff@example.com
+  conversations: [geoff_and_junior]
+  created_at: <%= 2.months.ago %>
+
+junior:
+  id: 4
+  name: Junior J. Junior, Sr.
+  email: jr@example.com
+  confirmed_at: 2018-01-01
+  disposable_email: false
+  canonical_email: jr@example.com
+  conversations: [geoff_and_junior]
+  created_at: <%= 2.months.ago %>
+
+banned:
+  id: 5
+  name: Ban-man
+  email: bannedguy@gmail.com
+  canonical_email: bannedguy@gmail.com
+  banned_at: 2020-01-01
+  created_at: <%= 2.months.ago %>
+
+admin:
+  id: 6
+  name: Admin Fella
+  email: admin@example.com
+  webhook_secret: 31dc177d015ad5668f34698209b13ef9edc3f877
+  confirmed_at: 2018-01-01
+  disposable_email: false
+  canonical_email: admin@example.com
+  created_at: <%= 2.months.ago %>
+
+mod:
+  id: 7
+  name: Maddy Rater
+  email: mod@example.com
+  webhook_secret: 31dc177d015ad5668f34698209b13ef9edc3f877
+  confirmed_at: 2018-01-01
+  disposable_email: false
+  canonical_email: mod@example.com
+  created_at: <%= 2.months.ago %>
