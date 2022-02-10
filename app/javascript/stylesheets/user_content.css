@@ -1,0 +1,62 @@
+.user-content {
+  background: linear-gradient(to right, #fcf1f1, #FFF 1em);
+  border-left: 2px solid #F2E5E5;
+  padding: 0.5em 1em;
+  overflow-x: auto;
+}
+
+.user-content > p:first-child {
+  margin-top: 0;
+}
+.user-content > p:last-child {
+  margin-bottom: 0;
+}
+
+.user-content img {
+  max-width: 100%;
+}
+
+.user-screenshots * {
+  vertical-align: middle;
+}
+.user-screenshots a {
+  text-decoration: none;
+}
+
+.comment-screenshot-control {
+  margin: 10px 0;
+}
+.remove-images {
+  display: flex;
+  margin-top: 5px;
+}
+.remove-image {
+  border: 2px solid black;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.remove-image:not(:first-child) {
+  margin-left: 5px;
+}
+.remove-image img {
+  display: block;
+}
+.remove-image-selecter {
+  margin-top: 10px;
+}
+
+.comment .user-content .user-screenshots {
+  margin-top: 10px;
+}
+
+#additional-info .user-screenshots {
+  margin-top: 1em;
+}
+
+.user-content blockquote {
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 2px solid #CCC;
+}

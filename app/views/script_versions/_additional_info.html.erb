@@ -1,0 +1,29 @@
+<%
+# Locals to pass in:
+#  - la: localized_attribute for the additional info
+#  - index: index of the additional info (to avoid duplicate names and IDs)
+%>
+<div class="form-control">
+  <label for="<%= "script-version-additional-info-#{index}" %>">
+    <%= t('activerecord.attributes.script.additional_info') %>
+    <input type="hidden" name="script_version[additional_info][<%= index %>][attribute_default]" value="<%= la.attribute_default %>">
+    <% if !la.attribute_default %>
+      <select name="script_version[additional_info][<%= index %>][locale]">
+        <option value="" <% if la.locale_id.nil? %> selected<% end %>><%= t('scripts.additional_info_locale_prompt') %></option>
+        <% Locale.where(ui_available: true).each do |locale| %>
+          <option value="<%= locale.id %>" <% if la.locale_id == locale.id %> selected<% end %>><%= locale.display_text %></option>
+        <% end %>
+        <option disabled>---</option>
+        <% Locale.all.each do |locale| %>
+          <option value="<%= locale.id %>"<% if la.locale_id == locale.id %> selected<% end %>><%= locale.display_text %></option>
+        <% end %>
+      </select>
+    <% end %>
+  </label>
+  <span class="label-note">
+    <%= t('scripts.additional_info_note') %>
+  </span><br>
+  <%= with_user_text_preview(markup_name: "script_version[additional_info][#{index}][value_markup]", markup: la.value_markup) do
+    text_area_tag("script_version[additional_info][#{index}][attribute_value]", la.attribute_value, {id: "script-version-additional-info-#{index}"})
+  end %>
+</div>

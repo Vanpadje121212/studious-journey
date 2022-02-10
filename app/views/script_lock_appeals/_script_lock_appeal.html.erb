@@ -1,0 +1,37 @@
+<p><%= t('appeals.deletion_reason_html', script: render_script(script_lock_appeal.script), reason: delete_reason(script_lock_appeal.script)) %></p>
+
+<p><%= t('appeals.author_reason') %></p>
+
+<div class="user-content">
+  <%= format_user_text(script_lock_appeal.text, script_lock_appeal.text_markup) %>
+</div>
+
+<% case script_lock_appeal.resolution %>
+<% when 'unresolved' %>
+  <% if current_user&.moderator? %>
+    <%= form_tag(dismiss_script_script_lock_appeal_path(script_lock_appeal.script, script_lock_appeal), method: 'POST', class: 'report-resolution-options') do %>
+      <%= text_area_tag :moderator_notes, nil, rows: 3, placeholder: 'Moderator notes (optional)' %>
+      <%= submit_tag('Dismiss appeal') %>
+    <% end %>
+    <%= form_tag(unlock_script_script_lock_appeal_path(script_lock_appeal.script, script_lock_appeal), method: 'POST', class: 'report-resolution-options') do %>
+      <%= text_area_tag :moderator_notes, nil, rows: 3, placeholder: 'Moderator notes (optional)' %>
+      <%= submit_tag('Undelete script') %>
+    <% end %>
+  <% else %>
+    <p><%= t('appeals.pending_review') %></p>
+  <% end %>
+<% when 'dismissed' %>
+  <p><%= t('appeals.dismissed_by_moderator') %></p>
+  <% if script_lock_appeal.moderator_notes.presence %>
+    <div class="user-content">
+      <%= script_lock_appeal.moderator_notes %>
+    </div>
+  <% end %>
+<% when 'unlocked' %>
+  <p><%= t('appeals.upheld_by_moderator') %></p>
+  <% if script_lock_appeal.moderator_notes.presence %>
+    <div class="user-content">
+      <%= script_lock_appeal.moderator_notes %>
+    </div>
+  <% end %>
+<% end %>

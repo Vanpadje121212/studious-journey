@@ -1,0 +1,43 @@
+<%= form_tag(user_do_ban_path) do |f| %>
+  <% if @user.banned? && @user.non_locked_scripts.none? %>
+    <p>(User already banned.)</p>
+  <% else %>
+    <% if @user.banned? %>
+      <p>
+        <%= @user.name %> has already been banned, but you can still deleted their non-locked scripts.
+      </p>
+    <% end %>
+    <p>
+      <% if @user.banned? %>
+        <label for="reason">Why are you deleting <%= @user.name %>'s scripts?</label>
+      <% else %>
+        <label for="reason">Why are you banning <%= @user.name %>?</label>
+      <% end %>
+      <br>
+      <textarea id="reason" name="reason" rows="5" cols="100" maxlength="500" required></textarea>
+    </p>
+    <% if @user.non_locked_scripts.any? %>
+      <p><%= @user.name %> has <%= @user.non_locked_scripts.count %> non-locked scripts:</p>
+      <ul>
+        <% @user.non_locked_scripts.each do |script| %>
+          <li><%= link_to script.name(request_locale), script %></li>
+        <% end %>
+      </ul>
+      <p>
+        <% unless @user.banned? %>
+          <input type="radio" required id="delete_type_0" name="delete_type" value="" checked> <label for="delete_type_0">Don't delete</label><br>
+        <% end %>
+        <% (Script.delete_types.keys - ['redirect']).each do |k| %>
+          <input type="radio" required id="delete_type_<%= k %>" name="delete_type" value="<%= k %>" <% if @user.banned? && k == 'keep' %> checked<% end %>>
+          <label for="delete_type_<%= k %>"><%= t("scripts.delete_update_behaviours.#{k}") %></label><br>
+        <% end %>
+      </p>
+    <% end %>
+    <% if @user.comments.not_deleted.any? %>
+      <p>
+        <input type="checkbox" name="delete_comments" id="delete_comments" value="1"> <label for="delete_comments">Delete user's <%= link_to "#{@user.comments.not_deleted.count} #{'comment'.pluralize(@user.comments.not_deleted.count)}", discussions_path(user: @user.id) %></label>
+      </p>
+    <% end %>
+    <input type="submit" value="Ban">
+  <% end %>
+<% end %>

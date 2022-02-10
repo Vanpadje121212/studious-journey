@@ -1,0 +1,756 @@
+ar:
+  layouts:
+    application:
+      script_list: "البرامج النصية"
+      forum: "المنتدى"
+      help: "المساعدة"
+      sign_in: "تسجيل دخول"
+      submenu: "أكثر"
+      advanced_search: "بحث متقدم"
+      user_list: "قائمة المستخدمين"
+      libraries: "المكتبات"
+      moderator_log: "سجل المشرف"
+  scripts:
+    created_date: "تم إنشاؤه"
+    updated_date: "تم تحديثه"
+    total_installs: "إجمالي التثبيت"
+    daily_installs: "التثبيت اليومي"
+    ratings: "التقييمات"
+    author_name: "المؤلف"
+    version_number: "الإصدار"
+    license: "الترخيص"
+    no_license: "لا يوجد"
+    compatibility: "التوافق"
+    compatible_with_browser: "متوافق مع %{browser}"
+    incompatible_with_browser: "غير متوافق مع %{browser}"
+    applies_to: "ينطبق على"
+    applies_to_link_title:
+      zero: "شاهد %{count} برنامج نصي آخر لـ %{site}"
+      one: "شاهد برنامج نصي آخر لـ %{site}"
+      two: "شاهد برنامجين نصيين آخرين لـ %{site}"
+      few: "شاهد %{count} برامج نصية آخرى لـ %{site}"
+      many: "شاهد %{count} برنامج نصي آخر لـ %{site}"
+      other: "شاهد %{count} برنامج نصي آخر لـ %{site}"
+    applies_to_all: "جميع المواقع"
+    install: "تثبيت هذا البرنامج النصي"
+    install_css: "التثبيت كنمط المستخدم"
+    install_help: "؟"
+    install_help_title: "كيفية التثبيت"
+    update: "تحديث لنسخة %{version}"
+    downgrade: "رجوع لنسخة %{version}"
+    reinstall: "إعادة تثبيت نسخة %{version}"
+    old_version_warning: "هذا البرنامج النصي ليس أحدث اصدار. إذا قمت بتثبيته ، فلن يتم تحديثه إلى إصدار أحدث. تثبيت على أي حال؟"
+    promoted: "برنامج نصي ترويجي"
+    author_promoted: "سكربت موصى به للمؤلف"
+    promoted_text_html: "ربما يعجبك أيضا %{script_link}."
+    library_instructions_html: "لا ينبغي أن لا يتم تثبيت هذا السكريت مباشرة. هو مكتبة لسكبتات لتشمل مع التوجيه الفوقية %{code}"
+    deleted_notice: "لقد تم حذف هذا البرنامج النصي."
+    deleted_notice_with_related: "تم حذف برنامج نصي الذي طلبته ، ولكن إليك بعض البرامج النصية ذات الصلة."
+    version_notice_html: "اعتبارا من %{date}. شاهد %{latest_version_link}."
+    version_notice_latest_version_link: "أحدث إصدار"
+    info_page: "معلومات"
+    code_page: "الكود"
+    history_page: "التاريخ"
+    feedback_page: "ردود الفعل (%{count})"
+    stats_page: "إحصائيات"
+    derivatives_page: "المشتقات"
+    update_page: "تحديث"
+    delete_page: "حذف"
+    delete_explanation: "حذف برنامجك النصي يجعل الوصول له فقط متاح لك ولمشرفي Greasy Fork. بإمكانك التراجع عن حذفه في أي وقت."
+    delete_update_behaviour: "مالذي تريد حصوله مع المستخدمين الذين ثبتوا برنامجك النصي سابقا ؟"
+    delete_permanently_heading: "حذف دائم"
+    delete_permanently_submit: "طلب الحذف الدائم"
+    delete_permanently_immediate_submit: "حذف بشكل نهائي"
+    delete_permanently_notice: "تم تسجيل طلب الحذف الدائم. سيتم حذف البرنامج النصي الخاص بك بشكل دائم بعد 7 أيام."
+    delete_permanently_notice_immediate: "تم حذف البرنامج النصي نهائيا."
+    cancel_delete_permanently_submit: "إلغاء طلب الحذف النهائي."
+    delete_permanently_rejected_locked: "هذا البرنامج النصي مقفل ولا يمكن حذفه نهائيا."
+    admin_page: "مسؤول"
+    admin:
+      title: "%{script_name} - مسؤول"
+      promoted_heading: "سكربت ترويجي"
+      promoted_explanation: "بعد تثبيت هذا السكربت ، يمكن لـ%{site_name} أن يقترح على المستخدم تجربة سكربت آخر من اختيارك."
+      promoted_script_label: "رابط السكربت لترويجة"
+      promoted_submit: "أختر سكربت لترويجة"
+      sync_heading: "مزامنة المصدر"
+      locale_heading: "اللغة الافتراضية"
+      locale_example_html: "لغة هذا النص: <i>%{text}</i>"
+      locale_multiple_note: "لاحظ أن %{meta_keys_link: يمكن تعريف عدة لغات للسكربت}."
+      update_locale: "تحديث اللغة"
+      no_moderator_logs: "لم يتم اتخاذ أي إجراءات بواسطة المشرفين على هذا السكربت."
+      compare_button: "قارن"
+    history_title: "%{script_name} - تاريخ الإصدار"
+    history_only_code_changes_info: "هذه إصدارات لهذا البرنامج النصي حيث تم تحديث الكود."
+    history_all_changes_link: "عرض كل الإصدارات."
+    history_all_changes_info: "هنا كل إصدارات هذا البرنامج النصي."
+    history_only_code_changes_link: "إظهار الإصدارات حيث تغيير الكود فقط."
+    diff_button: "الفرق بين الإصدارات المختارة"
+    code_title: "%{script_name} - كود المصدر"
+    feedback_title: "%{script_name} - ردود الفعل"
+    feedback_no_discussions_html: "لا يوجد نقاش حتى الآن. %{start_first_discussion_link}"
+    feedback_no_discussions_on_page_form: "لم يتم نشر أي مناقشات حتى الآن."
+    feedback_start_first_discussion_link: "كن أول من يناقش هذا البرنامج النصي."
+    stats_title: "%{script_name} - إحصائيات"
+    stats_daily_installs_heading: "التثبيت اليومي"
+    stats_weekly_installs_heading: "التثبيت الأسبوعي"
+    stats_daily_update_checks_heading: "التـأكد من التحديث اليومي"
+    stats_daily_installs_date_column_heading: "التاريخ"
+    stats_daily_installs_install_count_column_heading: "التثبيتات"
+    stats_daily_installs_update_check_count_column_heading: "التـأكد من التحديث"
+    stats_raw_data_header: "البيانات الخام"
+    stats_download_raw_data_html: "تنزيل كل البيانات كـ: %{links}"
+    stats_no_data: "لا يوجد"
+    stats_filter_options:
+      month: آخر 30 يوم
+      year: آخر 365 يوم
+      all: كل الوقت
+    derivatives_title: "%{script_name} - المشتقات"
+    derivatives_exact_copies_heading: "نسخ مطابقة"
+    derivatives_exact_copies_list_intro: "تحتوي البرامج النصية التالية على نفس التعليمات البرمجية الخاصة بك:"
+    similarity_score:
+      high: مشابه جدا
+      medium: متشابه إلى حد ما
+      low: مشابهة إلى حد ما
+      none: لا تتشابه
+    derivatives_similar_check_now: "أعد الفحص الآن"
+    listing_title_all_sites: "برامج نصية لكل المواقع"
+    listing_description_all_sites: "البرامج النصية التي تضيف ميزات وتزيل الأخطاء على جميع المواقع"
+    listing_title_for_site: "برامج نصية لـ %{site}"
+    listing_description_for_site: "البرامج النصية التي تضيف ميزات وتزيل الأخطاء على  %{site}"
+    listing_title_for_search: "'%{search_string}' البرامج النصية"
+    listing_title_for_code_search: "'%{search_string}' البرامج النصية"
+    listing_title_generic: "البرامج النصية"
+    listing_title_for_favorites: "%{user_name} %{set_name}"
+    listing_description_generic: "البرامج النصية التي تضيف ميزات وتزيل الأخطاء على مواقع تستخدمها أنت"
+    listing_sort_label: "فرز حسب:"
+    listing_sort_relevance: "العلاقة"
+    listing_sort_daily_installs: "مرات التثبيت اليومية"
+    listing_sort_total_installs: "إجمالي مرات التثبيت"
+    listing_sort_ratings: "التقييمات"
+    listing_sort_created: "تاريخ الإنشاء"
+    listing_sort_updated: "تاريخ التحديث"
+    listing_sort_name: "الاسم"
+    listing_filter_by_site_label: "عرض البرامج النصية لـ:"
+    listing_filter_by_site_disable: "الكل"
+    listing_filter_by_site_all_sites: "(كل المواقع)"
+    listing_filter_by_language_label: "لغة:"
+    listing_filter_by_site_more_sites: "أكثر ..."
+    listing_no_scripts: "لم يتم العثور على برامج نصية."
+    listing_created_feed: "البرامج النصية الجديدة"
+    listing_updated_feed: "البرامج النصية المحدثة"
+    listing_none: "(لا يوجد)"
+    listing_language_all: "الكل"
+    listing_language_js: "جافا سكريبت"
+    listing_language_css: "سي إس إس"
+    import: "استيراد البرامج النصية"
+    support_site: "قم بزيارة موقع المؤلف."
+    support_email: "إرسال بريد إلكتروني للمؤلف."
+    contribution_no_amount: "شكر %{author} عن طريق التبرع."
+    contribution_with_amount: "شكر %{author} عن طريق التبرع. مقدار التبرع المقترح هو %{amount}."
+    contribution_bitcoin_no_amount_html: "شكر %{author} بالتبرع عن طريق بيتكوين إلى %{address}."
+    contribution_bitcoin_with_amount_html: "شكر %{author} عن طريق التبرع بـ بتكوين إلى %{address}. المقدار المقترح هو %{amount}."
+    locale_explanation_html: "يجب مطابقة لغة <code>@name</code>, <code>@description</code>, والمعلومة الإضافية الأولى."
+    locale_auto_select: "(كشف تلقائي)"
+    sets_label: "في مجموعة البرامج النصية:"
+    sets_label_no_sets: "مجموعات البرامج النصية"
+    sets_remove_inclusion: "إزالة من %{set_name}"
+    sets_remove_exclusion: "إزالة الاستبعاد من %{set_name}"
+    sets_add_inclusion: "إضافة إلى %{set_name}"
+    sets_add_exclusion: "استبعاد من %{set_name}"
+    sets_add_to_new: "إضافة إلى مجموعة جديدة"
+    rules_summary_html: "البرامج النصية يجب أن تكون <strong>موصوفة بشكل جيد</strong>، لا يجب أن تكون <strong>غامضة</strong> أو <strong>مصغرة</strong>، يجب احترام <strong>حقوق النشر</strong>، محدودة في <strong>الكود الخارجي</strong> المستخدم. %{full_rules_link}"
+    rules_summary_link_to_full: "قراءة كامل الشروط."
+    syncing_notice_html: "هذا البرنامج النصي %{syncing_notice_sync_type}. سيتم الكتابة فوق أية تحديثات تجريها على الكود هنا عندما تتم المزامنة."
+    syncing_notice_sync_type_manual: "جعله يزامن يدويا من %{sync_identifier}"
+    syncing_notice_sync_type_automatic: "جعله يزامن تلقائيا من %{sync_identifier}"
+    upload_label: "أو رفع:"
+    enable_source_code_editor_label: "تمكين تظليل الكود المصدري في المحرر"
+    changelog_note: "ما الذي تغير في هذا الإصدار؟"
+    post_new_script: "إضافة البرنامج النصي"
+    post_updated_script: "إضافة إصدار جديد"
+    type_1_html: "برنامج نصي عام - برنامج نصي يراه ويستخدمه الجميع."
+    type_2_html: "برنامج نصي غير مدرج - برنامج نصي (شبه) خاص.  متوفر للوصول المباشر، ولكن لا يوضع له أي رابط في أي مكان على %{site_name}."
+    type_3_html: "المكتبة - برنامج نصي للإستخدام كـ <code>@require</code>-d من قبل البرامج النصية.الأخرى ولا يتم تثبيته مباشرة."
+    warning_version_not_incremented_html: "أنت قمت بتحديث الكود لكن لم تقم بزيادة رقم الإصدار <code>@version</code>. هؤلاء الذين ثبتوا البرنامج النصي سابقا قد لا يحصلون على التحديث.."
+    warning_namespace_changed_html: "<code>@namespace</code> الخاص بك تغير. <code>@namespace</code> ثابت سمح للمستخدمين بإعادة تثبيت برنامجك النصي لتحديثه."
+    warning_potentially_minified_html: "يبدو أنا برنامجك النصي يحتوي كود مصغر (مضغوط). إذا كنت تستخدم مكتبة مضغوطة رجاء استبدلها <code>@require</code> من %{allowed_requires_link}. البرامج النصية التي تحوي كود مضغوط هي عرضة للحذف."
+    warning_automatic_sensitive_html: "السكربت الخاص بك مخصص لـ %{sensitive_domains} وسيتم تمييزه على أنه محتوى للبالغين."
+    warning_potentially_minified_allowed_requires_link: "واحد من هذه الأماكن"
+    additional_info_locale_prompt: "(اختر اللغة المحلية)"
+    additional_info_add_localized: "إضافة معلومات إضافية بلغة محلية أخرى"
+    additional_info_locale_repeated: "تزويد معلومة إضافية للغة المحلية '%{locale_code}'"
+    localized_additional_info_with_no_name: "تم تعيين معلومات إضافية لـ '%{locale_code}' لكن لم يتم تزويد name:%{locale_code}."
+    code_syncing_from_url_html: "هذا البرنامج النصي وضع للمزامنة من: %{field}"
+    provide_code_syncing_from_url_html: "%{site_name} بإمكانه استيراد البرامج النصية المستضافة في مكان آخر. مثلا في أنظمة إدارة الإصدارات (مثل GitHub)، خادومك الخاص أو موقع آخر لاستضافة البرامج النصية. لتمكين مزامنة برنامج النصي قم بإضافة وصلة: %{field}"
+    sync_type_intro: "سيتم مزامن البرنامج النصي:"
+    sync_type_1:
+      name: يدوي
+      description: سيتم التحقق من وجود تحديثات فقط عند تشغيله
+    sync_type_2:
+      name: تلقائي
+      description: سيتم فحصه بشكل دوري للحصول على التحديثات
+    sync_type_3:
+      name: عناوين الويب
+    sync_failed_info_html: "آخر محاولة مزامنة كانت %{date}, وكانت نتيجتها %{error}."
+    sync_success_info_html: "آخر مزامنة ناجحة كانت %{date}."
+    sync_never_succeeded: "لم تكتمل المزامنة بنجاح."
+    add_synced_additional_info: إضافة مترجم ،ومعلومات إضافية متزامنة
+    update_and_sync: "تحديث ومزامنة الآن"
+    update_no_sync: "تحديث"
+    turn_off_syncing: "إيقاف تشغيل المزامنة لهذا البرنامج النصي"
+    additional_info_default_sync_html: "معلومات إضافية افتراضية  (language matches <code>@name</code>)"
+    additional_info_localized_sync_html: "للغة المحلية (يطابق <code>@name:XX</code>)"
+    sync_url_placeholder: "(رابط)"
+    screenshots_add: "إضافة:"
+    screenshots_remove: "حذف"
+    diff_title: "%{script} - فرق الإصدار"
+    diff_old_version: "قديم:"
+    diff_new_version: "جديد:"
+    diff_lines_of_context: "أسطر السياق:"
+    diff_ignore_whitespace: "تجاهل المسافات الفارغة"
+    diff_refresh: "تحديث"
+    diff_no_change: "لم يتم العثور على فرق"
+    good_rating_explanation: "عدد الأشخاص الذين قيموه أنه جيد أو أضافوه إلى المفضلة."
+    ok_rating_explanation: "عدد الأشخاص الذين قيموه بـ لا بأس."
+    bad_rating_explanation: "عدد الأشخاص الذين قيموه أنه سيئ."
+    write_your_own_html: "%{post_a_script_link} (أو %{learn_to_write_scripts_link})"
+    learn_to_write_scripts_link_text: "تعلم كيفية كتابة واحد"
+    adult_content: "محتوى للبالغين"
+    adult_content_self_report: "يتضمن هذا البرنامج النصي محتوى للبالغين أو أنه لموقع يحتوي على محتوى للبالغين."
+    adult_content_self_report_explanation: "%{site_name} يسمح بالبرامج النصية ذات محتوى للبالغين، ولكنها يجب أن يشار إليها على هذا النحو بحيث يمكن للمستخدمين اختيار ما إذا كان يريدون رؤيتها."
+    not_adult_content_self_report_html: "هذا البرنامج النصي <strong>لا</strong> يحتوي محتوى للبالغين و <strong>ليس</strong> ليس لموقع ذو محتويات للبالغين."
+    not_adult_content_self_report_explanation: "%{site_name} يسمح بالبرامج النصية ذات محتوى للبالغين، ولكنها يجب أن يشار إليها على هذا النحو بحيث يمكن للمستخدمين اختيار ما إذا كان يريدون رؤيتها. تم وسم برنامجك النصي بأنه يحوي محتوى للبالغين. يمكنك الإبلاغ عن أنه ليس كذلك. وسيتم مراجعة ذلك عن طريق أحد المشروفين."
+    not_adult_content_self_report_explanation_automatic: " %{site_name} يسمح بالسكربتات التي تحتوي على محتوى للبالغين ، ولكن يجب تمييزها على هذا النحو بحيث يمكن للمستخدمين اختيار ما إذا كانوا يريدون رؤيتها. تم تمييز السكربت الخاص بك على أنه يحتوي على محتوى للبالغين نظراً لأنه مخصص للعمل على %{domain_list}"
+    adult_content_on_greasy_logged_in_error: "هذا البرنامج النصي لم يعد متوفرا على هذا الموقع %{edit_account_link:Greasy Fork account settings}."
+    adult_content_on_greasy_not_logged_in_error: "هذا البرنامج النصي لم يعد متوفرا بشكل مجهول على هذا الموقع. %{login_link:سجل دخولك} وتفحص إعدادات حسابك في موقع Greasy Fork."
+    non_adult_content_on_sleazy: "هذا البرنامج النصي غير متوفر على هذا الموقع."
+    adult_marker: "(بالغين)"
+    deleted_marker: "(محذوف)"
+    locked_marker: "(مقفل)"
+    unlisted_marker: "(غير مدرج)"
+    library_marker: "(المكتبة)"
+    libraries_title: "المكتبات"
+    libraries_description_html: "هناك مكتبات تم وضعها بواسطة مستخدمي %{site_name} يمكنك <code>@require</code> في برنامجك النصي. لأنواع المكتبات الأخرى يمكنك <code>@require</code>, اقرأ سياسة %{policy_link:%{site_name} حول <code>@require</code>}."
+    by_site_list_title: "برامج نصية لـ %{site_name} مجمعة حسب الموقع"
+    by_site_list_description: "هذه هي المواقع المتأثرة من البرامج النصية الأكثر شعبية. حجم خط أكبر يدل على البرامج النصية الأكثر شعبية."
+    by_site_list_filter: "تصفية حسب اسم الموقع:"
+    search_placeholder: "بحث في البرامج النصية"
+    updated: "تم تحديث السكربت."
+    preview_additional_info: "معاينة"
+    must_confirm_email_button: "أرسل رابط التأكيد إلى %{email}"
+    authors_heading: "المؤلفين"
+    invitations:
+      form_title: "أدعُ مؤلفين آخرين"
+      explanation: "يمكنك إضافة مستخدمي Greasy Fork الآخرين كمؤلفين لهذا السكربت. سيكون لديهم نفس الحقوق التي تملكها لهذا السكربت."
+      invited_user_url_label: "مستخدم لدعوته"
+      invited_user_placeholder: "رابط الملف الشخصي للمستخدم على %{site_name}"
+      submit: "أرسل دعوة"
+      invalid_user_url: "رابط دعوة المستخدم غير صالح."
+      already_author: "المستخدم الذي حددته هو مؤلف لهذا البرنامج النصي بالفعل."
+      sent: "تم أرسال الدعوة."
+      subject: "دعوة لـ %{script_name}"
+      body: "لقد تمت دعوتك لتكون مؤلف لـ %{script_name} (%{script_url}) على %{site_name}. لقبول هذه الدعوة, رجاءً زيارة %{accept_url}."
+      current_user_already_author: "أنت بالفعل مؤلف لهذا السكربت."
+      invitation_not_found: "الدعوة غير موجودة."
+      invitation_expired: "انتهت صلاحية الدعوة."
+      invitation_accepted: "أنت الآن مؤلف في هذا السكربت."
+    remove_author:
+      heading: "أزٍل المؤلفين"
+      success: "تم أزالة %{user_name} كمؤلف."
+      remove_button: "إزالة"
+      remove_confirm: "هل انت متأكد من أزالة %{user_name} كمؤلف؟"
+      failure: "فشل أزالة المؤلف."
+    no_disposable_email: "لا يجوز لك نشر السكربتات إذا كنت تستخدم عنوان بريد إلكتروني يمكن التخلص منه."
+    new_script_notice:
+      title: "ماذا تحاول أن تفعل؟"
+    antifeatures:
+      types:
+        ads:
+          title: إعلانات
+        tracking:
+          title: تتبع
+      cancel_install: إلغاء
+    badges:
+      css:
+        short: سي إس إس
+  script_sets:
+    description: "مجموعات البرامج النصية تسمح لك بإنشاء قائمة برامج نصية مخصصة لتصفح النصية بها. يمكنك إضافة البرنامج النصية إلى مجموعة عن طريق إضافتها منفردة أو من مجموعات المستخدمين  الآخرين أو تلقائيا. يمكنك أيضا استثناء برامج نصية من مجموعتك بنفس الأساليب."
+    favorites_name: "المفضلة"
+    delete: "حذف مجموعة البرامج النصية"
+    delete_confirmation: "هل أنت متأكد أنك تريد حذف مجموعة البرامج النصية هذه؟"
+    site_default_sort: "(افتراضي الموقع)"
+    edit_scripts:
+      heading: "البرامج النصية"
+      description: "تضمين أو استثناء  برامج نصية منفردة من مجموعة البرامج النصية الخاصة بك."
+      included: "مضمن"
+      included_none: "(لا يوجد)"
+      remove_included: "حذف المحدد"
+      excluded: "مستثنى"
+      excluded_none: "(لا يوجد)"
+      remove_excluded: "حذف المحدد"
+      add_label: "إضافة برامج نصية (روابط، معرفات، مفصولة بمسافة)"
+      add_include: "تضمين"
+      add_exclude: "استثناء"
+    edit_sets:
+      heading: "مجموعات البرامج النصية"
+      description: "تضمين أو استثناء  مجموعات برامج نصية في مجموعة البرامج النصية الخاصة بك."
+      included: "مضمن"
+      included_none: "(لا يوجد)"
+      remove_included: "حذف المحدد"
+      excluded: "مستثنى"
+      excluded_none: "(لا يوجد)"
+      remove_excluded: "حذف المحدد"
+      add_label: "إضافة برامج نصية (روابط، معرفات، مفصولة بمسافة)"
+      add_include: "تضمين"
+      add_exclude: "استثناء"
+      user_label: "إظهار مجموعات البرامج النصية لمستخدم  (روابط، معرفات، أو الاسم)"
+      user_no_sets: "(ليس لدى المستخدم مجموعات)"
+      user_no_other_sets: "( ليس لدى المستخدم مجموعات أخرى)"
+    edit_auto_sets:
+      heading: "مجموعات برامج نصية تلقائية"
+      description: "تضمين أو استثناء  مجموعات منشأة تلقائيا في مجموعة البرامج النصية الخاصة بك."
+      included: "مضمن"
+      included_none: "(لا يوجد)"
+      remove_included: "حذف المحدد"
+      excluded: "مستثنى"
+      excluded_none: "(لا يوجد)"
+      all_scripts_label: "كل البرامج النصية "
+      all_scripts_include: "تضمين"
+      for_sites_label: "برامج نصية لموقع (مثال example.com، اتركه فارغا من أجل \"كل المواقع\")"
+      for_sites_include: "تضمين"
+      for_sites_exclude: "استثناء"
+      for_user_label: "مجموعات البرامج النصية حسب المستخدم  (روابط، معرفات، أو الاسم)"
+      for_user_include: "تضمين"
+      for_user_exclude: "استثناء"
+      for_language_label: "برامج نصية باللغة"
+      for_language_include: "تضمين"
+      for_language_exclude: "استثناء"
+    calculated_list: "قوائم البرامج النصية المحسوبة"
+    calculated_list_none: "(لا يوجد)"
+    calculated_list_more:
+      zero: "و%{count} أكثر..."
+      one: "و%{count} أكثر..."
+      two: "و%{count} أكثر..."
+      few: "و%{count} أكثر..."
+      many: "و%{count} أكثر..."
+      other: "و%{count} أكثر..."
+    already_included: "'%{name}' مثبت بالفعل."
+    could_not_parse_script: "لا يمكن تحليل البرنامج النصي '%{value}'"
+    save: "حفظ"
+    saved: "تم حفظ قائمة البرامج النصية "
+    auto_set_types:
+      all_scripts: "كل البرامج النصية "
+      site: "برامج نصية لـ %{site}"
+      all_sites: "جميع المواقع"
+      user: "برامج نصية حسب المستخدم %{user}"
+      locale: "برامج نصية باللغة %{locale_name}"
+  home:
+    title: "%{site_name} - برامج نصية آمنة ومفيدة."
+    welcome: "مرحبا في %{site_name}، موقع للبرامج النصية التي ينشئها المستخدمون"
+    sleazy_title: "%{site_name} - برامج نصية آمنة ومفيدة للبالغين"
+    sleazy_welcome: "مرحبا لك في %{site_name}، وهو موقع للبرامج النصية ذات محتوى للبالغين."
+    search_placeholder: "بحث عن البرامج النصية"
+    scripts_for_label: "برامج نصية لـ:"
+    explain_user_scripts_heading: "ما هي البرامج النصية ؟"
+    explain_user_scripts_html: "البرامج النصية تتيح لك التحكم بتجربة التصفح الخاص بك. بمجرد تركيبها، سوف تجعل المواقع التي تزورها أفضل من خلال إضافة ميزات، مما يجعلها أسهل للاستخدام، أو تزيل الأشياء تلقائيا. تم كتابة البرامج النصية على %{site_name} من قبل المستخدمين الآخرين ونشرت لمشاركتها مع العالم. إنها مجانية للتثبيت وسهلة الاستخدام."
+    installing_step1_header: "الخطوة 1: قم بتثبيت برنامج إدارة البرامج النصية"
+    installing_step1_caption: "Tampermonkey على Chrome"
+    installing_step2_header: "خطوة 2: قم بتثبيت برنامج نصي"
+    installing_step2_caption: "زر تثبيت برنامج نصي"
+    installing_step2_description_html: >
+        <p>%{browse_link:تصفح هذا الموقع} لإيجاد برنامج نصي تريد تجربته. هنا عينة
+        من البرامج النصية المحبوبة:</p>
+
+        %{highlighted_scripts_list}
+
+        <p>بمجرد العثور على برنامج نصي اضغط زر التثبيت الأخضر وسوف يطلب منك مدير البرامج
+        النصية تأكيد التثبيت.</p>
+    installing_step3_header: "خطوة 3: استخدم البرنامج النصي"
+    installing_step3_description_html: >
+        <p>اذهب إلى الموقع الذي يؤثر عليه البرنامج النصي. وسوف يقوم البرنامج النصي
+        بالعمل. بعد تجربتك للبرنامج النصي عد إلى صفحته وأخبر المؤلف بملاحظاتك.</p>
+  users:
+    sign_in_title: "تسجيل دخول إلى جريسي فورك"
+    sign_in_description: "تسجيل الدخول في %{site_name} يتيح لك إضافة البرامج النصية وردود الفعل على البرامج النصية للآخرين.  لكنك لا تحتاج لتسجيل الدخول لتصفح أو تثبيت البرامج النصية."
+    sign_in_external: "تسجيل الدخول بواسطة خدمة خارجية"
+    sign_in_with: "سجل الدخول بـ %{provider}"
+    sign_in_password: "تسجيل دخول مع كلمة مرور"
+    sign_in_email_used_no_external_services_html: "%{email}' مستخدم بالفعل من قبل '%{user_name}'. إذا كان هذا أنت وتريد إضافة معلومات تسجيل دخول إضافية بـ %{provider}, %{sign_in_link} فقم بإضافة معلوماتك دخول بـ %{provider}."
+    sign_in_email_used_with_external_services_html: "'%{email}' مستخدم بالفعل بواسطة '%{user_name}'، والذي يقوم بتسجيل الدخول عبر %{existing_providers}. إذا كان هذا أنت وتريد إضافة معلومات تسجيل دخول إضافية بـ %{provider}, %{sign_in_link} فقم بإضافة معلوماتك دخول بـ %{provider}."
+    sign_in_email_used_sign_in_link: "تسجيل دخول"
+    sign_in_email_missing: "%{site_name} يتطلب بريد إلكتروني لإنشاء حساب جديد، لكن %{site_name} لم يقدم حسابا بالنسبة لك. يمكنك إما تحديث حساب %{provider} الخاص بك. أو قم إنشاء حساب البريد الإلكتروني / كلمة المرور المعتاد على %{site_name}، ثم أضف حساب %{provider} إليه."
+    sign_in_name_used: "الاسم '%{name}' مستخدم بالفعل. اختر اسما آخر."
+    sign_in_name_used_submit: "إرسال"
+    control_panel: "لوحة التحكم"
+    discussions_on_scripts: "مناقشات حول برامجك النصية"
+    discussions_on_scripts_feed_alt: "RSS تغذية"
+    discussions_on_scripts_none: "لا شيء حتى الآن!"
+    discussions_on_scripts_more: "المزيد من المناقشات ..."
+    script_list: "برامج نصية"
+    script_list_none: "لم يتم إضافة برامج نصية"
+    script_list_none_for_filter: "لا توجد برامج نصية حسب عامل الترشيح الحالي"
+    script_list_none_same_user_html: "لم تقم بإضافة أي برنامج نصي. %{script_list_none_same_user_info_link}"
+    script_list_none_same_user_info_link_text: "هل ترغب في معرفة كيف؟"
+    deleted_script_list: "البرامج النصية المحذوفة"
+    sign_out: "تسخيل خروج"
+    edit: "تعديل الحساب"
+    edit_sign_in: "تحرير طرق تسجيل الدخول"
+    edit_sign_in_title: "تحرير طرق تسجيل الدخول"
+    edit_sign_in_password: "كلمة المرور"
+    edit_notifications: "تحرير الإشعارات"
+    no_password_set_info: "لم يتم تكوين كلمة مرور لحسابك."
+    set_password: "تعيين كلمة مرور"
+    update_password: "تحديث كلمة المرور"
+    update_password_no_match: "كلمات المرور غير متطابقة."
+    password_updated: "تم تحديث كلمة المرور."
+    remove_password_info: "يمكنك إزالة كلمة المرور وتعتمد فقط على تسجيل الدخول الخارجي."
+    remove_password: "حذف كلمة المرور"
+    cant_remove_password: "لا يمكن إزالة كلمة المرور - لأنك لن تمتلك وسيلة لتسجيل الدخول!"
+    cant_remove_sign_in: "لا يمكنك إزالة %{provider} لأنك لن تمتلك وسيلة لتسجيل الدخول!"
+    password_removed: "تمت إزالة كلمة المرور."
+    edit_sign_in_external: "تسجيل الدخول الخارجي"
+    external_sign_in_info_no_sign_ins: "يمكنك استخدام حسابك على مواقع أخرى لتسجيل الدخول إلى %{site_name}."
+    external_sign_in_info_with_sign_ins: "أنت تستخدم حاليا تسجيل دخول خارجي موضح أدناه. تسجيل دخول \"متزامن\" يعني أن معلومات  %{site_name} الخاصة بك (مثل اسم المستخدم والبريد الإلكتروني) سيتم تحديثها لتتطابق عند تسجيل الدخول."
+    external_sign_in_added: "%{provider} تمت إضافته لتسجيل الدخول."
+    external_sign_in_updated: "%{provider} تم تحديثه لتسجيل الدخول.."
+    external_sign_in_removed: "%{provider} تم حذف تسجيل الدخول هذا."
+    external_sign_in_failed: "%{provider} فشل تسجيل الدخول: %{error}."
+    external_sign_in_already_used: "إضافة تسجيل دخول عبر %{provider} فشل: يتم بالفعل استخدام هذا الدخول من قبل المستخدم '%{user_name}'."
+    external_sign_in_confirmation: "حساب %{site_name} تم إنشاؤه بناء على تفاصيل حسابك في  %{provider}. اسم المستخدم الخاص بك هو %{username}."
+    syncing_indicator: "(المزامنة)"
+    enable_syncing: "تشغيل المزامنة"
+    disable_syncing: "إيقاف المزامنة"
+    remove_external_sign_in: "حذف"
+    add_external_sign_in_info: "إضافة تسجيل دخول:"
+    set_up_webhook: "قم بإعداد عناوين الويب"
+    author_email_notification_type:
+      none: "عدم تلقي بريد إلكتروني عن المناقشات حول البرامج النصية الخاصة بك"
+      discussion_only: "تلقي بريد إلكتروني عندما يتم نشر مناقشات حول البرامج النصية الخاصة بك"
+      discussion_and_comment: "تلقي بريد إلكتروني عندما يتم نشر مناقشات حول البرامج النصية أو عندما توجد تعليقات جديدة"
+    list_display_html:
+      zero: "%{user_link} - %{count} برنامج نصي"
+      one: "%{user_link} - %{count} برنامج نصي واحد"
+      two: "%{user_link} - %{count} برنامجين نصيين"
+      few: "%{user_link} - %{count} برامج نصية"
+      many: "%{user_link} - %{count} برنامج نصي"
+      other: "%{user_link} - %{count} برنامج نصي"
+    listing_number_of_scripts: "عدد البرامج النصية"
+    listing_new_scripts: "البرامج النصية الجديدة"
+    listing_updated_scripts: "البرامج النصية المحدثة"
+    listing_registration_date: "تاريخ التسجيل"
+    listing_title: "المستخدمون"
+    listing_banned_filter:
+      banned: "محظور"
+      not_banned: "غير محظور"
+      all: "الكل"
+    listing_author_filter:
+      script_author: "مؤلف السيناريو"
+      not_script_author: "ليس مؤلف السيناريو"
+      all: "الكل"
+    search_placeholder: "بحث المستخدمين"
+    locale_prompt: "(اختر اللغة المحلية)"
+    show_ads_description: "دعم %{site_name} عن طريق السماح له بعرض الإعلانات"
+    show_sensitive_description: "إظهار البرامج النصية ذات محتوى للبالغين"
+    preferred_markup_description: "ستستخدم للبرامج النصية والمشاركات الجديدة."
+    filter_locale_default_description: "بشكل افتراضي، قائمة المحتوى فقط في الإعدادات المحلية الحالية"
+    greasy_fork_scripts_link:
+      zero: "%{user_name} لديه أيضا %{count} برنامج نصي على Greasy Fork."
+      one: "%{user_name} لديه أيضا %{count} برنامج نصي واحد على Greasy Fork."
+      two: "%{user_name} لديه أيضا %{count} برنامجين نصيين على Greasy Fork."
+      few: "%{user_name} لديه أيضا %{count} برامج نصية على Greasy Fork."
+      many: "%{user_name} لديه أيضا %{count} برنامج نصي على Greasy Fork."
+      other: "%{user_name} لديه أيضا %{count} برنامج نصي على Greasy Fork."
+    update_sync_warning:
+      zero: "تم إعداد اسم المستخدم والبريد الإلكتروني الخاصين بك للمزامنة عند دخولك بواسطة %{providers}. %{edit_sign_in_link:عدل طرق تسجيل الدخول لحذف المزامنة} إذا كنت تريد وضع اسم مستخدم أو بريد مخصص بشكل دائم."
+      one: "تم إعداد اسم المستخدم والبريد الإلكتروني الخاصين بك للمزامنة عند دخولك بواسطة %{providers}. %{edit_sign_in_link:عدل طرق تسجيل الدخول لحذف المزامنة} إذا كنت تريد وضع اسم مستخدم أو بريد مخصص بشكل دائم."
+      two: "تم إعداد اسم المستخدم والبريد الإلكتروني الخاصين بك للمزامنة عند دخولك بواسطة %{providers}. %{edit_sign_in_link:عدل طرق تسجيل الدخول لحذف المزامنة} إذا كنت تريد وضع اسم مستخدم أو بريد مخصص بشكل دائم."
+      few: "تم إعداد اسم المستخدم والبريد الإلكتروني الخاصين بك للمزامنة عند دخولك بواسطة %{providers}. %{edit_sign_in_link:عدل طرق تسجيل الدخول لحذف المزامنة} إذا كنت تريد وضع اسم مستخدم أو بريد مخصص بشكل دائم."
+      many: "تم إعداد اسم المستخدم والبريد الإلكتروني الخاصين بك للمزامنة عند دخولك بواسطة %{providers}. %{edit_sign_in_link:عدل طرق تسجيل الدخول لحذف المزامنة} إذا كنت تريد وضع اسم مستخدم أو بريد مخصص بشكل دائم."
+      other: "تم إعداد اسم المستخدم والبريد الإلكتروني الخاصين بك للمزامنة عند دخولك بواسطة %{providers}. %{edit_sign_in_link:عدل طرق تسجيل الدخول لحذف المزامنة} إذا كنت تريد وضع اسم مستخدم أو بريد مخصص بشكل دائم."
+    delete_link: "أحذف الحساب"
+    delete:
+      password_effect: "لن تتمكن بعد الآن من تسجيل الدخول باستخدام كلمة المرور الخاصة بك."
+      scripts_effect:
+        zero: "سيتم حذف سكربت من %{count}."
+        one: "سيتم حذف سكربت من %{count}."
+        two: "سيتم حذف سكربتين من %{count}."
+        few: "سيتم حذف سكربتات من %{count}."
+        many: "سيتم حذف سكربتات من %{count}."
+        other: "سيتم حذف سكربت من %{count}."
+      script_sets_effect:
+        zero: "سيتم حذف سكربت من %{count}."
+        one: "سيتم حذف سكربت من %{count}."
+        two: "سيتم حذف سكربتين من %{count}."
+        few: "سيتم حذف سكربتات من %{count}."
+        many: "سيتم حذف سكربتات من %{count}."
+        other: "سيتم حذف سكربتات من %{count}."
+      submit: "أحذف الحساب"
+      confirmation_email_sent: "تم إرسال بريد إلكتروني لتأكيد الحذف."
+      confirmation_email:
+        subject: "تأكيد حذف الحساب %{site_name}"
+      confirmation:
+        intro: "أنت على وشك حذف الحساب '%{user_name}'. لا يمكن التراجع عن هذا الإجراء."
+        confirm: "أحذف '%{user_name}'"
+        cancel: "الغ الحذف"
+        key_mismatch: "لا يمكن حذف المستخدم - المفاتيح غير متطابقة."
+        request_expired: "لا يمكن حذف المستخدم - انتهت صلاحية الطلب."
+        cancelled: "تم الغاء عملية الحذف."
+        completed: "لقد تم حذف حسابك."
+    badges:
+      author:
+        short: مؤلف
+        long: مؤلف هذا النص
+  help:
+    installing_user_scripts:
+      title: 'كيفية تثبيت البرامج النصية'
+    meta_keys:
+      title: "مفاتيح ميتا للبرامج النصية تقرأ بواسطة %{site_name}"
+      intro_html: "هذه قائمة <a href=\"http://wiki.greasespot.net/Metadata_Block\"> مفاتيح ميتا</a> يستطيع %{site_name} قرائتها، المفاتيح الني خارج القائمة يمكن تضمينها في البرنامج النصي وستكون موجودة لكن ليس لها تأثير على واجهة %{site_name}'."
+      name: "اسم البرنامج النصي، مستخدم كعنوان وفي الروابط. مطلوب."
+      name_localized_html: "اسم البرنامج النصي المحدد بلغة محلية بحيث أن XX هي <a href=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\">ISO 639-1 2-letter code</a> وYY هي <a href=\"https://www.iso.org/obp/ui/#search\">ISO 3166 country code</a> اختياري. تستبدل <code>@name</code> عندما يتصفح المستخدم من منطقة مطابقة."
+      description: "وصف للبرنامج النصي. يعرض كنص تحت اسم البرنامج النصي. مطلوب."
+      description_localized_html: "وضف البرنامج النصي بلغة محلية حيث أن XX <a href=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\">ISO 639-1 2-letter code</a> وYY هي <a href=\"https://www.iso.org/obp/ui/#search\">ISO 3166 country code</a> اختياري. تستبدل <code>@description</code> عندما يتصفح المستخدم من منطقة مطابقة."
+      namespace_html: "تركيبة من <code>@namespace</code> و <code>@name</code> تستخدم من قبل إضافات إدارة البرامج النصية لمعرفة إذا كان البرنامج النصي مثبت. %{site_name} يطلب هذا الحقل، وسوف ينبهك إذا حصل تتغير أثناء التحديث."
+      require_html: "يتضمن جافاسكربت خارجية في البرنامج النصي. اقرأ %{external_script_link}."
+      require_external_script_link_text: "قواعد استخدام أكواد تتضمن برامج نصية خارجية."
+      updateURL: "يوصف كيفية حصول إضافات إدارة البرامج النصية على التحديثات. %{site_name} سيقوم بتجريد هذه المفاتيح، الأمر الذي يجعل أي برنامج نصي مثبت من %{site_name} يحصل على التحديث فقط من %{site_name}."
+      supportURL: "وصلة لصفحة حيث يمكن للمستخدمين الحصول على الدعم للبرنامج النصي (مثل تعقب الأخطاء، منتدى، عنوان بريد إلكتروني). يتم عرض وصلة الدعم على صفحة الملاحظات للبرنامج النصي."
+      contributionURL_html: "وصلة لصفحة حيث يمكن للمستخدمين التبرع لمؤلف البرنامج النصي. يتم عرض وصلة المساهمة في الصفحة الخاصة بردود الفعل على البرنامج النصي. يمكن أن تكون عنوان  HTTP و HTTPS أو بروتوكولات بيتكوين. لوضع رابط إلى صفحة تبرع باي بال استخدم التنسيق <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=your.email.here@example.com&item_name=Greasy+Fork+donation\">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=your.email.here@example.com&item_name=Greasy+Fork+donation</a>، استبدل مثال اسم البريد ببريدك الإلكتروني."
+      contributionAmount_html: "مقدار التبرع المقترح، يستخدم مع <code>@contributionURL</code>."
+      compatible_html: "قم بوسم هذا البرنامج النصي كمتوافق مع مستعرض. سيتم عرض معلومات التوافق على صفحة برنامج البرنامج النصي. يمكن تضمين تعليقات على التوافق في شكل <code>@compatible firefox Must disable pop-up blocker</code>. المتصفحات التعرف عليها هي %{browsers}."
+      incompatible_html: "قم بوسم هذا البرنامج النصي كغير متوافق مع مستعرض ما. سيتم عرض معلومات التوافق على صفحة البرنامج النصي. تعليقات اختيارية على التوافق يمكن تضمينها في الشكل <code>@incompatible firefox Broken since Firefox 23</code>. المتصفحات المتعرف عليها هي %{browsers}."
+    writing_user_scripts:
+      title: "كيفية كتابة برامج نصية"
+      content_html: "<p>كتابة برنامج نصي يتطلب معرفة بجافاسكربت. <a href=\"http://wiki.greasespot.net/Tutorials\">دروس غريسبوت ويكي</a> سوف تساعدك على البدء في التعلم حول جافاسكربت بشكل عام وبشكل خاص عن البرامج النصية. مشاهدة البرامج النصية الأخرى قد يكون مفيدا. ربما تكون مهتما بـ %{code_rules_link} و %{meta_keys_link}. إذا أردت المساعدة في تطوير البرنامج النصي الخاص بك قم السؤال في %{ask_in_forum_link}.</p><p>للكتابة في %{site_name}, أنت تحتاج لإنشاء حساب من %{user_page_link}, اتبع الرابط إلى %{post_new_script_link}.</p>"
+      ask_in_forum_link_text: 'اسأل في المنتدى'
+      user_page_link_text: 'صفحة المستخدم'
+      post_new_script_link_text: 'أضف برنامج نصي جديد'
+    code_rules:
+      title: "قواعد %{site_name} من أجل إضافة برامج نصية"
+    external_scripts:
+      title: "سياسة %{site_name} حول البرامج النصية الخارجية"
+    script_rewriting:
+      title: "كيف سيقوم %{site_name} بإعادة كتابة البرامج النصية المضافة"
+      content_html: >
+          <p>البرامج النصية المضافة إلى %{site_name} سيتم إعادة كتابتها بالطريقة التالية:</p>
+          <ul>
+
+          <li>موجهات <code>@updateURL</code>, <code>@installURL</code>, و <code>@downloadURL</code>
+          سيتم تجريدها إذا  كانت موجودة. عدم وجود هذه الموجهات يعني أن أي برنامج نصي
+          مثبت من %{site_name} سيتم تحديثه من %{site_name}.</li>
+
+          <li>موجهات <code>@version</code> و <code>@namespace</code> سيتم إدراجها
+          إذا لم تكن موجودة. هذه الموجهات مطلوبة من أجل تحديث سليم.</li>
+
+          <li><code>@description</code> سيتم إدراجه إذا كان الإصدار الجديد من البرنامج
+          النصي يفتقده والإصدار السابق منه يحتويه .</li>
+
+          <li>علامات إنهاء السطرCRLF و CR سيتم تحويلها إلى تنسيق يونيكس.</li>
+
+          </ul>
+    site_feedback_link: "بلغ عن مشكلة أو شارك فكرة حول %{site_name} نفسه."
+    credits:
+      title: "الاعتماد"
+      authors_credit: "%{site_name} لم يكن ليكون ممكنا دون المؤلفين الذين ساهموا بالبرامج النصية.."
+      developers_credit: "%{site_name} بني نفسه بواسطة %{developers_link:هؤلاء الأشخاص} بمساعدة كل أولئك الذين يبلغون عن الخلل ويققترحون التحسينات."
+      translators_credit: "%{site_name} تمت ترجمته بواسطة %{translators_link:the Greasy Translation Force on Transifex}:"
+    help_with_greasymonkey: "مساعدة Greasemonkey"
+    contact:
+      title: "تواصل مع شخص ما"
+      content_html: >
+          <p>وهناك عدد من الطرق للحديث ع %{site_name} والأشياء فيه.</p> <p>هل لديك
+          سؤال أو تعليق حول برنامج نصي محدد منشور على الموقع؟ إذا كان الأمر كذلك،
+          أضف مناقشة من الوصلة فيعلامة التبويب للملاحظات على صفحة البرنامج النصي.
+          مؤلفو البرامج النصية يحصلون على إخطارات على صفحات حساباتهم في أي مناقشات
+          حول برامجهم النصية.</p> <p>هل لديك سؤال أو تعليق حول %{site_name} أو تطوير
+          البرامج النصية, أو تريد من شخص ما صنع برنامج نصي لك؟ %{forum_link:الكتابة
+          في المنتدى} سوف يوصلك نقاشك لجمهور عريض.</p> <p>هل لديك تقرير عن أخطاء أو
+          فكرة كاملة لـ %{site_name} (وليس عن برنامج نصي محدد <em>منشور على</em> %{site_name})؟
+          %{github_link:قم بكتابته في صفحة GitHub .}</p> <p>هل لديك سؤال خاص أو تعليق
+          ترغب فقط من المشرف معرفته؟ %{admin_email_link:أرسل بريد إلكتروني.}</p>
+    privacy_policy:
+      title: "سياسة الخصوصية"
+      content_html: >
+          <p>هذه الصفحة تصف كيفية قيام %{site_name} بتتبع المستخدمين. إذا كان لديك
+          أية مخاوف، %{admin_email_link:أرسل بريد للمدير}.</p> <h2>سجلات الخادوم</h2>
+          <p>%{site_name} يسجل كل الطلبات في نموذج سجل الخادم المعتاد. المعلومات المسجلة
+          تشمل الصفحات المزارة، عنوان الآيبي، وسلسلة عميل المستخدم. هذه السجلات هي
+          من أجل تصحيح الأخطاء وتحليل الخادم. يتم الاحتفاظ بالبيانات لمدة أسبوع واحد.
+          هذه البيانات غير مشتركة وغير متاحة للجمهور.</p> <h2>إحصائيات البرامج النصية</h2>
+          <p>لأغراض توليد إحصاءات، %{site_name} يسجل طلبات التثبيت والتحديث مع معلومات
+          عنوان الآيبي. يتم الاحتفاظ بهذه المعلومات ليوم واحد، ومن ثم يتم تجميعها
+          لكي لا تحتوي عنوان الآيبي. بيانات عنوان الآيبي المعينة غير مشتركة وغير علنية،
+          ولكن البيانات المجمعة هي كذلك.</p> <h2>الكوكيز (عند عدم تسجيل الدخول)</h2>
+          <p>%{site_name} قد توضع ملفات تعريف الإرتباط أو الكوكيز لجلسة مؤقتة للسماح
+          لبعض ميزات الموقع بالعمل. لم يتم تعيين هذه الملفات لأن تكون دائمة ويمكن
+          مسحها عند إغلاق المتصفح (حسب إعدادات المتصفح).</p> <h2>حسابات المستخدم</h2>
+          <p>%{site_name} يتطلب من المستخدمين إنشاء حساب للنشر البرامج النصية، والمشاركة
+          في المناقشات، والوصول إلى بعض ميزات الموقع الأخرى. عند إنشاء حساب، معلومات
+          مثل عنوان الآيبي، وعنوان البريد الإلكتروني، وكيل المستخدم قد تكون مخزنة
+          بشكل دائم. ربما بعض من هذه المعلومات مرئية للمستخدمين الآخرين.</p> <p>الإجراءات
+          التي يتم تنفيذها عند تسجيل الدخول، على سبيل المثال نشر الكتابات والتعليقات،
+          ستكون مرئية للمستخدمين الآخرين.</p> <p>
+
+          واذا كان خيار "تذكرني" محدد عند تسجيل الدخول إلى حساب، %{site_name} سيحفظ
+          ملفات تعريف ارتباط دائمة للاحتفاظ بحالة تسجيل الدخول.</p> <h2>البرامج النصية
+          المنشورة على %{site_name}</h2> <p>%{site_name} يحتوي على محتوى مقدم من المستخدمين،
+          والبرامج النصية المنشورة قد تكون قادرة على تعقب المستخدمين إذا تم تثبيتها.</p>
+          <h2>مكتبات الطرف الثالث</h2> <p>%{site_name} يمكن أن يشمل كود طرف ثالث لجمع
+          إحصاءات أو عرض الإعلانات على الموقع. ويمكن أن تشمل هذه المكتبات منطق تتبع.</p>
+  search:
+    script_search:
+      title: "بحث البرامج النصية "
+    library_search:
+      title: "بحث المكتبات "
+    code_search:
+      title: "بحث الكود المصدري"
+      description: "بحث في الكود المصدري لبرنامج نصي. يتم البحث بتجاهل حالة الأحرف وبنص مباشر."
+    user_search:
+      title: "بحث عن مستخدم"
+      description: "البحث عن المستخدمين بالاسم. نص مجرد كـ أبحث."
+  moderator_logs:
+    date_column: "التاريخ"
+    moderator_column: "مدير"
+    item_column: "عنصر"
+    action_column: "إجراء"
+    reason_column: "السبب"
+    item_script_html: "السكربت: %{script_link}"
+    item_deleted_script: "أحذف السكربت %{id}"
+    item_user_html: "المستخدم: %{user_link}"
+  discussions:
+    edit_comment_header: "تعديل التعليق"
+    delete_comment: "حذف"
+    delete_discussion: "حذف"
+    update_comment_submit: "تحديث التعليق"
+    cancel_update_comment: "إلغاء"
+    question_heading_html: "سؤال / تعليق"
+    review_heading_html: "مراجعة: %{rating}"
+    ratings_short:
+      question: "سؤال / تعليق"
+      bad: "سيئة"
+      ok: "حسنا"
+      good: "جيد"
+    sign_in_to_post_discussion: "قم بتسجيل الدخول لنشر مراجعة أو تعليق أو سؤال."
+    sign_in_to_post_comment: "تسجيل الدخول إلى مرحلة ما بعد الرد."
+    user_filter:
+      label: "مناقشات شاركت فيها"
+      all: "كل المناقشات"
+      subscribed: "مشترك"
+    other_user_filter:
+      all: "جميع المناقشات"
+      comments_by: "تعليقات بواسطة %{user}"
+    category_filter:
+      label: الفئة
+      all: جميع الفئات
+    read_filter:
+      all: الكل
+      read: مقروءة
+      unread: غير مقروءة
+    user_activity:
+      title: "التعليقات الأخيرة"
+      no_recent_activity: "هذا المستخدم لم ينشر أي تعليقات مؤخرا."
+      see_all_activity: "شاهد كل نشاط المستخدم."
+      script_review:
+        posted_html: "نشر مشاركة حول <i>%{script}</i>"
+      script_question:
+        posted_html: "نشر سؤال / تعليق حول <i>%{script}</i>"
+        replied_html: "رد على سؤال / تعليق حول <i>%{script}</i>"
+      discussion:
+        posted_html: "نشر مناقشة: <i>%{title}</i>"
+        replied_html: "رد على المناقشة: <i>%{title}</i>"
+    question_title: "سؤال حول %{script_name}"
+    subscribe: الإشتراك
+    unsubscribe: إلغاء الاشتراك
+    notify: أعلمني بأي ردود
+    categories:
+      development:
+        name: تطوير
+    new_title: مناقشة جديدة
+    new_button: مناقشة جديدة
+    no_discussions: لم يتم العثور على مناقشات.
+    mark_all_read: ضع علامة بأنه تم القراءة
+    pending_moderator_review: هذه المناقشة غير متاحة للمستخدمين الآخرين حتى تتم مراجعتها من قبل المشرف.
+  conversations:
+    user_input_note: أدخل اسم المستخدم أو عنوان URL إلى ملف التعريف الخاص به.
+    new_title: قم بإنشاء محادثة جديدة
+    new_link: قم بإنشاء محادثة جديدة
+    new_button: إنشاء محادثة
+    send_message: أرسل رسالة
+    conversation_list_title: المحادثات
+    conversation_info_html: آخر رسالة في%{date} بواسطة %{user}.
+    no_conversations: لم تجر أي محادثات بعد.
+    recent:
+      title: المحادثات الأخيرة
+      more: مشاهدة جميع المحادثات
+  common:
+    allowed_elements_link: "(مشاهدة الكود المسموح به)"
+    allowed_elements_and_attributes_title: "العناصر المسموحة لمحتوى HTML "
+    allowed_elements_intro: "العناصر والخصائص التالية مسموح بها. هذا ينطبق على كل من HTML و Markdown (بعد تحويلها إلى HTML)"
+    allowed_elements_extra_info: "المسافات البيضاء سيتم تحويلها إلى عنصر p او br . الوصلات سيتم تفعيلها بشكل تلقائي."
+    not_found_text: "404 - الصفحة غير موجودة."
+    not_found_title: "404 - الصفحة غير موجودة"
+    not_found_link_home: "الذهاب للصفحة الرئيسية"
+    suggest_locale: "%{site_name} متوفر بـ %{locale_name}."
+    incomplete_locale: "ترجمة %{site_name} باللغة %{locale_name} مكتملة فقط بنسبة %{percent}. بإمكانك تغيير ذلك."
+    expander_show_more: "عرض المزيد"
+    expander_show_less: "عرض أقل"
+    advertisement_note: الإعلانات
+    preview_tab: معاينة
+    write_tab: أكتب
+    listing_options_title: "خيارات البحث"
+    quote:
+      prefix_html: "%{user}قال:"
+  activerecord:
+    attributes:
+      user:
+        name: "الاسم"
+        profile: "الملف الشخصي"
+        locale: "اللغة المحلية المفضلة"
+        author_email_notification_type_id: "إخطارات مناقشة البرنامج النصي"
+        show_ads: "عرض الإعلانات"
+        show_sensitive: "محتوى للبالغين"
+        preferred_markup: "العلامات المفضلة"
+      script:
+        name: "الاسم"
+        description: "الوصف"
+        locale: "اللغة المحلية"
+        code: "الكود"
+        changelog: "سجل التغييرات"
+        type: "نوع البرنامج النصي"
+        additional_info: "معلومات إضافية"
+        screenshots: "لقطات الشاشة"
+        replaced_by_script_id: "البرنامج النصي للاستبدال"
+      script_set:
+        name: "الاسم"
+        description: "الوصف"
+        default_sort: "الفرز الافتراضي "
+      report:
+        reason: "سبب التقرير"
+      discussion:
+        rating: "تقييم"
+        category: "الفئة"
+        title: عنوان
+      conversation:
+        user_input: المستعمل
+      message:
+        content: رسالة
+  errors:
+    messages:
+      script_missing_name: "مطلوب - حدد واحد بـ @name"
+      script_missing_description: "مطلوب - حدد واحد بـ @description"
+      script_name_same_as_description: "يجب ألا يكون نفس الاسم"
+      script_sync_identifier_bad_protocol: "يجب أن يكون رابط HTTP أو HTTPS"
+      script_too_many_screenshots: "كثير من لقطات الشاشة - الحد الأقصى هو %{number}"
+      cannot_be_self_reference: "لا يمكن أن يكون نفس البرنامج النصي"
+      cannot_be_deleted_reference: "لا يمكن أن يكون برنامج نصي محذوف"
+      cannot_be_used_with_this_script: "لا يمكن استخدامة مع هذا السكربت"
+      must_be_greasy_fork_script: "يجب أن يكون الرابط لبرنامج نصي على %{site_name}"
+      script_update_not_utf8: "المرفوع يجب أن يكون نص UTF-8"
+      script_disallowed_require: "يستخدم برنامج نصي خارجي غير مصرح به: %{code}"
+      script_rate_limit: "لقد تجاوزت حد النشر. حاول مجدداً في وقت لاحق."
+      file_size_out_of_range: "يجب أن يكون الحجم أقل من 200 كيلو بايت"
+  opensearch:
+    short_name: "بحث %{site_name}"
+    description: "بحث عن البرامج النصية للمستخدم في %{site_name}."
+    long_name: "%{site_name} بحث عن البرامج النصية"
+    attribution: "حقوق التأليف والنشر لمؤلفي البرامج النصية، شاهد البرامج النصية بشكل منفصل من أجل الترخيص"

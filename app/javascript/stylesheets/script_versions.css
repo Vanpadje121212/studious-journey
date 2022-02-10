@@ -1,0 +1,27 @@
+.history_versions {
+  display: table;
+  padding: 0;
+}
+.history_versions li {
+  display: table-row;
+}
+.diff-controls, .version-number, .version-date, .version-changelog {
+  display: table-cell;
+  padding-bottom: 0.5em;
+}
+.diff-controls, .version-number, .version-date {
+  white-space: nowrap;
+  padding-right: 1em;
+}
+.version-changelog {
+  overflow-wrap: anywhere;
+}
+.version-changelog img {
+  max-width: 100%;
+}
+.version-changelog p:first-child {
+  margin-top: 0;
+}
+.version-changelog p:last-child {
+  margin-bottom: 0;
+}

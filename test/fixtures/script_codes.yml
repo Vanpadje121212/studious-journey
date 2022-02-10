@@ -1,0 +1,296 @@
+# use this one when it doesn't matter
+empty:
+  id: 100
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @version 1.1
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  code_hash: 27e969ebfb2c56e9daf4ab45bf3782c592125c78
+
+one:
+  id: 1
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @version 1.1
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  code_hash: 0a48d41041444f9a31619dbdedbaa9cd36ec215f
+
+two:
+  id: 2
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  code_hash: 0a48d41041444f9a31619dbdedbaa9cd36ec215f
+
+three:
+  id: 3
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  code_hash: 0a48d41041444f9a31619dbdedbaa9cd36ec215f
+
+four:
+  id: 4
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  code_hash: ca397005488815b64d9974cf7082442e77144d9f
+
+five:
+  id: 5
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @namespace http://example.com
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  code_hash: dd5cbda5e988f244641f06cf0062a99b20b32bed
+
+six:
+  id: 6
+  code: |
+    // ==UserScript==
+    // @name		This is something
+    // @description		Unit test.
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 2;
+  code_hash: 8b1f93bca318b7c6d4af8df9af4e4c9a9f3bace3
+
+seven:
+  id: 7
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @version 1.1
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  code_hash: 27e969ebfb2c56e9daf4ab45bf3782c592125c78
+
+eight:
+  id: 8
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @version 1.1
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  code_hash: 27e969ebfb2c56e9daf4ab45bf3782c592125c78
+
+nine:
+  id: 9
+  code: |-
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @version 1.1
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  code_hash: 28918a32c05920a6f914e547b62492e3843ff0df
+
+ten:
+  id: 10
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @version 1.1
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  code_hash: 27e969ebfb2c56e9daf4ab45bf3782c592125c78
+
+eleven:
+  id: 11
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @namespace		http://example.com/1
+    // @description		Unit test.
+    // @version		1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    foo.baz();
+  code_hash: 2e3369c53f38744f02bf4d7aeb272d0cb46a3a9c
+
+twelve:
+  id: 12
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @namespace		http://example.com/1
+    // @description		Unit test.
+    // @version		1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    foo.baz();
+  code_hash: 2e3369c53f38744f02bf4d7aeb272d0cb46a3a9c
+
+thirteen:
+  id: 13
+  code: |
+    /* License info is here */
+    // ==UserScript==
+    // @name		A Test!
+    // @namespace		http://example.com/1
+    // @description		Unit test.
+    // @version		1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    foo.baz();
+  code_hash: 2ae5e0fa207ab9ac5daab8f023fa90e6707cf2a0
+
+fourteen:
+  id: 14
+  code: |
+    // ==UserScript==
+    // @name		A Test!
+    // @name:fr		Un test!
+    // @namespace		http://example.com/1
+    // @description		Unit test.
+    // @description:fr		Test d'unit.
+    // @version		1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    foo.baz();
+  code_hash: da0082e6556bb2071a95272a803eef5d702693e4
+
+webhook_sync:
+  id: 18
+  code: |
+    // ==UserScript==
+    // @name         mb. FUNKEY ILLUSTRATED RECORDS 15
+    // @description  musicbrainz.org: CAA front cover art archive pictures/images (release groups and releases) Big illustrated discography and/or inline everywhere possible without cluttering the pages
+    // @version      2016.3.20.2000
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    foo.baz();
+  code_hash: e0ffd7a8837e1784e1687a2c9c5efbefc86d77f7
+
+library:
+  code: |
+    // ==UserScript==
+    // @name A Test Update!
+    // @description Unit test.
+    // @version 1.2
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  code_hash: 4fdb1d7852df5252b70681e02f2a8479accde113
+
+copy_origin:
+  id: 20
+  code: |
+    // ==UserScript==
+    // @name A Test Update!
+    // @description Unit test.
+    // @version 1.2
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    some.unique[value]
+  code_hash: 42bb9e0348c34813d61e258956060ac2a0fb06b2
+
+antifeatures:
+  id: 21
+  code: |
+    // ==UserScript==
+    // @name A Test Update!
+    // @description Unit test.
+    // @version 1.2
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @antifeature ads this has ads
+    // @license MIT
+    // ==/UserScript==
+    var foo;
+  code_hash: 6bb5190067b49fc62c05639ecdd36f1d0f4adec3
+
+style:
+  id: 22
+  code: |
+    /* ==UserStyle==
+    @name A Test Update!
+    @description Unit test.
+    @version 1.2
+    @namespace http://greasyfork.local/users/1
+    @include *
+    @antifeature ads this has ads
+    @license MIT
+    ==/UserStyle== */
+    @-moz-document domain(example.com) {
+      a { color: blue }
+    }
+  code_hash: 12cefec882d2b32f0072212a8c50c5cc0dc9141d
+
+style_antifeatures:
+  id: 23
+  code: |
+    /* ==UserStyle==
+    @name A Test Update!
+    @description Unit test.
+    @version 1.2
+    @namespace http://greasyfork.local/users/1
+    @include *
+    @antifeature ads this has ads
+    @license MIT
+    ==/UserStyle== */
+    @-moz-document domain(example.com) {
+      a { color: blue }
+    }
+  code_hash: 12cefec882d2b32f0072212a8c50c5cc0dc9141d
