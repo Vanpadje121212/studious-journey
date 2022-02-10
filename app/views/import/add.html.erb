@@ -1,0 +1,43 @@
+<%- title t('importing.results.title') %>
+
+<% if !@results[:new].empty? %>
+  <p><%= t('importing.results.success') %></p>
+  <ul>
+    <% @results[:new].each do |script| %>
+      <li><%= link_to script.name, script %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if !@results[:needsdescription].empty? %>
+  <%= form_tag(import_add_path) do |f| %>
+    <p><%= t('importing.results.needs_description') %></p>
+    <ul>
+      <% @results[:needsdescription].each do |script| %>
+        <li>
+          <%= script.name %> <input maxlength="500" size="50" name="needsdescription-<%= script.sync_identifier %>">
+          <input id="script-<%= script.sync_identifier %>" type="hidden" name="sync_ids[]" value="<%= script.sync_identifier %>">
+        </li>
+      <% end %>
+    </ul>
+    <%= submit_tag t('importing.submit') %>
+  <% end %>
+<% end %>
+
+<% if !@results[:existing].empty? %>
+  <p><%= t('importing.results.existing') %></p>
+  <ul>
+    <% @results[:existing].each do |script| %>
+      <li><%= link_to script.name, script %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if !@results[:failure].empty? %>
+  <p><%= t('importing.results.failure') %></p>
+  <ul>
+    <% @results[:failure].each do |name| %>
+      <li><%= name %></li>
+    <% end %>
+  </ul>
+<% end %>

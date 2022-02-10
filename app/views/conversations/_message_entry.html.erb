@@ -1,0 +1,12 @@
+<div class="form-control">
+  <%= f.label :content %>
+  <%= with_user_text_preview_for_form(form: f, markup_name: :content_markup) do
+    f.text_area :content, required: true
+  end %>
+
+  <div class="comment-screenshot-control">
+    <%= render partial: 'screenshots/entry', locals: { f: f } %>
+  </div>
+
+  <%= render partial: 'discussions/subscribe', locals: { subscribe: @subscribe } %>
+</div>

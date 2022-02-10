@@ -1,0 +1,590 @@
+uk:
+  layouts:
+    application:
+      script_list: "Скрипти"
+      forum: "Форум"
+      help: "Допомога"
+      sign_in: "Увійти"
+      submenu: "Більше"
+      advanced_search: "Розширений пошук"
+      user_list: "Список користувача"
+      libraries: "Бібліотеки"
+      moderator_log: "Лог модератора"
+  scripts:
+    created_date: "Створено"
+    updated_date: "Оновлено"
+    total_installs: "Всього встановлень"
+    daily_installs: "Щоденних встановлень"
+    ratings: "Рейтинги"
+    author_name: "Автор"
+    version_number: "Версія"
+    license: "Ліцензія"
+    no_license: "Н/Д"
+    compatibility: "Сумісність"
+    compatible_with_browser: "Сумісний з %{browser}"
+    incompatible_with_browser: "Несумісний з %{browser}"
+    applies_to: "Відноситься до"
+    applies_to_link_title:
+      one: "Подивіть ще %{count} скрипт для %{site}"
+      few: "Подивіть ще %{count} скрипта для %{site}"
+      many: "Подивіть ще %{count} скриптів для %{site}"
+      other: "Подивіть ще %{count} скриптів для %{site}"
+    applies_to_all: "Всі сайти"
+    install: "Встановити цей скрипт"
+    install_css: "Встановити як користувацький стиль"
+    install_help: "?"
+    install_help_title: "Як встановити"
+    update: "Оновитися до версії %{version}"
+    downgrade: "Відкотитися до версії %{version}"
+    reinstall: "Перевстановити версію %{version}"
+    old_version_warning: "Це застаріла версія скрипта. Якщо її встановити, новіша версія ніколи не буде встановлена. Все одно встановити?"
+    promoted: "Розкручений сценарій"
+    promoted_text_html: "Вам також може сподобатись %{script_link}."
+    library_instructions_html: "Цей скрипт не слід встановлювати безпосередньо. Це - бібліотека для інших скриптів для включення в мета директиву %{code}"
+    deleted_notice: "Цей скрипт було видалено."
+    deleted_notice_with_related: "Скрип, який ви запитуєте, був видалений. Але ось деякі пов'язані скрипти."
+    deleted_undelete_notice_html: "Цей сценарій був заблокований модератором і не може бути відновлений з причини \"<i>%{delete_reason}</i>\"."
+    deleted_locked_author_notice_html: "Цей сценарій був видалений модератором і не є доступним для інших користувачів. Причина видалення: \"<i>%{delete_reason}</i>\". Будь ласка, перегляньте %{code_rules_link:правила%{site_name}}. Якщо ви вважаєте, що видалення було помилковим, ви можете %{appeal_link:оскаржити} його. Не публікуйте цей сценарій повторно: це може призвести до бану на%{site_name}."
+    deleted_author_notice: "Цей сценарій був видалений і не є доступним для інших користувачів. Ви можете відновити його із вкладки \"Видалити\"."
+    version_notice_html: "Від %{date}. Дивіться %{latest_version_link}."
+    version_notice_latest_version_link: "остання версія"
+    reported_notice_for_author: "Цей сценарій буде недоступним іншим користувачам, поки його не перегляне оператор."
+    info_page: "Інформація"
+    code_page: "Код"
+    history_page: "Історія"
+    feedback_page: "Відгуки (%{count})"
+    stats_page: "Статистика"
+    derivatives_page: "Подібні"
+    update_page: "Оновити"
+    delete_page: "Видалити"
+    delete_explanation: "Видалення скрипту робить його недоступним для всіх окрім вас і модераторів Greasy Fork'у. Ви можете його повернути будь-коли."
+    delete_update_behaviour: "Що ви хочете, щоб трапилось вже зі встановленими версіями вашого скрипту?"
+    delete_permanently_heading: "Повне знищення"
+    delete_permanently_submit: "Надіслати запит на повне знищення"
+    delete_permanently_immediate_submit: "Повністю видалити"
+    delete_permanently_notice: "Запит на остаточне видалення було прийнято. Ваш скрипт буде повністю видалено через 7 днів."
+    delete_permanently_notice_immediate: "Скрипт був повністю видалений."
+    cancel_delete_permanently_submit: "Відмінити запит на повне знищення"
+    cancel_delete_permanently_notice: "Ваш запит на повне знищення був скасований. Ваш сценарій досі не видно для інших."
+    delete_permanently_rejected_locked: "Цей скрипт заблокований і не може бути повністю видалений"
+    admin_page: "Адміністратор"
+    admin:
+      promoted_heading: "Розкручений сценарій"
+      promoted_submit: "Встановити розкручений сценарій"
+      no_moderator_logs: "Модератори не виконали жодних дій над цим сценарієм."
+      compare_title: "Повірняти з іншим скриптом."
+      compare_button: "Порівняти"
+      compare_must_be_local_url: "Сценарій для порівняння має бути URL на %{site_name}."
+    history_title: "%{script_name} - Історія версій"
+    history_only_code_changes_info: "Це версії цього скрипту, де код був змінений."
+    history_all_changes_link: "Показати всі версії."
+    history_all_changes_info: "Це всі версії цього скрипту."
+    history_only_code_changes_link: "Показати тільки версії, де присутні зміни в коді."
+    diff_button: "Порівняти обрані версії"
+    list_all_script_versions: "Показати всі версії сценарію"
+    code_title: "%{script_name} - Початковий код"
+    feedback_title: "%{script_name} - Відгуки"
+    feedback_no_discussions_html: "Ще не було опубліковано жодної дискусії. %{start_first_discussion_link}"
+    feedback_no_discussions_on_page_form: "Жодного обговорення ще не опубліковано."
+    feedback_report_instead: "Якщо ви вважаєте, що цей сценарій порушує %{rules_link:правила %{site_name}}, будь ласка, %{report_link:зголосіть його для видалення}."
+    feedback_start_first_discussion_link: "Будьте першим, хто напише про цей скрипт."
+    stats_title: "%{script_name} - Статистика"
+    stats_daily_installs_heading: "Щоденні встановлення"
+    stats_weekly_installs_heading: "Тижневі встановлення"
+    stats_daily_update_checks_heading: "Щоденні перевірки оновлень"
+    stats_daily_installs_date_column_heading: "Дата"
+    stats_daily_installs_install_count_column_heading: "Встановлень"
+    stats_daily_installs_update_check_count_column_heading: "Перевірки оновлень"
+    stats_raw_data_header: "Необроблені дані"
+    stats_download_raw_data_html: "Завантажити всі дані як: %{links}"
+    stats_no_data: "Н/Д"
+    stats_filters: "Фільтр: %{filter_options}"
+    stats_filter_options:
+      month: Останні 30 днів
+      year: Останні 365 днів
+      all: Увесь час
+    derivatives_title: "%{script_name} - Подібні"
+    derivatives_intro: "Ці сценарії можуть ґрунтуватись на ваших (або ваші можуть ґрунтуватись на них). Якщо ви знайшли приклад несанкціонованого використання вашого коду, зголосіть його із вкладки відгуків сценарію."
+    derivatives_exact_copies_heading: "Точні копії"
+    derivatives_exact_copies_list_intro: "Наступні скрипти мають такий самий код, як і ваш:"
+    derivatives_exact_copies_item_html: "%{script_link} від %{author_links} - версії: %{version_list}"
+    derivatives_exact_copes_none: "Більше немає скриптів на %{site_name}, що мають такий самий код, як і цей скрипт."
+    derivatives_similar_heading: "Схожі скрипти"
+    similarity_score:
+      high: Дуже схожі
+      medium: Помірно схожі
+      low: Дещо схожі
+      none: Не схожі
+    derivatives_similar_none: "Немає скриптів, схожих до вашого."
+    derivatives_similar_item: "%{score}: %{diff_link:[Diff]} %{script}"
+    derivatives_similar_last_check_html: "Ми востаннє перевірили подібні скрипти до вашого %{date}."
+    derivatives_similar_last_check_soon: "Ми скоро перевіримо скрипти, подібні до вашого."
+    derivatives_similar_last_check_again_soon_html: "Ми востаннє перевіряли наявність сценаріїв, схожих на ваші, о %{date}. Незабаром ми здійснимо перевірку ще раз."
+    derivatives_similar_check_now: "Перевірити зараз"
+    listing_title_all_sites: "Скрипти користувачів для всіх сайтів"
+    listing_description_all_sites: "Скрипти користувачів, що додають нові функції і видаляють помилки на всіх сайтах"
+    listing_title_for_site: "Скрипти користувачів для %{site}"
+    listing_description_for_site: "Скрипти користувачів, що додають нові функції і видаляють помилки на %{site}"
+    listing_title_for_search: "'%{search_string}' скрипти користувачів"
+    listing_title_for_code_search: "'%{search_string}' скрипти користувачів"
+    listing_title_generic: "Скрипти Користувачів"
+    listing_title_for_favorites: "%{set_name} (Від %{user_name})"
+    listing_description_generic: "Скрипти користувачів, що додають нові функції і видаляють помилки на сайтах якими ви користуєтесь"
+    listing_sort_label: "Сортувати по:"
+    listing_sort_relevance: "Доречності"
+    listing_sort_daily_installs: "Кількості щоденних встановлень"
+    listing_sort_total_installs: "Кількості встановлень загалом"
+    listing_sort_ratings: "Рейтингах"
+    listing_sort_created: "Даті створення"
+    listing_sort_updated: "Даті оновлення"
+    listing_sort_name: "Назві"
+    listing_filter_by_site_label: "Показати сценарії для:"
+    listing_filter_by_site_disable: "Всі"
+    listing_filter_by_site_all_sites: "(Всі сайти)"
+    listing_filter_by_language_label: "Мова:"
+    listing_filter_by_site_more_sites: "Більше..."
+    listing_no_scripts: "Скриптів не знайдено."
+    listing_created_feed: "Нові скрипти"
+    listing_updated_feed: "Оновлені скрипти"
+    listing_none: "(Жодного)"
+    listing_set_locale_filter: "Показано результати для всіх мов. %{set_filter_link: Показати результати лише: %{language} .}"
+    listing_remove_locale_filter: "Показано результати лише такою мовою: %{language}. %{remove_filter_link:Показати результати для всіх мов.}"
+    listing_language_all: "Всі"
+    listing_language_js: "JavaScript"
+    listing_language_css: "CSS"
+    import: "Імпортувати скрипти"
+    new: "Опублікуйте свій скрипт"
+    new_css: "Опублікуйте свій стиль"
+    support_site: "Відвідайте сайт підтримки автора."
+    support_email: "Надішліть E-mail автору для підтримки."
+    contribution_no_amount: "Зробіть внесок, як подяку %{author}'у."
+    contribution_with_amount: "Зробіть внесок, як подяку %{author}'у. Пропонований внесок %{amount}."
+    contribution_bitcoin_no_amount_html: "Подякуйте %{author}'у надіславши Bitcoin на %{address}."
+    contribution_bitcoin_with_amount_html: "Подякуйте %{author}'у надіславши Bitcoin на %{address}. Пропонований внесок %{amount}."
+    locale_explanation_html: "Повинен підходити до мови полів <code>@name</code> та <code>@description</code>, і першої додаткової інформації."
+    locale_auto_select: "(Автоматичне визначення)"
+    sets_label: "В наборах скриптів:"
+    sets_label_no_sets: "Набори скриптів:"
+    sets_remove_inclusion: "Видалити з %{set_name}"
+    sets_remove_exclusion: "Видалити виключення з %{set_name}"
+    sets_add_inclusion: "Додати до %{set_name}"
+    sets_add_exclusion: "Додати виключення з %{set_name}"
+    sets_add_to_new: "Створити новий набір"
+    rules_summary_html: "Скрипт повинен бути <strong>належним чином описаний</strong>, не може бути <strong>закодований</strong> або <strong>стиснутий</strong>, повинен відповідати <strong>авторському праву</strong>, і обмеженим в використанні <strong>зовнішнього коду</strong>. %{full_rules_link}"
+    rules_summary_link_to_full: "Прочитати всі правила."
+    syncing_notice_html: "Цей скрипт використовує %{syncing_notice_sync_type}. Будь-які оновлення, внесені в код тут будуть перезаписані при синхронізації."
+    syncing_notice_sync_type_manual: "ручну синхронізацію з %{sync_identifier}"
+    syncing_notice_sync_type_automatic: "автоматичну синхронізацію з %{sync_identifier}"
+    upload_label: "Або завантажте:"
+    enable_source_code_editor_label: "Ввімкнути редактор коду з підсвічуванням синтаксису"
+    changelog_note: "Які зміни відбулись в цій версії?"
+    additional_info_note: "Більш розгорнутий опис, вказівки і т. д."
+    post_new_script: "Опублікувати скрипт"
+    post_updated_script: "Опублікувати нову версію"
+    type_1_html: "Загальний скрипт користувачів - скрипт який всі користувачі можуть бачити і використовувати."
+    type_2_html: "Приватні скрипти користувачів - скрипт користувача для (напів-)приватного використання. Доступні за прямим посиланням, проте не показані на жодній сторінці %{site_name}'у."
+    type_3_html: "Бібліотека - скрипт, може бути підключений за допомогою <code>@require</code> з іншого скрипта, але не встановлюється безпосередньо."
+    override_warning_checkbox_label: "Все одно зберегти"
+    warning_version_not_incremented_html: "Ви оновили код, але не збільшили номер <code>@version</code>. Користувачі, які раніше встановили ваш скрипт не отримають оновлення коду."
+    warning_version_missing_html: "Ви не вказали <code>@version</code>. <code>@version</code> потрібна для отримання оновлень користувачами. Ви можете вказати версію так: <code>// @version 1.0</code>."
+    warning_version_missing_generate_automatically_html: "Генерувати <code>@version</code> автоматично"
+    warning_namespace_missing_generate_automatically_html: "Генерувати <code>@namespace</code> автоматично"
+    warning_namespace_changed_html: "Ваше <code>@namespace</code> змінилося. Незмінний <code>@namespace</code> дозволяє користувачам повторно встановивши ваш скрипт, оновити його."
+    warning_potentially_minified_html: "Ваш сценарій виглядає неначе він може містити стиснений (minified) код. Якщо ви використовуєте стиснуту бібліотеку, будь ласка замість коду приєднайте її за допомогою поля <code>@require</code> з %{allowed_requires_link}. Скрипти з мінімізованим кодом підлягають видаленню."
+    warning_automatic_sensitive_html: "Ваш сценарій створений для %{sensitive_domains}, отже, буде позначений як дорослий контент."
+    warning_potentially_minified_allowed_requires_link: "одному з цих місць"
+    warning_code_previously_posted_html: "Цей код був опублікований раніше в %{script_links}. Повторні публікації будуть видалені модератором."
+    warning_license_missing_html: "Ви не вказали <code>@license</code>. Публікуючи код на %{site_name}, ви дозволяєте іншим його використовувати, але за допомогою ліцензії можна вказати, як цей код можна видозмінювати і поширювати. Наприклад, <code>// @license MIT</code> означає, що всім дозволено видозмінювати і поширювати написаний вами код. {license_chooser_link:Більше інформації про ліцензії можна знайти тут.} Якщо ви не вкажете ліцензію, %{site_name} буде вважати, що іншим заборонено вносити зміни чи поширювати копії. Зауважте, що якщо ви не є єдиним автором коду, ви не можете опублікувати його без дозволу решти авторів."
+    warning_license_missing_override_html: "Зберегти без ліцензії"
+    additional_info_locale_prompt: "(Виберіть мову)"
+    additional_info_add_localized: "Додати перекладену додаткову інформацію"
+    additional_info_locale_repeated: "Надайте тільки одну додаткову інформацію для '%{locale_code}' мови."
+    localized_additional_info_with_no_name: "Додаткова інформація була вказана для '%{locale_code}' мови, але при цьому @name:%{locale_code} не було вказано."
+    code_syncing_from_url_html: "Код скрипту налаштовано на синхронізацію з: %{field}"
+    provide_code_syncing_from_url_html: "%{site_name} може імпортувати скрипти, які вже розміщених в іншому місці, наприклад, у системі контролю версій (як GitHub), ваш власний сервер або інший хостинг сайт користувацьких сценаріїв. Щоб включити синхронізацію для вашого сценарію, надайте URL: %{field}"
+    sync_type_intro: "Скрипт буде синхронізовано:"
+    sync_type_1:
+      name: Вручну
+    sync_type_2:
+      name: Автоматично
+      description: перевірка оновлень буде проводитись періодично
+    sync_failed_info_html: "Остання спроба синхронізації відбулась %{date}, і в результаті неї трапилась %{error}."
+    sync_success_info_html: "Остання успішна спроба синхронізації відбулась %{date}."
+    sync_never_succeeded: "Синхронізації ніколи не завершилась успішно."
+    update_and_sync: "Оновити та синхронізувати зараз"
+    update_no_sync: "Оновити"
+    turn_off_syncing: "Вимкнути синхронізацію для цього скрипту"
+    additional_info_default_sync_html: "Додаткова інформація за замовчуванням (мова повинна відповідати <code>@name</code>)"
+    additional_info_localized_sync_html: "Для мови (повинні відповідати <code>@name:XX</code>)"
+    sync_url_placeholder: "(URL)"
+    screenshots_add: "Додати:"
+    screenshots_remove: "Видалити"
+    replacement_script_explanation: "(Необов'язково) Оберіть інший сценарій, що замістить цей. Уведіть URL замісного сценарію:"
+    diff_title: "%{script} - Різниця версій"
+    diff_old_version: "Стара:"
+    diff_new_version: "Нова:"
+    diff_lines_of_context: "Рядки змін:"
+    diff_ignore_whitespace: "Ігнорувати зміни в табуляції"
+    diff_refresh: "Оновити"
+    diff_no_change: "Не знайдено відмінностей."
+    good_rating_explanation: "Кількість людей, які оцінили його як Хороший, чи додали в улюблені."
+    ok_rating_explanation: "Кількість людей, які оцінили його як Непоганий."
+    bad_rating_explanation: "Кількість людей, які оцінили його як Поганий."
+    write_your_own_html: "%{post_a_script_link} (або %{learn_to_write_scripts_link})"
+    post_a_script_link_text: "Опублікуйте свій скрипт"
+    learn_to_write_scripts_link_text: "дізнайтесь як його створити"
+    feedback_or_report: "%{feedback_link:Задати запитання, залишити відгук}, або %{report_link:повідомити про скрипт}."
+    support_feedback_or_report: "Відвідайте сайт автора, щоб %{support_url:отримати підтримку}, %{feedback_link:поставити питання, залишити відгук}, або %{report_link:поскаржитись на сценарій}."
+    support_email_feedback_or_report: "Ви можете зв'язатись з автором по email, щоб %{support_url:отримати підримку}, %{feedback_link:поставити питання, залишити відгук}, або %{report_link:поскаржитись на сценарій}."
+    adult_content: "Вміст для дорослих"
+    adult_content_self_report: "Цей сценарій містить вміст для дорослих або для сайту, який містить вміст для дорослих."
+    adult_content_self_report_explanation: "%{site_name} дозволяє сценарії з вмістом для дорослих, але вони повинні бути відзначені, як такі, так що користувачі можуть вибрати чи шукати їм це."
+    not_adult_content_self_report_html: "Це скрипт <strong>не</strong> містить вміст для дорослих і <strong>не</strong> для сайту, який містить вміст для дорослих."
+    not_adult_content_self_report_explanation: "%{site_name} дозволяє сценарії з вмістом для дорослих, але вони повинні бути відзначені, як такі, так що користувачі можуть вибрати чи шукати їм це. Сценарій був відзначений як такий, що має вміст для дорослих. Ви можете повідомити, що це не так; це буде розглянуто модератором."
+    adult_content_on_greasy_logged_in_error: "Цей сценарій більше не доступні на цьому сайті з поточними %{edit_account_link: налаштуваннями облікового запису користувача Greasy Fork}."
+    adult_content_on_greasy_not_logged_in_error: "Цей сценарій більше не доступний анонімно на цьому сайті. %{login_link:Увійдіть} і перевірте налаштування облікового запису Greasy Fork."
+    non_adult_content_on_sleazy: "Цей сценарій не доступний на цьому сайті."
+    not_js_convertible_override_header: "Перетворення в JS"
+    adult_marker: "(Для дорослих)"
+    deleted_marker: "(Видалений)"
+    locked_marker: "(Заблокований)"
+    unlisted_marker: "(Прихований)"
+    library_marker: "(Бібліотека)"
+    libraries_title: "Бібліотеки"
+    search_placeholder: "Знайти скрипти"
+    updated: "Скрипт оновлено"
+    preview_additional_info: "Перегляд"
+    must_confirm_email_button: "Надіслати посилання для підтвердження на %{email}"
+    authors_heading: "Автори"
+    error_unauthorized_copy: "Схоже цей код є неавторизованою копією %{script}. Будь ласка, зверніться до %{site_name} %{rules_link:rules} про публікацію скриптів."
+    invitations:
+      form_title: "Запросити інших авторів"
+      explanation: "Ви можете додати інших користувачів Greasy Fork як авторів цього скрипта. Вони матимуть такі ж права на нього, як і ви."
+      invited_user_url_label: "Користувач, якого можна запросити"
+      invited_user_placeholder: "URL профілю користувача на %{site_name}"
+      submit: "Надіслати запрошення"
+      invalid_user_url: "URL-адреса запрошеного користувача недійсна."
+      already_author: "Користувач, якого ви вказали, вже є автором цього скрипта."
+      sent: "Запрошення надіслано."
+      subject: "Запрошення для %{script_name}"
+      body: "Вас запросили стати автором %{script_name} (%{script_url}) на %{site_name}. Щоб підтвердити запрошення, перейдіть за посиланням %{accept_url} ."
+      current_user_already_author: "Ви вже є автором цього скрипта."
+      invitation_not_found: "Запрошення не знайдено."
+      invitation_expired: "Закінчився термін дії запрошення."
+      invitation_accepted: "Тепер ви є автором цього скрипта."
+    remove_author:
+      heading: "Видалити авторів"
+      success: "%{user_name} був видалений як автор."
+      remove_button: "Видалити"
+      remove_confirm: "Ви впевнені, що хочете видалити %{user_name} як автора?"
+      failure: "Неможливо видалити автора."
+    new_script_notice:
+      title: "Що ви намагаєтеся зробити?"
+    new_title:
+      js: "Додати новий скрипт"
+      css: "Додати новий стиль"
+    update_title: "Додати нову версію %{script}"
+    antifeatures:
+      types:
+        ads:
+          title: Реклама
+        tracking:
+          title: Стеження
+        miner:
+          title: Криптомайнер
+      install_anyway: Встановити скрипт
+      cancel_install: Скасувати
+    badges:
+      js:
+        short: JS
+        long: Сценарій користувача
+      css:
+        short: CSS
+        long: Стиль користувача
+  script_sets:
+    favorites_name: "Улюблені"
+    delete: "Видалити цей набір скриптів"
+    delete_confirmation: "Ви впевнені, що хочете видалити цей набір скриптів?"
+    site_default_sort: "(За замовчуванням сайту)"
+    edit_scripts:
+      heading: "Скрипти"
+      included_none: "(Жодного)"
+      remove_included: "Вилучити відмічені"
+      excluded_none: "(Жодного)"
+      remove_excluded: "Вилучити відмічені"
+    edit_sets:
+      heading: "Набори скриптів"
+      included_none: "(Жодного)"
+      remove_included: "Вилучити відмічені"
+    save: "Зберегти"
+    saved: "Набір скриптів збережено."
+  home:
+    title: "%{site_name} - безпечні і корисні скрипти користувачів"
+    welcome: "Ласкаво просимо на %{site_name}, сайт для Користувацьких скриптів (user scripts)."
+    sleazy_title: "%{site_name} - безпечні і корисні скрипти користувачів для дорслих"
+    sleazy_welcome: "Ласкаво просимо на %{site_name}, сайт для скриптів користувачів для дорослих."
+    explain_user_scripts_heading: "Що таке скрипти користувачів?"
+    explain_user_scripts_html: "Скрипти користувачів дають вам в контроль над переглядом вебсторінок. Після встановлення вони покращують сайти додаючи функціонал, роблять їх легшими для користування, або усувають дратівливі деталі. Скрипти користувачів на %{site_name} були написані іншими користувачами, які діляться ними зі світом. Вони відкриті для встановлення і прості у використанні."
+  users:
+    sign_in_title: "Увійти в %{site_name}"
+    sign_in_description: "Увійшовши в %{site_name} дозволяє створювати свої скрипти та залишати відгуки про скрипти інших користувачів. Щоб переглядати і встановлювати скрипти вам не обов'язково входити."
+    sign_in_external: "Увійти за допомогою зовнішнього сервісу"
+    sign_in_with: "Увійти за допомогою %{provider}"
+    sign_in_password: "Увійти за допомогою паролю"
+    sign_in_email_used_no_external_services_html: "'%{email}' вже використовується користувачем '%{user_name}'. Якщо це ви, і ви хочете додати можливість входу за допомогою %{provider}, %{sign_in_link} на свій обліковий запис, а потім додати метод входу %{provider} ."
+    sign_in_email_used_with_external_services_html: "'%{email}' вже використовується користувачем '%{user_name}', який ввійшов з використанням %{existing_providers}. Якщо це ви, і ви хочете, щоб додати метод входу %{provider}, спочатку %{sign_in_link} на свій обліковий запис, а потім додайте новий метод входу %{provider}."
+    sign_in_email_used_sign_in_link: "увійти"
+    sign_in_email_missing: "%{site_name} потребує електронну пошту, щоб створити новий обліковий запис, але %{provider} не надав нам її. Ви можете додати її до %{provider}, та спробувати увійти знову, або створити нормальний обліковий запис з електронною поштою/паролем на %{site_name}, а пізніше додати %{provider} до вашого облікового запису."
+    sign_in_name_used: "Ім'я '%{name}' вже зайняте. Прохання вибрати інше."
+    sign_in_name_used_submit: "Надіслати"
+    control_panel: "Панель керування"
+    discussions_on_scripts: "Обговорення ваших скриптів"
+    discussions_on_scripts_feed_alt: "RSS Потік"
+    discussions_on_scripts_none: "Ще немає!"
+    discussions_on_scripts_more: "Більше обговорень..."
+    script_list: "Скрипти"
+    script_list_none: "Жоден скрипт ще не опубліковано."
+    script_list_none_for_filter: "За даним фільтром скриптів не знайдено."
+    script_list_none_same_user_html: "Ви ще не створили жодного скрипту. %{script_list_none_same_user_info_link}"
+    script_list_none_same_user_info_link_text: "Хочете дізнатись як?"
+    deleted_script_list: "Видалені скрипти"
+    unlisted_script_list: "Недоступні сценарії"
+    sign_out: "Вийти"
+    edit: "Змінити обліковий запис"
+    edit_sign_in: "Змінити методи входу"
+    edit_sign_in_title: "Змінити методи входу"
+    edit_sign_in_password: "Пароль"
+    no_password_set_info: "В вашому обліковому записі не налаштований пароль."
+    set_password: "Встановити пароль"
+    update_password: "Оновити пароль"
+    update_password_no_match: "Паролі не співпадають."
+    password_updated: "Пароль оновлено."
+    remove_password_info: "Ви можете видалити свій пароль і покладатися виключно на зовнішні методи входу."
+    remove_password: "Видалити пароль"
+    cant_remove_password: "Ми не можемо видалити пароль - ви не будете мати змоги увійти!"
+    cant_remove_sign_in: "Ми не можемо видалити %{provider} - ви не будете мати змоги увійти!"
+    password_removed: "Пароль видалено."
+    edit_sign_in_external: "Зовнішні методи входу"
+    external_sign_in_info_no_sign_ins: "Ви можете використовувати свої облікові записи на інших сайтах, щоб увійти в %{site_name}."
+    external_sign_in_info_with_sign_ins: "Ви в даний момент ввійшли за допомогою зовнішніх модулів, перерахованих нижче. \"Синхронізації\" входу означає, що вашу інформацію в %{site_name} (наприклад, ім'я користувача та адресу електронної пошти), буде оновлено відповідно до методу входу."
+    external_sign_in_added: "%{provider} метод входу додано."
+    external_sign_in_updated: "%{provider} метод входу оновлено."
+    external_sign_in_removed: "%{provider} метод входу видалено."
+    external_sign_in_failed: "%{provider} похибка входу: %{error}."
+    external_sign_in_already_used: "Додавання %{provider} видало помилку: цей метод вже використовується користувачем '%{user_name}'."
+    syncing_indicator: "(синхронізація)"
+    enable_syncing: "Ввімкнути синхронізацію"
+    disable_syncing: "Вимкнути синхронізацію"
+    remove_external_sign_in: "Видалити"
+    add_external_sign_in_info: "Додати метод входу:"
+    author_email_notification_type:
+      none: "Не отримую листи про обговорення ваших скриптів"
+      discussion_only: "Отримати лист, коли розпочинається обговорення ваших скриптів"
+      discussion_and_comment: "Отримати лист, коли розпочинається обговорення ваших скриптів, або коли в цих обговореннях з'являються нові коментарі."
+    list_display_html:
+      one: "%{user_link} - %{count} скрипт"
+      few: "%{user_link} - %{count} скрипта"
+      many: "%{user_link} - %{count} скриптів"
+      other: "%{user_link} - %{count} скриптів"
+    listing_number_of_scripts: "Кількість скриптів"
+    listing_new_scripts: "Нові скрипти"
+    listing_updated_scripts: "Оновлені скрипти"
+    listing_registration_date: "Дата реєстрації"
+    listing_title: "Користувачі"
+    listing_banned_filter:
+      all: "Всі"
+    listing_author_filter:
+      script_author: "Автор скрипта"
+      all: "Всі"
+    search_placeholder: "Пошук користувачів"
+    locale_prompt: "(Виберіть мову)"
+    show_ads_description: "Підтримуйте %{site_name}, дозволяючи йому показувати вам рекламу"
+    show_sensitive_description: "Показати скрипти з вмістом для дорослих"
+    preferred_markup_description: "Буде використовуватися для нових сценаріїв та повідомлень."
+    greasy_fork_scripts_link:
+      one: "%{user_name} також має %{count} скрипт на Greasy Fork'у."
+      few: "%{user_name} також має %{count} скрипти на Greasy Fork'у."
+      many: "%{user_name} також має %{count} скриптів на Greasy Fork'у."
+      other: "%{user_name} також має %{count} скриптів на Greasy Fork'у."
+    delete_link: "Видалити аккаунт"
+    delete:
+      submit: "Видалити аккаунт"
+      confirmation:
+        confirm: "Видалити '%{user_name}'"
+        cancel: "Скасувати видалення"
+        cancelled: "Видалення скасовано."
+    badges:
+      moderator:
+        long: Модератор
+      author:
+        short: Автор
+        long: Автор цього скрипта
+    notifications:
+      discussion_defaults:
+        title: Сповіщення форуму
+      save_button: Оновити налаштування сповіщень
+      title: Сповіщення
+      unsubscribe_all: Скасувати підписку на усі сповіщення
+      unsubscribe_all_success: Ви скасували підписку на всі сповіщення.
+  help:
+    sections:
+      usage: Використання
+      development: Розробка
+    meta_keys:
+      title: "Мета ключі які розпізнає %{site_name}"
+      intro_html: "Це <a href=\"http://wiki.greasespot.net/Metadata_Block\">список мета полів</a>, які %{site_name} буде читати в скриптах користувачів. Значення поза цим списком можуть бути включені в сценарії, і будуть присутні у встановленому скрипті, але не мають ніякого ефекту в інтерфейсі %{site_name}'у."
+      name: "Назва скрипту, яка використовується в якості заголовка та в посиланнях. Обов'язкове поле."
+      name_localized_html: "Ім'я скрипта в певній мові, де XX <a href=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\">ISO 639-1 2-х літерний код</a>, а YY додатковий <a href=\"https://www.iso.org/obp/ui/#search\">ISO 3166 код країни</a>. Заміняє <code>@name</code>, коли користувач перемикає на відповідну мову."
+      description: "Опис того, що робить скрипт. Показано як текст під назвою скрипта. Обов'язкове поле."
+      description_localized_html: "Опис скрипта в певній мові, де XX <a href=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\">ISO 639-1 2-х літерний код</a>, а YY додатковий <a href=\"https://www.iso.org/obp/ui/#search\">ISO 3166 код країни</a>. Заміняє <code>@description</code>, коли користувач перемикає на відповідну мову."
+      namespace_html: "Поєднання <code>@namespace</code> і <code>@name</code> використовується менеджерами скриптів користувачів, щоб побачити, чи вже встановлений скрипт. Для %{site_name} важливі ці області і буде попереджати, якщо вони змінились при оновленні."
+      require_html: "Скрипт приєднує до себе зовнішній JavaScript. Прочитайте %{external_script_link}."
+      require_external_script_link_text: "правила для коду, що приєднує зовнішні скрипти"
+      updateURL: "Опишіть, як менеджери скриптів користувачів повинні отримувати оновлення. %{site_name} очистить ці поля, щоб змусити будь-який сценарій, встановлений з %{site_name} оновлюватись з %{site_name}."
+      supportURL: "URL для сторінки, де користувачі можуть отримати підтримку до вашого скрипту (наприклад трекер помилок, форум, адреса електронної пошти). URL підтримки відображається на сторінці зворотного зв'язку скрипту."
+      contributionURL_html: "URL для сторінки, де користувачі можуть внести пожертву автору скрипта. Внесок URL відображається на сторінці зворотного зв'язку скрипта. URL-адреси можуть бути HTTP, HTTPS, або протоколи Bitcoin. Щоб додати посилання на сторінку PayPal для пожертвувань, використовуйте URL у форматі <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=your.email.here@example.com&item_name=Greasy+Fork+donation\">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=your.email.here@example.com&item_name=Greasy+Fork+donation</a>, замініть приклад адреси електронної пошти вашим власним."
+      contributionAmount_html: "Пропонована кількість пожертви, використовується в поєднанні з <code>@contributionURL</code>."
+      compatible_html: "Позначити цей скрипт як сумісний з браузером. Інформація про сумісність буде показана на сторінці скрипту. Додаткові коментарі про сумісності, можуть бути включені у форматі <code>@compatible firefox Must disable pop-up blocker</code>. Відомі браузери: %{browsers}."
+      incompatible_html: "Позначити цей скрипт як несумісний з браузером. Інформація про сумісність буде показана на сторінці скрипта. Додаткові коментарі про сумісності, можуть бути включені у форматі <code>@incompatible firefox Broken since Firefox 23</code>. Відомі браузери: %{browsers}."
+    writing_user_scripts:
+      title: "Як писати користувацькі скрипти"
+      content_html: "<p>Написання користувацьких скриптів вимагає знання JavaScript. \n<a href=\"http://wiki.greasespot.net/Tutorials\">Статті з GreaseSpot Wiki</a> повинні дати вам початковий поштовх як в цілому, так і як він деталях до написання користувацьких скриптів на JavaScript. Перевірка чужих скриптів може бути корисною. Вас також може зацікавити %{code_rules_link} та %{meta_keys_link}. Якщо вам потрібна допомога з написання скрипту, не соромтесь і %{ask_in_forum_link}.</p><p>Щоб публікувати на %{site_name}, вам потрібно зареєструватись. Тоді з вашої %{user_page_link}, перейдіть по посиланню по %{post_new_script_link}.</p>"
+      ask_in_forum_link_text: 'задайте питання на форумі'
+      user_page_link_text: 'сторінки користувача'
+      post_new_script_link_text: 'публікації нового скрипту'
+    code_rules:
+      title: "правила для публікації скриптів на %{site_name}"
+      code_header: Код
+      reposting_deleted: Не публікуйте повторно сценарії, що були видалені через порушення правил; натомість користуйтесь функцією "оскаржити". Повторна публікація видалених скриптів може призвести до бану.
+    external_scripts:
+      title: "Політика %{site_name}'у щодо зовнішніх сценаріїв"
+    script_rewriting:
+      title: "Як %{site_name} буде переписувати опубліковані скрипти"
+    site_feedback_link: "Повідомити про Проблему або Побажання на %{site_name}"
+    credits:
+      title: "Подяка"
+      authors_credit: "%{site_name} не було б можливим без авторів, які вносять вклад в розвиток цього ресурсу написанням скриптів."
+      developers_credit: "%{site_name} був побудований завдяки %{developers_link:цим людям}, а також всім, хто повідомляє про помилки та вносить пропозиції щодо покращення роботи ресурсу."
+      translators_credit: "%{site_name} був перекладений зусиллями %{translators_link:перекладачів Greasy Translation Force на Transifex'і}:"
+    help_with_greasymonkey: "Допомога з Greasemonkey"
+    contact:
+      title: "Сконтактуватись з кимось"
+    privacy_policy:
+      title: "Політика приватності"
+  moderator_logs:
+    date_column: "Дата"
+    moderator_column: "Модератор"
+    action_column: "Дія"
+    reason_column: "Причина"
+    item_script_html: "Скрипт: %{script_link}"
+    item_script_lock_appeal: "%{appeal_link:Заява #%{appeal_id}}"
+  reports:
+    reason:
+      spam: "Спам"
+  discussions:
+    title: Обговорення
+    comment_date: "Опубліковано: %{date}"
+    last_comment: "Останній: %{user} %{date}"
+    new_discussion_heading: "Опублікувати відгук, коментар або запитання"
+    new_discussion_submit: "Опублікувати коментар"
+    new_comment_heading: "Опублікувати відповідь"
+    new_comment_submit: "Опублікувати відповідь"
+    back_to_feedback: "< Відгуки до %{script}"
+    edit_comment_link: "Редагувати"
+    edit_comment_header: "Редагувати коментар"
+    delete_comment: "Видалити"
+    delete_comment_confirm: Ви впевнені, що хочете видалити цей коментар?
+    delete_discussion: "Видалити"
+    delete_discussion_confirm: Ви впевнені, що хочете видалити цю розмову?
+    cancel_update_comment: "Скасувати"
+    quote_comment: "Цитувати"
+    review_heading_html: "Відгук: %{rating}"
+    ratings:
+      bad: "Погано - скрипт не працює"
+      good: "Добре - скрипт працює добре"
+    ratings_short:
+      question: "Запитання/коментар"
+      bad: "Погано"
+      ok: "Нормально"
+      good: "Добре"
+    read_filter:
+      all: Всі
+      read: Прочитано
+      unread: Не прочитано
+    locale_filter:
+      label: Мова
+      all: Всі
+    user_activity:
+      title: "Останні коментарі"
+    subscribe: Підписатися
+    unsubscribe: Відписатися
+    notify: Повідомляти мене про будь-які відповіді
+    notifying_on_script: 'Ви отримаєте сповіщення про будь-які коментарі відповідно до %{notifications_link: ваших налаштувань сповіщень скриптів}.'
+    categories:
+      greasyfork:
+        name: Відгуки Greasy Fork
+      development:
+        name: Розробка
+      script-discussions:
+        name: Обговорення скриптів
+    mark_all_read: Відмітити як прочитане
+  conversations:
+    new_button: Створити обговорення
+    send_message: Надіслати повідомлення
+    no_recent_conversations: У вас немає недавніх розмов.
+  screenshots:
+    requirements: "Максимум %{number} PNG, GIF, JPEG, або WebP зображень, кожне з яких менше за %{size}."
+  common:
+    allowed_elements_link: "(Переглянути дозволений код.)"
+    allowed_elements_and_attributes_title: "Допустимі елементи HTML"
+    allowed_elements_intro: "Наступні елементи і атрибути допускаються. Це відноситься як до HTML так і до Markdown (після перетворення в HTML)."
+    allowed_elements_extra_info: "Проміжки будуть перетворені на р або br елементи. URL-адреси будуть автоматично перетворені в посилання."
+    not_found_text: "404 - сторінку не знайдено."
+    not_found_title: "404 - Сторінку Не Знайдено"
+    not_found_link_home: "Додому."
+    suggest_locale: "%{site_name} доступна на %{locale_name}."
+    incomplete_locale: "%{locale_name} переклад %{site_name}'у завершений тільки на %{percent}. Ви можете це змінити."
+    expander_show_more: "Показати більше"
+    expander_show_less: "Показати менше"
+    advertisement_note: Реклама
+  activerecord:
+    attributes:
+      user:
+        name: "Назва"
+        profile: "Профіль"
+        locale: "Бажана мова"
+        author_email_notification_type_id: "Попередження обговорення скриптів"
+        show_ads: "Показувати рекламу"
+        show_sensitive: "Вміст для дорослих"
+        preferred_markup: "Бажана розмітка"
+      script:
+        name: "Назва"
+        description: "Опис"
+        locale: "Мова"
+        code: "Код"
+        changelog: "Зміни версій"
+        type: "Тип скрипту"
+        additional_info: "Додаткова інформація"
+        screenshots: "Скріншоти"
+        replaced_by_script_id: "Скрипт заміна"
+      script_set:
+        description: "Опис"
+      discussion:
+        rating: "Рейтинг"
+  errors:
+    messages:
+      script_missing_name: "обов'язково - вкажіть, щоб було присутнє @name"
+      script_missing_description: "обов'язково - вкажіть, щоб був присутній @description"
+      script_name_same_as_description: "повинно відрізнятись від імені"
+      script_sync_identifier_bad_protocol: "повинно бути посиланням HTTP або HTTPS"
+      script_too_many_screenshots: "Прикріплено забагато скріншотів - максимальна кількість %{number}"
+      cannot_be_self_reference: "не може бути тим же скриптом"
+      cannot_be_deleted_reference: "не може бути видаленим скриптом"
+      must_be_greasy_fork_script: "повинно бути посиланням на скрипт в %{site_name}"
+      script_update_not_utf8: "завантажений текст повинен бути UTF-8"
+      script_disallowed_require: "використовує незатверджений сторонній скрипт: %{code}"
+  opensearch:
+    short_name: "%{site_name} пошук"
+    description: "Шукати користувацькі скрипти на %{site_name}."
+    long_name: "%{site_name} пошук скриптів користувачів"
+    attribution: "Авторське право належить авторам скриптів, див. сторінку кожного скрипта за інформацією про ліцензування"

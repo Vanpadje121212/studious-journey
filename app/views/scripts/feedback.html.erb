@@ -1,0 +1,74 @@
+<%- title t('scripts.feedback_title', script_name: @script.name(request_locale)) %>
+<%- description "Feedback on #{@script.name(request_locale)}" %>
+
+<% if !@script.contribution_url.nil?
+  is_bitcoin = @script.contribution_url.starts_with?('bitcoin:') %>
+  <p id="contribution">
+    <% if @script.contribution_amount.nil? %>
+      <% if is_bitcoin %>
+        <%= t('scripts.contribution_bitcoin_no_amount_html', author: @script.users.map(&:name).to_sentence, address: link_to(@script.contribution_url.sub('bitcoin:', ''), @script.contribution_url, {rel: 'nofollow'})) %>
+      <% else %>
+        <%= link_to t('scripts.contribution_no_amount', author: @script.users.map(&:name).to_sentence), @script.contribution_url, {rel: 'nofollow'} %>
+      <% end %>
+    <% else %>
+      <% if is_bitcoin %>
+        <%= t('scripts.contribution_bitcoin_with_amount_html', author: @script.users.map(&:name).to_sentence, amount: @script.contribution_amount, address: link_to(@script.contribution_url.sub('bitcoin:', ''), @script.contribution_url, {rel: 'nofollow'})) %>
+      <% else %>
+        <%= link_to t('scripts.contribution_with_amount', author: @script.users.map(&:name).to_sentence, amount: @script.contribution_amount), @script.contribution_url, {rel: 'nofollow'} %>
+      <% end %>
+    <% end %>
+  </p>
+<% end %>
+
+<% if !@script.support_url.nil? %>
+  <p id="support-url">
+    <% if @script.support_url.start_with?('mailto') %>
+      <%= link_to t('scripts.support_email'), @script.support_url, {rel: :nofollow} %>
+    <% else %>
+      <%= link_to t('scripts.support_site'), @script.support_url, {rel: :nofollow} %>
+    <% end %>
+  </p>
+<% end %>
+
+<div class="post-discussion">
+  <% #if we're showing a lot of them, have a link on top too
+     if @discussions.length > 10 %>
+    <p>
+      <%= it('scripts.feedback_or_report', report_link: It.link(new_report_path(item_class: 'script', item_id: @script.id), rel: :nofollow), feedback_link: It.link('#post-discussion', rel: :nofollow)) %>
+    </p>
+  <% end %>
+  <% if @discussions.empty? %>
+    <p id="no-discussions">
+      <%= t('scripts.feedback_no_discussions_on_page_form') %>
+    </p>
+  <% else %>
+    <div class="script-discussion-list">
+      <%= render collection: @discussions, partial: 'discussions/discussion' %>
+    </div>
+    <%= will_paginate @discussions %>
+  <% end %>
+  <h3 id="post-discussion"><%= t('discussions.new_discussion_heading') %></h3>
+  <p>
+    <%= it('scripts.feedback_report_instead', site_name: site_name, rules_link: It.link(help_code_rules_path), report_link: It.link(new_report_path(item_class: 'script', item_id: @script.id), rel: :nofollow)) %>
+  </p>
+  <% if current_user %>
+    <%= form_with(model: @discussion, url: script_discussions_path(@script), method: :POST, id: 'new-script-discussion') do |f| %>
+      <%= f.fields_for(:comments) do |cf| %>
+        <%= render partial: 'discussions/comment_entry', locals: { f: cf, markup_name: 'discussion[comments_attributes][0][text_markup]' } %>
+      <% end %>
+      <%= render partial: 'discussions/rating_entry', locals: { f: f } %>
+      <%= render partial: 'discussions/subscribe', locals: { subscribe: @subscribe} %>
+      <p>
+        <% if current_user.needs_to_recaptcha? %>
+          <%= invisible_recaptcha_tags callback: 'submitInvisibleRecaptchaScriptDiscussionForm', text: t('discussions.new_discussion_submit') %>
+        <% else %>
+          <%= f.submit t('discussions.new_discussion_submit') %>
+        <% end %>
+      </p>
+    <% end %>
+  <% else %>
+    <p>
+      <%= link_to t('discussions.sign_in_to_post_discussion'), new_user_session_path(return_to: request.fullpath) %>
+    </p>
+  <% end %>
+</div>

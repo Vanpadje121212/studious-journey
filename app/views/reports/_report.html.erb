@@ -1,0 +1,245 @@
+<% i = 0 unless defined?(i) %>
+<% show_reporter = report.auto_reporter || (current_user && (current_user.moderator? || current_user == report.reporter)) %>
+
+<h4 id="open-report-<%= i %>">
+  <% if report.unauthorized_code? && (report.reference_script || report.script_url.present?) %>
+    <% if show_reporter %>
+      <%= t('reports.report_intro_unauthorized_html', reported_script: report_item_link(report), other_script: report.reference_script ? render_script(report.reference_script) : link_to(report.script_url, report.script_url, rel: :nofollow), reporter: report.auto_reporter || link_to(report.reporter.name, user_path(report.reporter)), report_date: markup_date(report.created_at)) %>
+    <% else %>
+      <%= t('reports.report_intro_unauthorized_no_reporter_html', reported_script: report_item_link(report), other_script: report.reference_script ? render_script(report.reference_script) : link_to(report.script_url, report.script_url, rel: :nofollow), report_date: markup_date(report.created_at)) %>
+    <% end %>
+  <% else %>
+    <% if show_reporter %>
+      <%= it('reports.report_intro', reported_item: report_item_link(report), reason: report.reason_text, reporter: report.auto_reporter || link_to(report.reporter.name, user_path(report.reporter)), report_date: markup_date(report.created_at)) %>
+    <% else %>
+      <%= it('reports.report_intro_no_reporter', reported_item: report_item_link(report), reason: report.reason_text, report_date: markup_date(report.created_at)) %>
+    <% end %>
+  <% end %>
+</h4>
+
+<% if report.unauthorized_code? && report.reference_script %>
+  <p>
+    <% if report.reference_script.license&.url %>
+      <%= it('reports.report_intro_unauthorized_license',
+             other_script: report.reference_script ? render_script(report.reference_script) : link_to(report.script_url, report.script_url, rel: :nofollow),
+             license_link: report.reference_script.license.url,
+             license_name: report.reference_script.license.name,
+             tldr_legal_link: It.link("https://tldrlegal.com/search?q=#{URI.encode_www_form_component(report.reference_script.license.code)}", target: 'tldrlegal'))
+      %>
+    <% elsif report.reference_script.license || report.reference_script.license_text %>
+      <%= it('reports.report_intro_unauthorized_license_no_url',
+             other_script: report.reference_script ? render_script(report.reference_script) : link_to(report.script_url, report.script_url, rel: :nofollow),
+             license_name: report.reference_script.license&.name || report.reference_script.license_text,
+             tldr_legal_link: It.link("https://tldrlegal.com/search?q=#{URI.encode_www_form_component(report.reference_script.license&.name || report.reference_script.license_text)}", target: 'tldrlegal'))
+      %>
+    <% else %>
+      <%= it('reports.report_intro_unauthorized_no_license',
+             other_script: report.reference_script ? render_script(report.reference_script) : link_to(report.script_url, report.script_url, rel: :nofollow))
+      %>
+    <% end %>
+  </p>
+<% end %>
+
+<% if current_user&.moderator? && report.awaiting_response? && !report.resolved? %>
+  <p><b>(Awaiting response from author)</b></p>
+<% end %>
+
+<% case report.item %>
+<% when Comment %>
+  <div><%= t('common.quote.prefix_html', user: render_user(report.reported_users.first, report.reported_user_id)) %></div>
+  <blockquote>
+    <div class="user-content">
+      <%= format_user_text(report.item.text, report.item.text_markup) %>
+    </div>
+  </blockquote>
+<% when Discussion %>
+  <% if report.item.first_comment %>
+    <div><%= t('common.quote.prefix_html', user: render_user(report.reported_users.first, report.reported_user_id)) %></div>
+    <blockquote>
+      <div class="user-content">
+        <%= format_user_text(report.item.first_comment.text, report.item.first_comment.text_markup) %>
+      </div>
+    </blockquote>
+  <% end %>
+<% when Message %>
+  <div><%= t('common.quote.prefix_html', user: render_user(report.reported_users.first, report.reported_user_id)) %></div>
+  <blockquote>
+    <div class="user-content">
+      <%= format_user_text(report.item.content, report.item.content_markup) %>
+    </div>
+  </blockquote>
+<% end %>
+
+<% if report.explanation.present? %>
+  <% if show_reporter %>
+    <div><%= t('common.quote.prefix_html', user: report.auto_reporter || render_user(report.reporter, report.reporter_id)) %></div>
+  <% else %>
+    <div><%= t('common.quote.anonymous_reporter_html') %></div>
+  <% end %>
+  <blockquote>
+    <div class="user-content">
+      <%= format_user_text(report.explanation, report.explanation_markup) %>
+      <%= render partial: 'screenshots/show', locals: { attachable: report } %>
+    </div>
+  </blockquote>
+<% end %>
+
+<% if report.rebuttal.present? %>
+  <div><%= t('common.quote.prefix_html', user: render_user(report.rebuttal_by_user, report.rebuttal_by_user_id)) %></div>
+  <blockquote>
+    <div class="user-content">
+      <%= format_user_text(report.rebuttal, 'text') %>
+    </div>
+  </blockquote>
+<% end %>
+
+<% if report.unauthorized_code? && report.reference_script %>
+  <table class="unauthorized-code-comparison">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Script</th>
+      <th>License</th>
+      <th>Created</th>
+      <th>Updated</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Reported</td>
+      <td><%= render_script(report.item) %></td>
+      <td><%= license_display(report.item) %></td>
+      <td><%= report.item.created_at %></td>
+      <td><%= report.item.code_updated_at %></td>
+    </tr>
+    <tr>
+      <td>Original</td>
+      <% if report.reference_script %>
+        <td><%= render_script(report.reference_script) %></td>
+        <td><%= license_display(report.reference_script) %></td>
+        <td><%= report.reference_script.created_at %></td>
+        <td><%= report.reference_script.code_updated_at %></td>
+      <% else %>
+        <td><%= link_to report.script_url %></td>
+      <% end %>
+    </tr>
+    </tbody>
+  </table>
+
+  <% if report.reference_script %>
+    <div class="report-diff">
+      <p>
+        <%= button_to t('reports.load_diff'), diff_report_path(report), method: :get, remote: true, class: 'lazy-load-diff', data: { disable_with: t('reports.loading_diff') } %>
+      </p>
+    </div>
+  <% end %>
+<% end %>
+
+<% if current_user&.moderator? %>
+  <% if report.reporter %>
+    <% reporter_stats = report.reporter.report_stats(ignore_report: report) %>
+    <% if reporter_stats.values.any?{ |v| v > 0 } %>
+      <p>
+        <%= link_to(report.reporter.name, user_path(report.reporter)) %> (reporter) has made
+        <%= reporter_stats[:pending] %> pending <%= 'report'.pluralize(reporter_stats[:pending]) %>,
+        <%= reporter_stats[:dismissed] %> dismissed <%= 'report'.pluralize(reporter_stats[:dismissed]) %>,
+        <%= reporter_stats[:fixed] %> <%= 'report'.pluralize(reporter_stats[:fixed]) %> marked as fixed,
+        and <%= reporter_stats[:upheld] %> upheld <%= 'report'.pluralize(reporter_stats[:upheld]) %>.
+      </p>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% report.reported_users.each do |reported_user| %>
+  <p>
+    <%= t('reports.reported_user_activity_html', user: render_user(reported_user, reported_user.id)) %>
+  </p>
+  <ul>
+    <li><%= link_to t('activerecord.models.script', count: reported_user.scripts.not_deleted.count), user_path(reported_user.id, anchor: 'user-script-list') %></li>
+    <li><%= link_to t('activerecord.models.comment', count: reported_user.comments.not_deleted.count), discussions_path(user: reported_user.id) %></li>
+  </ul>
+<% end %>
+
+<% if report.discussions.any? %>
+  <p>
+    <b><%= link_to t('reports.view_discussion'), report.discussions.first.path(locale: request_locale.code) %></b>
+  </p>
+<% elsif current_user&.moderator? %>
+  <p>
+    <%= link_to('Start a discussion', new_discussion_path(report_id: report.id)) %>
+  </p>
+<% end %>
+
+<% if report.upheld? %>
+  <p>
+    <% if current_user&.moderator? && report.resolver %>
+      This report has been upheld by <%= render_user(report.resolver, report.resolver_id) %>.
+    <% else %>
+      <%= t('reports.result_upheld') %>
+    <% end %>
+  </p>
+  <% if report.moderator_notes.present? %>
+    <blockquote>
+      <div class="user-content">
+        <%= format_user_text(report.moderator_notes, 'text') %>
+      </div>
+    </blockquote>
+  <% end %>
+  <% if current_user && report.item.is_a?(Script) && report.item.users.include?(current_user) %>
+    <p>You can <%= link_to('submit an appeal', new_script_script_lock_appeal_path(report.item, report_id: report.id)) %> to get your script undeleted.</p>
+  <% end %>
+<% elsif report.fixed? %>
+  <p>
+    <% if current_user&.moderator? && report.resolver %>
+      This report has been marked as fixed by <%= render_user(report.resolver, report.resolver_id) %>.
+    <% else %>
+      <%= t('reports.result_fixed') %>
+    <% end %>
+  </p>
+  <% if report.moderator_notes.present? %>
+    <blockquote>
+      <div class="user-content">
+        <%= format_user_text(report.moderator_notes, 'text') %>
+      </div>
+    </blockquote>
+  <% end %>
+<% elsif report.dismissed? %>
+  <p>
+    <% if current_user&.moderator? && report.resolver %>
+      This report has been dismissed by <%= render_user(report.resolver, report.resolver_id) %>.
+    <% else %>
+      <%= t('reports.result_dismissed') %>
+    <% end %>
+  </p>
+  <% if report.moderator_notes.present? %>
+    <blockquote>
+      <div class="user-content">
+        <%= format_user_text(report.moderator_notes, 'text') %>
+      </div>
+    </blockquote>
+  <% end %>
+<% elsif current_user && report.item.is_a?(Script) && report.item.users.include?(current_user) %>
+  <p>
+    <%= t('reports.result_pending_author_html') %>
+  </p>
+  <% unless report.rebuttal.present? %>
+    <%= form_with(model: report, url: rebut_report_path(report), method: 'POST', class: 'report-resolution-options') do |f| %>
+      <%= f.text_area :rebuttal, required: true, placeholder: t('reports.rebuttal_placeholder'), maxlength: 10_000, rows: 6 %>
+      <br>
+      <%= f.submit t('reports.submit_rebuttal') %>
+    <% end %>
+  <% end %>
+  <%= form_tag(uphold_report_path(report), method: 'POST', class: 'report-resolution-options') do %>
+    <%= submit_tag(t('reports.delete_script')) %>
+  <% end %>
+<% elsif current_user&.moderator? %>
+  <% if report.resolvable_by_moderator?(current_user) %>
+    <%= render partial: 'reports/moderator_controls', locals: { report: report, i: i } %>
+  <% else %>
+    <p class="report-resolution-options">(You're involved in this report, you can't resolve it yourself.)</p>
+  <% end %>
+<% else %>
+  <p>
+    <%= t('reports.result_pending') %>
+  </p>
+<% end %>

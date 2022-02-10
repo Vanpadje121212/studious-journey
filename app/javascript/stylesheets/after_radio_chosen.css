@@ -1,0 +1,7 @@
+.after-radio-chosen {
+  display: none;
+  margin-left: 29px;
+}
+input[type=radio]:checked ~ .after-radio-chosen {
+  display: block;
+}
