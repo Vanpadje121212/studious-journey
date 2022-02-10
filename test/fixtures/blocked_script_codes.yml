@@ -1,0 +1,18 @@
+not_serious:
+  pattern: this\.is\.a\.warn
+  public_reason: Warning
+  private_reason: Test warning
+  serious: false
+
+serious:
+  pattern: this\.is\.a\.ban
+  public_reason: Serious
+  private_reason: Test serious error
+  serious: true
+
+with_originating_script:
+  pattern: some\.unique\[value\]
+  public_reason: This appears to be an unauthorized copy of https://greasyfork.org/scripts/1
+  private_reason: Test warning
+  serious: false
+  originating_script_id: 21

@@ -1,0 +1,2 @@
+class ScriptSyncSource < ApplicationRecord
+end
