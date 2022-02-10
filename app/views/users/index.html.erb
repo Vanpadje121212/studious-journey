@@ -1,0 +1,17 @@
+<%- title @title %>
+<%- description @description %>
+
+<%= render partial: 'list_options'%>
+
+<% if @users.empty? %>
+	<p>No users!</p>
+<% else %>
+	<ol id="browse-user-list" class="user-list">
+		<%= render partial: 'user', collection: @users, locals: {script_counts: @user_script_counts} %>
+	</ol>
+<% end %>
+
+<% if !defined?(@paginate) or @paginate %>
+	<%= will_paginate @users %>
+<% end %>
+

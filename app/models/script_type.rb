@@ -1,0 +1,2 @@
+class ScriptType < ApplicationRecord
+end
