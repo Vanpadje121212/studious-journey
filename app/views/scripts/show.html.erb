@@ -1,0 +1,128 @@
+<%- title @script.name %>
+<%- description @script.description %>
+
+<% if @script.active? 
+	case @script.script_type_id
+		when 1, 2 %>
+			<div id="install-area">
+				<%=link_to t('scripts.install'), params[:version].nil? ? script_user_js_path(@script, :name => @script.url_name) : script_user_js_path(@script, :version => params[:version], :name => @script.url_name) + '&d=.user.js', {:class => 'install-link', 'data-ping-url' => url_for(script_install_ping_path(@script, :authenticity_token => session[:_csrf_token])), 'data-is-previous-version' => !params[:version].nil?, :rel => 'nofollow'}%><%=link_to t('scripts.install_help'), help_installing_user_scripts_path, {:class => 'install-help-link', :title => t('scripts.install_help_title'), :rel => 'nofollow'}%>
+
+				<% if user_signed_in?
+					sets_direct_inclusion = []
+					sets_direct_exclusion = []
+					sets_indirect_inclusion = []
+					sets_not_included = []
+					current_user.script_sets.each do |set|
+						if set.child_script_inclusions.include?(@script)
+							sets_direct_inclusion << set
+							next
+						end
+						if set.child_script_exclusions.include?(@script)
+							sets_direct_exclusion << set
+							next
+						end
+						set_script_ids = Rails.cache.fetch(set) do
+							set.scripts.map{|s| s.id}
+						end
+						if set_script_ids.include?(@script.id)
+							sets_indirect_inclusion << set
+						else
+							sets_not_included << set
+						end
+					end
+					in_sets = sets_direct_inclusion + sets_indirect_inclusion
+					user_has_favorites_set = current_user.script_sets.find{|s| s.favorite}
+					%>
+					<%=form_tag(add_to_script_set_path, {:class => 'script-in-sets'}) do |f| %>
+						<% if in_sets.empty? %>
+							<%=t('scripts.sets_label_no_sets')%>
+						<% else %>
+							<%=t('scripts.sets_label')%>
+							<%=ScriptSet.favorites_first(in_sets).map{|s| link_to(s.display_name, scripts_path(:set => s.id)).html_safe}.join(', ').html_safe%>
+						<% end %>
+						<select name="action-set">
+							<% if !user_has_favorites_set %>
+								<option value="ai-fav"><%=t('scripts.sets_add_inclusion', :set_name => t('script_sets.favorites_name'))%></option>
+							<% end %>
+							<% ScriptSet.favorites_first(sets_direct_inclusion).each do |set| %>
+								<option value="ri-<%=set.id%>"><%=t('scripts.sets_remove_inclusion', :set_name => set.display_name)%></option>
+							<% end
+							sets_direct_exclusion.each do |set| %>
+								<option value="re-<%=set.id%>"><%=t('scripts.sets_remove_exclusion', :set_name => set.display_name)%></option>
+							<% end
+							sets_indirect_inclusion.each do |set| %>
+								<option value="ae-<%=set.id%>"><%=t('scripts.sets_add_exclusion', :set_name => set.display_name)%></option>
+							<% end
+							ScriptSet.favorites_first(sets_not_included).each do |set| %>
+								<option value="ai-<%=set.id%>"><%=t('scripts.sets_add_inclusion', :set_name => set.display_name)%></option>
+							<% end %>
+						</select>
+						<input type="hidden" name="script_id" value="<%=@script.id%>">
+						<input type="submit" value="→">
+					<% end %>
+				<% end %>
+			</div>
+
+		<% when 3 %>
+			<p>
+				<% if params[:version].nil?
+					library_code_snippet = "<code>// @require #{script_library_js_path(@script, :version => @script_version.id, :name => @script.url_name, :only_path => false)}</code>"
+				else
+					library_code_snippet = "<code>// @require #{script_library_js_path(@script, :version => params[:version], :name => @script.url_name, :only_path => false)}</code>"
+				end %>
+				<%=t('scripts.library_instructions_html', :code => library_code_snippet.html_safe)%>
+			</p>
+	<% end %>
+<% elsif @script.deleted? %>
+	<p><%=t('scripts.deleted_notice')%>	<% if !@script.delete_reason.nil? %><%=@script.delete_reason%><%end%></p>
+<% elsif !params[:version].nil? %>
+	<p id="under-review-notice"><%=t('scripts.inactive_pending_changes_for_previous_version')%></p>
+<% else %>
+	<p id="under-review-notice"><%=t('scripts.inactive_pending_changes')%></p>
+<% end %>
+
+<div id="script-meta">
+	<dl id="script-stats">
+		<dt class="script-show-version"><%=t('scripts.version_number')%></dt>
+		<dd class="script-show-version"><%=@script_version.version%></dd>
+		<dt class="script-show-author"><%=t('scripts.author_name')%></dt>
+		<dd class="script-show-author"><%=link_to @script.user.name, @script.user%></dd>
+		<% if @script.script_type_id != 3 and params[:version].nil? %>
+		<dt class="script-show-daily-installs"><%=t('scripts.daily_installs')%></dt>
+		<dd class="script-show-daily-installs"><%=@script.daily_installs%></dd>
+		<dt class="script-show-total-installs"><%=t('scripts.total_installs')%></dt>
+		<dd class="script-show-total-installs"><%=@script.total_installs%></dd>
+		<% end %>
+		<dt class="script-list-fan-score"><%=t('scripts.fan_score')%></dt>
+		<dd class="script-list-fan-score"><%=@script.fan_score%></dd>
+		<dt class="script-show-created-date"><%=t('scripts.created_date')%></dt>
+		<dd class="script-show-created-date"><%=markup_date(@script.created_at)%></dd>
+		<dt class="script-show-updated-date"><%=t('scripts.updated_date')%></dt>
+		<dd class="script-show-updated-date"><%=markup_date(@script.code_updated_at)%></dd>
+		<dt class="script-show-license"><%=t('scripts.license')%></dt>
+		<dd class="script-show-license"><%=@script.license_display%></dd>
+	</dl>
+	<dl id="script-applies-to">
+		<dt class="script-show-applies-to"><%=t('scripts.applies_to')%></dt>
+		<dd class="script-show-applies-to">
+			<% if @script.script_applies_tos.empty? %>
+				<%=t('scripts.applies_to_all')%>
+			<% else %>
+				<ul>
+					<% script_applies_to_list_contents(@script, @by_sites).each do |script_applies_to_content| %>
+						<li><%=script_applies_to_content%></li>
+					<% end %>
+				</ul>
+			<% end %>
+		</dd>
+	</dl>
+</div>
+
+<% if !@script.additional_info.nil? and !@script.additional_info.empty? %>
+	<div id="additional-info">
+		<h3><%=t('scripts.additional_info')%></h3>
+		<div>
+			<%=format_user_text(@script.additional_info, @script.additional_info_markup)%>
+		</div>
+	</div>
+<% end %>

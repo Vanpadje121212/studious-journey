@@ -1,0 +1,50 @@
+<% if !@script.errors.empty? %>
+	<p>There were some problems with what you posted...</p>
+	<ul class="errors">
+		<% @script.errors.full_messages.each do |m| %>
+			<li><%=m%></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%=form_for(@script, :url => script_sync_update_path) do |s|%>
+	<% case @script.script_sync_source_id 
+		when 1 %>
+			<p>This script is set up to sync from</p>
+			<%=s.url_field(:sync_identifier, :size => 50)%>
+		<% when 2 %>
+			<p>This script is set up to sync from <a href="<%=Greasyfork::Application.config.userscriptsorg_host%>/scripts/show/<%=@script.sync_identifier%>">an entry on userscripts.org</a>.</p>
+		<% when nil %>
+			<p>Greasy Fork can import scripts that already hosted elsewhere, for example in a version control system (like GitHub), your own server, or another user script hosting site.</p>
+			<p>To enable syncing for your script, provide a URL: <%=s.url_field(:sync_identifier)%></p>
+	<% end %>
+	<div class="radio-group">
+		<% if @script.script_sync_source_id.nil? 
+			@script.script_sync_type_id = 1 %>
+			Sync the script:<br>
+		<% end %>
+		<%=s.radio_button(:script_sync_type_id, 2)%> <label for="script_script_sync_type_id_2">Automatically - periodically check for updates</label><br>
+		<%=s.radio_button(:script_sync_type_id, 1)%> <label for="script_script_sync_type_id_1">Manually - check for updates only when you trigger it</label><br>
+		<% # only allow changing *off* of Webhook - setting it to Webhook is done when a push comes in
+		if @script.script_sync_type_id == 3 %>
+			<%=s.radio_button(:script_sync_type_id, 3)%> <label for="script_script_sync_type_id_3">Webhook - get updates when you push changes to this file on GitHub</label><br>
+		<% end %>
+	</div>
+	<% if !@script.script_sync_source_id.nil? %>
+		<% if @script.sync_error.nil? %>
+			<p>Last successful sync was <%=@script.last_successful_sync_date.nil? ? '(unknown)' : markup_date(@script.last_successful_sync_date)%>.</p>
+		<% else %>
+			<p>Last attempted sync was <%=@script.last_attempted_sync_date.nil? ? '(unknown)' : markup_date(@script.last_attempted_sync_date)%>. Result was "<%=@script.sync_error%>". Last successful sync was <%=@script.last_successful_sync_date.nil? ? '(unknown)' : markup_date(@script.last_successful_sync_date)%>.</p>
+		<% end %>
+	<% end %>
+	<p>
+		<% if @script.script_sync_source_id.nil? %>
+			<input type="submit" name="update-and-sync" value="Update and sync now">
+		<% else %>
+			<input type="submit" name="update-only" value="Update">
+			<input type="submit" name="update-and-sync" value="Update and sync now">
+			<input type="submit" name="stop-syncing" value="Turn off syncing for this script">
+		<% end %>
+	</p>
+
+<% end %>

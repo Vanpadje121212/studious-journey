@@ -1,0 +1,377 @@
+en:
+  layouts:
+    application:
+      # link to the list of scripts
+      script_list: "Scripts"
+      # link to the forum
+      forum: "Forum"
+      # link to the help docs
+      help: "Help"
+      # link to sign in
+      sign_in: "Sign in"
+      # search placeholder
+      search: "Search"
+  helpers:
+    application:
+      # when showing a date newer than a week ago, we show something like "3 days ago". relative_time is the time from https://github.com/svenfuchs/rails-i18n/blob/b80bbdc9f9fa0ada05a7a2c9391a902ffde395d8/rails/rails4/action_view.yml . Search that repo to see what it could be in your language.
+      time_difference: "%{relative_time} ago"
+  scripts:
+    # label for created date of a script
+    created_date: "Created"
+    # label for updated date of a script
+    updated_date: "Updated"
+    # label for total install count of a script
+    total_installs: "Total installs"
+    # label for daily install count of a script
+    daily_installs: "Daily installs"
+    # label for the fan score of a script
+    fan_score: "Fans"
+    # label for author name of a script
+    author_name: "Author"
+    # label for version number of a script
+    version_number: "Version"
+    # label for the legal license a script is released under (e.g. GPL)
+    license: "License"
+    # what is shown as the license when no license is provided in a script
+    no_license: "N/A"
+    # label for the list of sites or patterns a script applies to
+    applies_to: "Applies to"
+    # a title (tooltip) for the links in the "applies to" section going to a list of scripts for that site. count is the number of other scripts, site is the name of the site. add subkeys for your language per http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html
+    applies_to_link_title:
+      one: "See %{count} other script for %{site}"
+      other: "See %{count} other scripts for %{site}"
+    # what is shown as the applies to when a script applies to all sites
+    applies_to_all: "All sites"
+    # header before the author-provided additional info - should imply that it was the author who wrote this, not the site
+    additional_info: "Author's Description"
+    # link that makes the user install the script
+    install: "Install this script"
+    # text for link that gives information on how to install scripts. should be very short.
+    install_help: "?"
+    # title (tooltip) for link that gives information on how to install scripts
+    install_help_title: "How to install"
+    # instructions on a script library. code will be a <code> element. Don't use punctuation around the code element if possible so that people don't accidentally include that when copying.
+    library_instructions_html: "This script should not be not be installed directly. It is a library for other scripts to include with the meta directive %{code}"
+    # text displayed for deleted scripts
+    deleted_notice: "This script has been deleted."
+    # text displayed for scripts hidden until they follow the rules
+    inactive_pending_changes: "This script is currently inactive because it doesn't align with Greasy Fork's policies."
+    # text displayed for when viewing a previous version of a script that was hidden because it didn't follow the rules
+    inactive_pending_changes_for_previous_version: "This version of this script is inactive because it doesn't align with Greasy Fork's policies."
+    # test displayed when viewing a previous version. date is a date and time (no "ago"), latest_version_link is a link to the newest version whose text is version_notice_latest_version_link
+    version_notice_html: "As of %{date}. See %{latest_version_link}."
+    version_notice_latest_version_link: "the latest version"
+    # link to the script's info page, containing script meta and author's description
+    info_page: "Info"
+    # link to the script's code page
+    code_page: "Code"
+    # link to the script's history page, listing all versions of the code
+    history_page: "History"
+    # link to the script's feedback page, listing discussions on the script. count is the number of discussions
+    feedback_page: "Feedback (%{count})"
+    # link to the script's install statistics page
+    stats_page: "Stats"
+    # link to the script's derivatives page, which shows similar scripts
+    derivatives_page: "Derivatives"
+    # link to the page that lets the author update the script
+    update_page: "Update"
+    # link to the page that lets the author set up script syncing from an external URL
+    sync_page: "Sync"
+    # link to the page that lets the author delete a script
+    delete_page: "Delete"
+    # link to the page that lets the author undelete a script
+    undelete_page: "Undelete"
+    # HTML title for the history page for a script
+    history_title: "%{script_name} - Version history"
+    # text explaining that we're only showing versions where the code changed
+    history_only_code_changes_info: "These are versions of this script where the code was updated."
+    # link to the list of all versions
+    history_all_changes_link: "Show all versions."
+    # text explaining that we're showing all versions
+    history_all_changes_info: "These are all versions of this script."
+    # link to the list of version where the code changed
+    history_only_code_changes_link: "Show only the versions where the code changed."
+    # button that shows changes (a diff) of the selected versions
+    diff_button: "Diff"
+    # HTML title of the script source code page
+    code_title: "%{script_name} - Source code"
+    # notice that syntax highlighting is disabled for this script's code to avoid browser hangs. size is something like "500KB"
+    code_highlighting_disabled: "Code is over %{size}, so syntax highlighting has been disabled to spare your browser."
+    # HTML title of the script feedback page
+    feedback_title: "%{script_name} - Feedback"
+    # text to show when no discussions are posted. start_discussion_first_link is a link with the text from feedback_start_first_discussion_link
+    feedback_no_discussions_html: "No discussions posted yet. %{start_first_discussion_link}"
+    feedback_start_first_discussion_link: "Be the first to discuss this script."
+    # link text for starting a new discussion when previous discussions already exist
+    feedback_start_discussion_link: "Start a new discussion on this script."
+    # html title for script stats page
+    stats_title: "%{script_name} - Stats"
+    # heading for daily install stats on stats page
+    stats_daily_installs_heading: "Daily installs"
+    # date column heading for a script's daily install stats table
+    stats_daily_installs_date_column_heading: "Date"
+    # install count column heading for a script's daily install stats table
+    stats_daily_installs_install_count_column_heading: "Installs"
+    # HTML title for derivatives page
+    derivatives_title: "%{script_name} - Derivatives"
+    # text explaining the derivatives page and what to do if the user finds unauthorized copies
+    derivatives_intro: "These scripts may be based on yours (or yours may be based on them). If you find an unauthorized use of your code, report the script by starting a new discussion on it."
+    # info on the list of derivative code matches. last_run is a date run through the "time ago" process. max_size is the maximum size of script this process will check and is run through number_to_human_size, for example "50 KB". match_size is the minimum length of code that can be counted as a duplicate
+    derivatives_code_matches_info_html: "Scripts posted by others that include code at least %{match_size} characters in common with your script. This check is run only on scripts less than %{max_size} and was last run %{last_run}."
+    # info on the list of derivative namespace matches. namespace is a user script meta line, like "@namespace http://example.com"
+    derivatives_namespace_matches_info_html: "Scripts posted by others using <code>%{namespace}</code>:"
+    # info on the list of derivative name matches
+    derivatives_name_matches_info: "Scripts posted by others with the most similar names to yours:"
+    # format for scripts listed on the derivatives page. script_link is a link to the derivative's page, user_link is a link to the user who created the derivative, license is text, link to the license, or scripts.no_license
+    derivatives_script_html: "%{script_link} by %{user_link}, license: %{license}"
+    # format for scripts listed on the derivatives page when referencing particular lines in the script. script_lines_link is a link to the derivative's code page with an fragment going to the particular line number, user_link is a link to the user who created the derivative, license is text, link to the license, or scripts.no_license
+    derivatives_script_with_code_line_html: "%{script_lines_link} by %{user_link}, license: %{license}"
+    # link text to a particular script's code, referencing particular lines
+    script_lines_link: "%{script_name}, lines %{start} to %{end}"
+    # html title for script list page when showing scripts that affect all sites
+    listing_title_all_sites: "User scripts for all sites"
+    # meta description and feed subtitle when showing scripts that affect all sites
+    listing_description_all_sites: "User scripts that add features and remove bugs on all sites"
+    # html title for script list page when showing scripts for a particular site. 'site' will be in the form 'example.com'
+    listing_title_for_site: "User scripts for %{site}"
+    # meta description and feed subtitle when showing scripts that affect a particular site
+    listing_description_for_site: "User scripts that add features and remove bugs on %{site}"
+    # html title for script list page for search results.
+    listing_title_for_search: "'%{search_string}' user scripts"
+    # html title for script list page for code search results.
+    listing_title_for_code_search: "'%{search_string}' user scripts"
+    # html title for script list page when no other situation applies
+    listing_title_generic: "User scripts"
+    # html title for script list page for a user's favorites. set_name is script_sets.favorites_name
+    listing_title_for_favorites: "%{user_name}'s %{set_name}"
+    # meta description and feed subtitle for script list page when no other situation applies
+    listing_description_generic: "User scripts that add features and remove bugs on the sites you use"
+    # label for sorting links on script list page
+    listing_sort_label: "Sorting by:"
+    # link for relevance (most matching the search terms) sort on a script list
+    listing_sort_relevance: "Relevance"
+    # link for daily install sort on a script list
+    listing_sort_daily_installs: "Daily installs"
+    # link for daily install sort on a script list
+    listing_sort_total_installs: "Total installs"
+    # link for fan score sort on a script list
+    listing_sort_fan_score: "Fans"
+    # link for created date sort on a script list
+    listing_sort_created_date: "Created date"
+    # link for updated date sort on a script list
+    listing_sort_updated_date: "Updated date"
+    # link for name sort on a script list
+    listing_sort_name: "Name"
+    # label for filtering by-site links on script list page
+    listing_filter_by_site_label: "Showing scripts for:"
+    # link for turning off by-site filtering on script list page
+    listing_filter_by_site_disable: "All"
+    # link for filtering script list by scripts that affect all sites
+    listing_filter_by_site_all_sites: "(All sites)"
+    # link to see a full list of sites that scripts on greasy fork affect
+    listing_filter_by_site_more_sites: "More…"
+    # text that shows when no scripts were found with the used parameters
+    listing_no_scripts: "No scripts found."
+    # feed title for the listing, ordered by created date
+    listing_created_feed: "New scripts"
+    # feed title for the listing, ordered by updated date
+    listing_updated_feed: "Updated scripts"
+    # when a list has nothing to show
+    listing_none: "(None)"
+    # link to start the process of importing (creating from an external place) scripts
+    import: "Import scripts"
+    # link to create a new script
+    new: "Post a script"
+    # when a user supplies a script with supportURL, the text of the link we'll use pointing to their support site
+    support_site: "Visit the author's support site."
+    # when a user supplies a script with supportURL, the text of the link we'll use pointing to their support email address
+    support_email: "E-mail the author for support."
+    # link to a site where the user can donate to the author, when the author didn't provide a suggested donation amount
+    contribution_no_amount: "Thank %{author} by making a donation."
+    # link to a site where the user can donate to the author, when the author provided a suggested donation amount
+    contribution_with_amount: "Thank %{author} by making a donation. Suggested donation is %{amount}."
+    # explanation of language chooser when editing script
+    locale_explanation: "Primary language of this entry."
+    # the default value for the locale box, if submitted the site will attempt to detect the language of the entry
+    locale_auto_select: "(Automatically detect)"
+    # label which lists the sets this script is in, which is followed by controls to change its inclusions
+    sets_label: "In script sets:"
+    # label for when the script is not in any sets, which is followed by controls to change its inclusions
+    sets_label_no_sets: "Script sets:"
+    # option to remove the script from the set
+    sets_remove_inclusion: "Remove from %{set_name}"
+    # option to remove the script's exclusion from the set
+    sets_remove_exclusion: "Remove exclusion from %{set_name}"
+    # option to add the script from the set
+    sets_add_inclusion: "Add to %{set_name}"
+    # option to exclude the script from the set (when it's been included as part of a sub set)
+    sets_add_exclusion: "Exclude from %{set_name}"
+  script_sets:
+    # name for the favorites set
+    favorites_name: "Favorites"
+    # delete button text for a script set
+    delete: "Delete script set"
+    # delete confirmation for a scirpt set
+    delete_confirmation: "Are you sure you want to delete this script set?"
+  forum_discussions:
+    # forum discussion lists with 2 * 2 = 4 options:
+    # 1. with_script: includes the script name, for example for "Discussions on your scripts" on a user's page
+    # 1. no_script: no script name, for example when viewing feedback for the script and the name's already on the page
+    # 2. with_reply: where someone has made a reply to the discussion
+    # 2. no_reply: no replies to the discussion
+    listing_no_script_no_reply_html: "%{discussion_link} by %{original_poster_link} %{original_post_date}"
+    listing_no_script_with_reply_html: "%{discussion_link} by %{original_poster_link} %{original_post_date}, last comment by %{last_commenter_link} %{last_comment_date}"
+    listing_with_script_no_reply_html: "%{script_link}: %{discussion_link} by %{original_poster_link} %{original_post_date}"
+    listing_with_script_with_reply_html: "%{script_link}: %{discussion_link} by %{original_poster_link} %{original_post_date}, last comment by %{last_commenter_link} %{last_comment_date}"
+  home:
+    # html title of the home page. do not translate "Greasy Fork".
+    title: "Greasy Fork - safe and useful user scripts"
+    # text at the top of the homepage. do not translate "Greasy Fork".
+    welcome: "Welcome to Greasy Fork, a site for user scripts."
+    # heading for the paragraph explaining what user scripts are
+    explain_user_scripts_heading: "What are user scripts?"
+    # text explaining what user scripts are. how_to_install_link goes to a document explaining how to install user scripts with text from explain_user_scripts_how_to_install_link. browse_link goes to the main script list with text from explain_user_scripts_browse_link. do not translate "Greasy Fork"
+    explain_user_scripts_html: "User scripts are pieces of code that add features, remove annoyances, or do other things to the sites you visit. The user scripts on Greasy Fork are free and can be installed with %{how_to_install_link}. Greasy Fork has thousands of user scripts written by hundreds of authors, so %{browse_link} to see what we've got!"
+    explain_user_scripts_how_to_install_link: "free extensions, like Greasemonkey"
+    explain_user_scripts_browse_link: "start browsing"
+    # heading for the paragraph explaining why authors should use greasy fork. do not translate "Greasy Fork"
+    greasy_fork_for_authors_heading: "I'm a script author, why should I use Greasy Fork?"
+    # text explaining why authors should use greasy fork. do not translate "Greasy Fork"
+    greasy_fork_for_authors_html: "Greasy Fork is aiming to become the premier user script site after the collapse of userscripts.org, with the biggest audience for your scripts. We prioritize quality of the scripts, so we strive to block spam and scam scripts. We offer technology to make managing your scripts easier, for example automatically pulling in changes when you commit to GitHub (or wherever!)"
+    # heading for the sample list of scripts
+    scripts_sample: "A sample of our scripts"
+    # final item of sample list of scripts, linking to the full listing page
+    scripts_sample_more: "More…"
+  users:
+    # html title for the sign in page
+    sign_in_title: "Sign in to Greasy Fork"
+    # what signing in lets people od
+    sign_in_description: "Signing in to Greasy Fork lets you post scripts and feedback on others' scripts. You do not need to sign in to browse or install scripts."
+    # heading for signing in with an external service (Google, GitHub, etc.)
+    sign_in_external: "Sign in with an external service"
+    # text before the list of external sign in services
+    sign_in_with: "Sign in with:"
+    # heading for signing in with a password
+    sign_in_password: "Sign in with a password"
+    # when a user attempts to sign in with an external service and a user already exists with the same email, this is the message shown. email: provided e-mail, user_name: existing user's name, provider: what the user tried to sign in with (e.g. GitHub), sign_in_link: a link to the sign in page with text from sign_in_email_used_sign_in_link
+    sign_in_email_used_no_external_services_html: "'%{email}' is already being used by user '%{user_name}'. If this is you and you wish to add additionally sign in with %{provider}, %{sign_in_link} to your account first, then add your %{provider} sign in."
+    # same as above, but when the existing user uses other providers. also includes existing_providers, which is a list of the existing user's sign ins, run through to_sentence (http://apidock.com/rails/Array/to_sentence)
+    sign_in_email_used_with_external_services_html: "'%{email}' is already being used by user '%{user_name}', who signs in with %{existing_providers}. If this is you and you wish to add additionally sign in with %{provider}, %{sign_in_link} to your account first, then add your %{provider} sign in."
+    # sign in link for email_used messages
+    sign_in_email_used_sign_in_link: "sign in"
+    # when a user attempts to create an account with an external service, but an email was not provided by that service
+    sign_in_email_missing: "Greasy Fork requires an email to make a new account, but %{provider} didn't provide one for you. You can either update your %{provider} account to have one, then try signing in again, or create a normal email/password account on Greasy Fork, then add your %{provider} account to it."
+    # this shows when signing in for the first time with an external sign in but the name received is already in use. the user is prompted to enter a different name.
+    sign_in_name_used: "The name '%{name}' is already used. Choose a different one."
+    # the button when submitting the name form per above
+    sign_in_name_used_submit: "Submit"
+    # Button to preview a user's profile before saving
+    preview_profile: "Preview"
+    # heading for the user's control panel, which contains links such as post script and edit account
+    control_panel: "Control panel"
+    # heading for the list of discussions about a user's own scripts
+    discussions_on_scripts: "Discussions on your scripts"
+    # alt text for the RSS feed icon for discussions about a user's own scripts
+    discussions_on_scripts_feed_alt: "RSS Feed"
+    # text to show in the section for discussions about a user's own scripts if there are no discussions yet
+    discussions_on_scripts_none: "None yet!"
+    # link to more discussions on a user's own scripts, as the initial list is limited in number
+    discussions_on_scripts_more: "More discussions…"
+    # heading for the list of scripts on a user's page
+    script_list: "Scripts"
+    # text to show in a user's script section when they have created no scripts
+    script_list_none: "No scripts posted."
+    # text to show in a user's script section when they have created scripts, but they are not shown due to the filters active
+    script_list_none_for_filter: "No scripts for the current filters."
+    # heading for the list of a user's deleted scripts (visible to only that user and mods)
+    deleted_script_list: "Deleted scripts"
+    # link to log out
+    sign_out: "Sign out"
+    # link to edit an account
+    edit: "Edit account"
+    # link to edit how the user signs in
+    edit_sign_in: "Edit sign in methods"
+    # html title for the edit sign in page
+    edit_sign_in_title: "Edit sign in methods"
+    # heading for the password section of the edit sign in methods page
+    edit_sign_in_password: "Password"
+    # informational text telling the user they're not using a password
+    no_password_set_info: "Your account is not configured with a password."
+    # button to set a password when one is not already set
+    set_password: "Set password"
+    # button to set a password when one is already set
+    update_password: "Update password"
+    # error message when the password and the confirmation don't match
+    update_password_no_match: "Passwords don't match."
+    # notice after a password was updated successfully
+    password_updated: "Password updated."
+    # information text saying the user can unset their password and use just external sign ins
+    remove_password_info: "You can remove your password and rely solely on external sign ins."
+    # button to remove the password from the user's account
+    remove_password: "Remove password"
+    # error message to show if the user attempts to remove a password but have no external sign ins. This is normally not possible with the interface.
+    cant_remove_password: "Can't remove password - you'd have no way to sign in!"
+    # error message to show if the user attempts to remove a sign in but has no password or other sign ins. This is normally not possible with the interface. provider is the external site's name, like GitHub or Google
+    cant_remove_sign_in: "Can't remove %{provider} sign in - you'd have no way to sign in!"
+    # notice after a password was removed successfully
+    password_removed: "Password removed."
+    # heading for the external sign ins section of the edit sign in methods page
+    edit_sign_in_external: "External sign ins"
+    # information text about how they can use external sign ins, shown when the user has not set any yet
+    external_sign_in_info_no_sign_ins: "You can use your account on other sites to sign in to Greasy Fork."
+    # information text about how they can use external sign ins, shown when the user already has some set. should describe the concept of syncing, where account details on Greasy Fork will be updated to match the external service on sign in
+    external_sign_in_info_with_sign_ins: "You're currently using the external sign ins listed below. A \"syncing\" sign in means your Greasy Fork info (like user name and email) will be updated to match when you sign in."
+    # notice after a sign in is added. provider is the external site's name, like GitHub or Google
+    external_sign_in_added: "%{provider} sign in added."
+    # notice after a sign in is updated (from syncing to not or opposite). provider is the external site's name, like GitHub or Google
+    external_sign_in_updated: "%{provider} sign in updated."
+    # notice after a sign in is removed. provider is the external site's name, like GitHub or Google
+    external_sign_in_removed: "%{provider} sign in removed."
+    # notice after a sign in fails
+    external_sign_in_failed: "%{provider} sign in failed: %{error}."
+    # notice after a user tries to add a sign in to their account, but that sign in is already in use by another user
+    external_sign_in_already_used: "Addition of %{provider} sign in failed: that sign in is already being used by user '%{user_name}'."
+    # an indicator beside the sign in provider's name if the user chose to enable syncing
+    syncing_indicator: "(syncing)"
+    # button to set a sign in provider to sync
+    enable_syncing: "Turn on syncing"
+    # button to set a sign in provider to not sync
+    disable_syncing: "Turn off syncing"
+    # button to remove a sign in provider
+    remove_external_sign_in: "Remove"
+    # information text indicating that the list of links below it are for addding an external sign in
+    add_external_sign_in_info: "Add a sign in:"
+    # link to docs on how to set up a GitHub webhook for script syncing
+    set_up_webhook: "Set up a GitHub webhook"
+    author_email_notification_type:
+      # notification option: don't send the user e-mails
+      none: "Don't get emails about discussions on your scripts"
+      # notification option: send e-mails on new discussions but not new posts on existing discussions
+      discussion_only: "Get an email when discussions are posted on your scripts"
+      # notification option: send e-mails on new discussoins and on new posts on existing discussions
+      discussion_and_comment: "Get an email when discussions are posted on your scripts or when those discussions get new comments"
+      # tell the user that the forum can send them other emails that are not controlled by this setting
+      note: "You may receive other emails based on your settings in the forum."
+  common:
+    # text to show before listing errors in a submission
+    error_preamble: "There were some problems with what you posted..."
+    # link to the list of allowed HTML elements and attributes for HTML/Markdown fields
+    allowed_elements_link: "(See allowed code.)"
+    # title of the page showing allowed HTML elements and attributes for HTML/Markdown fields
+    allowed_elements_and_attributes_title: "Allowed elements for HTML content"
+    # text to introduce the list of allowed HTML elements and attributes
+    allowed_elements_intro: "The following elements and attributes are allowed. This applies to both HTML and Markdown (after conversion to HTML)."
+    # additional info for the allowed HTML elements, explaining additional changes made to content
+    allowed_elements_extra_info: "Whitespace will be turned into p or br elements. URLs will automatically be linkified."
+  activerecord:
+    attributes:
+      user:
+        # user field: display name
+        name: "Name"
+        # user field: profile (HTML content describing themselves)
+        profile: "Profile"
+        # user field: setting to send e-mails when discussions or comments are posted to a user's scripts. options are under users.author_email_notification_type
+        author_email_notification_type_id: "Script discussion notifications"
+      script:
+        # locale the script is in. see also scripts.locale_explanation
+        locale: "Locale"

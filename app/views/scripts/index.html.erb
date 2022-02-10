@@ -1,0 +1,30 @@
+<%- title @title %>
+<%- description @description %>
+
+<%= render partial: 'list_options', :locals => {:by_sites => @by_sites, :scripts => @scripts}%>
+
+<% if defined?(@set) and !@set.nil? %>
+	<h3>
+		<%=@set.display_name%> by <%=link_to @set.user.name, @set.user%>
+		<% if user_signed_in? and current_user == @set.user%>
+			<%=link_to('Edit', edit_user_script_set_path(current_user, @set))%>
+		<% end %>
+	</h3>
+	<% if !@set.favorite %>
+		<p><%=@set.description%></p>
+	<% end %>
+<% end %>
+
+<% if @scripts.empty? %>
+	<p><%=t('scripts.listing_no_scripts')%></p>
+<% else %>
+	<ol id="browse-script-list" class="script-list">
+		<%= render partial: 'script', collection: @scripts %>
+	</ol>
+<% end %>
+
+<% if !defined?(@paginate) or @paginate %>
+	<%= will_paginate @scripts %>
+<% end %>
+
+<p><%=link_to t('scripts.new'), new_script_version_path %></p>
