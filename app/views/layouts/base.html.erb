@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="<%= params[:locale] %>">
+<head>
+  <title><%= content_for?(:title) ? content_for(:title) : site_name %></title>
+  <% if content_for?(:description) %><meta name="description" value="<%= content_for(:description) %>"><% end %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_pack_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <% if defined?(@bots) %>
+    <meta name="robots" content="<%= @bots %>">
+  <% end %>
+  <link rel="canonical" href="<%= canonical_url(@canonical_params) %>">
+  <link rel="icon" href="<%= image_pack_path 'blacklogo16.png' %>">
+  <% unless Rails.env.test? %>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <% end %>
+  <% if request.get?
+    # https://support.google.com/webmasters/answer/189077
+    alternate_url_without_locale = current_path_with_params(locale: 'XX').sub(/\A\/XX/, '') %>
+    <link rel="alternate" hreflang="x-default" href="<%= current_path_with_params(locale: nil) %>">
+    <% Rails.configuration.available_locales.each do |code, name| %>
+      <link rel="alternate" hreflang="<%= code %>" href="/<%= code %><%= alternate_url_without_locale %>">
+    <% end
+  end %>
+
+  <% if defined?(@link_alternates)
+    @link_alternates.each do |la| %>
+      <link rel="alternate" type="<%= la[:type] %>" href="<%= la[:url] %>" <% if !la[:title].nil? %> title="<%= la[:title] %>"<% end %>>
+    <% end
+  end %>
+
+  <link rel="search" href="<%= opensearch_description_path %>" type="application/opensearchdescription+xml" title="<%= t('opensearch.short_name', site_name: site_name, default: t('opensearch.short_name', site_name: site_name, locale: 'en')) %>" hreflang="<%= I18n.locale %>">
+
+  <% if @ad_method == 'ea' %>
+    <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
+  <% end %>
+
+  <% if content_for(:head_bottom) %><%= yield(:head_bottom) %><% end %>
+</head>
+<body>
+
+  <header id="main-header">
+    <div class="width-constraint">
+      <div id="site-name">
+        <%= link_to_unless_current "<img src=\"#{ image_pack_path 'blacklogo96.png'}\" alt=\"\">".html_safe, root_path %>
+        <div id="site-name-text">
+          <h1><%= link_to_unless_current site_name, root_path %></h1>
+        </div>
+      </div>
+      <div id="site-nav">
+        <div id="nav-user-info">
+          <% if user_signed_in? %>
+            <% if current_user.moderator? %>
+              <%= render partial: 'layouts/moderator_notices' %>
+            <% end %>
+            <span class="user-profile-link"><%= link_to(current_user.name, current_user) %></span>
+            <span class="sign-out-link">[ <%= link_to t('users.sign_out'), destroy_user_session_path, method: :delete %> ]</span>
+          <% else %>
+            <span class="sign-in-link"><%= link_to(t('layouts.application.sign_in'), new_user_session_path(request.get? ? {return_to: request.fullpath} : {}), {rel: 'nofollow'}) %></span>
+          <% end %>
+
+          <% form_action = if request.get?
+            current_path_with_params(locale: nil)
+          else
+            root_path({locale: nil})
+                        end %>
+          <form id="language-selector" action="<%= form_action %>">
+            <% user_with_locale = !current_user.nil? && !current_user.locale.nil?
+            locale_with_override_param = user_with_locale ? '1' : nil
+            switch_url_without_locale = current_path_with_params(locale: 'XX', locale_override: locale_with_override_param).delete_prefix('/XX') %>
+            <select id="language-selector-locale" name="locale" data-translate-url="<%= Rails.configuration.help_translate_url %>">
+              <% Rails.configuration.available_locales.each do |code, name|
+                if request.get? %>
+                  <option data-language-url="/<%= code %><%= switch_url_without_locale %>" value="<%= code %>"<% if params[:locale] == code %> selected<% end %>>
+                    <%= name %> (<%= code %>)
+                  </option>
+                <% else %>
+                  <option data-language-url="<%= root_path({locale: code, locale_override: locale_with_override_param}) %>" value="<%= code %>"<% if params[:locale] == code %> selected<% end %>>
+                    <%= name %> (<%= code %>)
+                  </option>
+                <% end
+              end %>
+              <option value="help">Help us translate!</option>
+            </select><input id="language-selector-submit" type="submit" value="→">
+            <script>
+              /* submit is handled by js if enabled */
+              document.getElementById("language-selector-submit").style.display = "none"
+            </script>
+            <% if user_with_locale %>
+              <input type="hidden" name="locale_override" value="1">
+            <% end %>
+          </form>
+        </div>
+        <nav>
+          <li class="scripts-index-link"><%= link_to(t('layouts.application.script_list'), scripts_path) %></li>
+          <li class="forum-link"><%= link_to(t('layouts.application.forum'), discussions_path) %></li>
+          <li class="help-link"><%= link_to_unless_current(t('layouts.application.help'), help_path) %></li>
+          <li class="with-submenu">
+            <a href="#" onclick="return false"><%= t('layouts.application.submenu') %></a>
+            <nav>
+              <li><%= link_to t('layouts.application.advanced_search'), search_path %></li>
+              <li><%= link_to t('layouts.application.user_list'), users_path %></li>
+              <li><%= link_to t('layouts.application.libraries'), libraries_scripts_path %></li>
+              <li><%= link_to t('layouts.application.moderator_log'), moderator_actions_path %></li>
+            </nav>
+          </li>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="width-constraint">
+    <% if @announcement %>
+      <div class="announcement">
+        <%= @announcement.content.is_a?(String) ? @announcement.content : instance_exec(&@announcement.content) %>
+        <% if @announcement.dismissable %>
+          <%= form_with(url: dismiss_announcement_path(key: @announcement.key), data: { remote: true }, id: 'announcement-dismiss') do |f| %>
+            <%= f.submit '✖' %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+    <% if notice %>
+      <p class="notice"><%= flash[:html_safe] ? notice.html_safe : notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= flash[:html_safe] ? alert.html_safe : alert %></p>
+    <% end %>
+
+    <%= content_for?(:content) ? yield(:content) : yield %>
+  </div>
+
+  <% if sleazy? %>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-48197018-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  <% else %>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-48197018-1', 'greasyfork.org');
+      ga('send', 'pageview');
+
+    </script>
+  <% end %>
+
+</body>
+</html>

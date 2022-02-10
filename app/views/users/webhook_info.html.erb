@@ -1,0 +1,97 @@
+<%- title t('webhooks.info.title') %>
+<%- description "Setting up a webook to update scripts on #{site_name} automatically." %>
+
+<%= it('webhooks.info.intro_html', site_name: site_name, import_link: import_start_path) %>
+
+<% if @webhook_scripts.any? %>
+  <p><%= t('webhooks.info.already_syncing_list') %></p>
+  <ul>
+    <% @webhook_scripts.each do |s| %>
+      <li><%= t('webhooks.info.synced_item_html', script_name: link_to(s.name, s), sync_type: t("scripts.sync_type_#{s.script_sync_type_id}.name"), sync_url: link_to(s.sync_identifier, s.sync_identifier)) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% unless I18n.locale == :en %>
+  <p><%= t('webhooks.info.language_note') %></p>
+<% end %>
+
+<h4>GitHub</h4>
+
+<p>To set up the webhook on GitHub, access your GitHub repository and go to Settings, Webhooks, Add webhook, then enter the data below.</p>
+
+<dl>
+  <dt>Payload URL</dt>
+  <dd><%= user_webhook_url(@user) %></dd>
+  <dt>Content type</dt>
+  <dd>application/json</dd>
+  <dt>Secret</dt>
+  <dd>
+    <%= form_tag do |f| %>
+      <% if @user.webhook_secret.nil? %>
+        <input type="submit" value="Generate">
+      <% else %>
+        <textarea cols="64" rows="2" readonly><%= @user.webhook_secret %></textarea> <input type="submit" value="Regenerate">
+      <% end %>
+    <% end %>
+  </dd>
+  <dt>Which events would you like to trigger this webhook?</dt>
+  <dd>
+    To update <%= site_name %> on all pushes, choose "Just the push event".<br>
+    To update <%= site_name %> only on releases, choose "Let me select individual events", uncheck "Pushes", and check "Releases".</dd>
+  <dt>Active</dt>
+  <dd>(Checked)</dd>
+</dl>
+
+<h4>Bitbucket</h4>
+
+<p>To set up the webhook on Bitbucket, access your Bitbucket repository and go to Repository Settings, Webhooks, Add webhook, then enter the data below.</p>
+
+<dl>
+  <dt>Title</dt>
+  <dd><%= site_name %></dd>
+  <dt>URL</dt>
+  <dd>
+    <%= form_tag do |f| %>
+      <% if @user.webhook_secret.nil? %>
+        <input type="submit" value="Generate">
+      <% else %>
+        <textarea cols="64" rows="2" readonly><%= user_webhook_url(@user, secret: @user.webhook_secret) %></textarea> <input type="submit" value="Regenerate">
+      <% end %>
+    <% end %>
+  </dd>
+  <dt>Active</dt>
+  <dd>(Checked)</dd>
+  <dt>Skip certificate verification</dt>
+  <dd>(Unchecked)</dd>
+  <dt>Enable request history collection</dt>
+  <dd>(Unchecked)</dd>
+  <dt>Triggers</dt>
+  <dd>Repository push</dd>
+</dl>
+
+<h4>GitLab</h4>
+
+<p>To set up the webhook on GitLab, access your GitLab repository and go to Settings, Integrations, then enter the data below.</p>
+
+<dl>
+  <dt>URL</dt>
+  <dd><%= user_webhook_url(@user) %></dd>
+  <dt>Secret Token</dt>
+  <dd>
+    <%= form_tag do |f| %>
+      <% if @user.webhook_secret.nil? %>
+        <input type="submit" value="Generate">
+      <% else %>
+        <textarea cols="64" rows="2" readonly><%= @user.webhook_secret %></textarea> <input type="submit" value="Regenerate">
+      <% end %>
+    <% end %>
+  </dd>
+  <dt>Trigger</dt>
+  <dd>
+    To update <%= site_name %> on all pushes, choose "Push events".<br>
+    To update <%= site_name %> only on releases, choose "Releases events".</dd>
+  </dd>
+  <dt>Enable SSL Verification</dt>
+  <dd>(Checked)</dd>
+</dl>

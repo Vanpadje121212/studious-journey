@@ -1,0 +1,2 @@
+class RedirectServiceDomain < ApplicationRecord
+end

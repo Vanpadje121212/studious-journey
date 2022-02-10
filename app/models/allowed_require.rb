@@ -1,0 +1,2 @@
+class AllowedRequire < ApplicationRecord
+end
