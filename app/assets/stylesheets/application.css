@@ -1,0 +1,425 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+	font-family: "Open Sans", sans-serif;
+	letter-spacing: -0.01em;
+	margin-right: 0;
+}
+/* https://bugzilla.mozilla.org/show_bug.cgi?id=1005669 */
+pre {
+	letter-spacing: normal;
+}
+a {
+	color: #670000;
+}
+a:visited {
+	color: #A42121;
+}
+
+#main-header {
+	background-color: #670000;
+	padding: 1em 0.5em 0.5em 1em;
+	margin-left: -1em;
+	margin-top: -1em;
+	position: relative;
+}
+#site-name img {
+	vertical-align: bottom;
+	
+}
+#site-name-text {
+	display: inline-block;
+	vertical-align: top;
+}
+#site-name-text h1  {
+	line-height: 1.1em;
+}
+
+#main-header, #main-header a, #main-header a:visited, #main-header a:active {
+	color: white;
+}
+#main-header h1 {
+	font-size: 72px;
+	margin: 0;
+	margin-top: 0px;
+	letter-spacing: -2px;
+}
+#main-header h1 a {
+	text-decoration: none;
+}
+#main-header .subtitle {
+	margin: -8px 0 0 10px;
+	font-size: 0.7em;
+	/* in case it overlaps the y in Greasy */
+	text-shadow: -1px -1px 0px #670000, 1px -1px 0px #670000, -1px 1px 0px #670000, 1px 1px 0px #670000;
+}
+
+#site-nav nav, #nav-user-info {
+	text-align: right;
+	position: absolute;
+	right: 0;
+	margin: 1em 0.5em 0.5em 0;
+}
+#site-nav nav {
+	bottom: 0;
+}
+#nav-user-info {
+	top: 0;
+}
+nav a:hover {
+	color: white;
+}
+nav {
+	padding: 0;
+}
+nav li {
+	list-style-type: none;
+	display: inline;
+}
+nav li + li {
+	margin-left: 0.5em;
+}
+#script-search, #language-selector {
+	display: inline;
+}
+#nav-user-info, #nav-user-info select, #nav-user-info input {
+	font-size: smaller;
+}
+
+#script-content {
+	/* extend the border to the left edge */
+	margin-left: -10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 1em;
+	border-top: 1px solid black;
+}
+#script-content > *:first-child {
+	margin-top: 0;
+}
+#script-info header h2 {
+	margin: 0.25em 0 0 0;
+	font-size: 2em;
+}
+#script-info header p {
+	margin: 0;
+}
+#version-note {
+	font-style: italic;
+	background-color: yellow;
+}
+
+#script-links {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 0;
+}
+#script-links li {
+	display: inline-block;
+	border: solid;
+	border-width: 1px 1px 0 1px;
+	margin: 0 0.5em 0 0;
+}
+#script-links li > * {
+	padding: 0.25em 1em;
+	display: block;
+}
+#script-links a {
+	text-decoration: none;
+}
+#script-links .current {
+	background: white;
+	/* shift it down 1px to overlap the top border of the next element */
+	position: relative;
+	top: 1px;
+	/* grow in size so the top borders align */
+	padding-top: 1px;
+}
+/* shift the text back up to align with the others */
+#script-links .current > * {
+	position: relative;
+	top: -1px;
+}
+#script-links li:not(.current) {
+	background-color: #EEE;
+}
+
+#install-area {
+	margin-bottom: 1em;
+}
+.install-link, .install-link:visited, .install-link:active, .install-link:hover, .install-help-link {
+	display: inline-block;
+	background-color: #005200;
+	padding: 0.5em 1em;
+	color: white;
+	text-decoration: none;
+}
+.install-help-link, .install-help-link:visited, .install-help-link:active, .install-help-link:hover {
+	background-color: #1E971E;
+	color: white;
+}
+#script-meta {
+	display: table;
+}
+#script-meta > * {
+	display: table-cell;
+}
+#script-stats, #script-stats dt, #script-stats dd, #script-applies-to, #script-applies-to dt, #script-applies-to dd {
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+}
+#script-stats {
+	padding-right: 1em;
+	min-width: 18em;
+}
+#script-stats dt {
+	clear: left;
+	float: left;
+	width: 12em;
+	font-weight: bold;
+}
+#script-stats dd {
+	float: left;
+}
+#script-stats, #script-applies-to {
+	margin-bottom: 1em;
+}
+#script-applies-to dt {
+	display: inline;
+	font-weight: bold;
+}
+#script-applies-to dt:after {
+	content: ":";
+	display: inline;
+	font-weight: bold;
+}
+#script-applies-to dd {
+	display: inline;
+}
+
+#additional-info > h3 {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+#additional-info > div {
+	margin: 0;
+	padding: 1em;
+	background-color: #FFE6E6;
+}
+#additional-info > div > *:first-child {
+	margin-top: 0;
+}
+#additional-info > div > *:last-child {
+	margin-bottom: 0;
+}
+
+.form-control {
+	margin-bottom: 1em;
+}
+.form-control textarea {
+	width: 100%;
+	height: 20em;
+}
+.form-control input:not([type=radio]):not([type=file]) {
+	width: 100%;
+}
+.radio-group input[type=radio] {
+	margin-left: 1em;
+}
+.form-control label {
+	font-weight: bold;
+}
+.form-control label.radio-label {
+	font-weight: normal;
+}
+.field_with_errors textarea {
+	background-color: #FEE;
+}
+.label-note {
+	font-size: smaller;
+}
+
+.script-list {
+	list-style-type: none;
+	padding: 0;
+}
+.script-list article {
+	margin-bottom: 1em;
+}
+.script-list h2 {
+	margin: 0;
+	font-size: 18px;
+}
+.script-list p {
+	margin: 0;
+}
+.script-list footer {
+	margin-top: 0.25em;
+}
+.script-list dl {
+	font-size: smaller;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;
+	-moz-column-gap: 0;
+	-webkit-column-gap: 0;
+	column-gap: 0;
+	max-width: 45em;
+	margin: 0;
+}
+.script-list dt, .script-list dd {
+	margin: 0;
+	padding: 0;
+}
+.script-list dt {
+	clear: left;
+	float: left;
+	width: 12em;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 1em;
+}
+.script-list dd {
+	float: left;
+}
+.script-list-current {
+	font-weight: bold;
+}
+.script-list .name-description-separator, .script-list .description {
+	font-weight: normal;
+}
+
+/* activated by js */
+.select-all, .select-none {
+	display: none;
+}
+
+.diff {
+	border: 2px solid black;
+}
+
+#help-allowed-elements {
+	-moz-column-width: 15em;
+	-webkit-column-width: 15em;
+	column-width: 15em;
+}
+
+#by-site-list {
+	list-style-type: none;
+	padding: 0;	
+}
+#by-site-list li {
+	display: inline;
+	vertical-align: middle;
+}
+
+#user_profile {
+	width: 100%;
+	height: 10em;
+}
+
+.preview-button {
+	
+}
+.preview-result {
+	display: none;
+	background-color: #FFA;
+	padding: 0.5em;
+}
+
+.failed-sync {
+	background-color: #FCC;
+}
+
+.discussion-question {
+	list-style-image: url(/images/circle-blue.png);
+}
+.discussion-report {
+	list-style-image: url(/images/report.png);
+}
+.discussion-bad {
+	list-style-image: url(/images/circle-red.png);
+}
+.discussion-ok {
+	list-style-image: url(/images/circle-yellow.png);
+}
+.discussion-good {
+	list-style-image: url(/images/circle-green.png);
+}
+
+.alert {
+	background-color: yellow;
+}
+
+.front-page-p {
+	margin-bottom: 0;
+}
+.front-page-box {
+	display: inline-block;
+	width: 45%;
+	vertical-align: top;
+	text-align: justify;
+}
+.front-page-box:first-of-type {
+	padding-right: 6%;
+}
+@media (max-width: 600px) {
+	.front-page-box {
+		display: block;
+		width: auto;
+		padding: 0;
+	}
+}
+
+#install-stats-chart {
+	width: 100%;
+	height: 400px;
+}
+td.numeric, th.numeric {
+	text-align: right;
+}
+
+#script-list-option-groups {
+	margin-top: 1em;
+	float: right;
+	width: 15em;
+	font-size: smaller;
+}
+.script-list-option-group {
+	background-color: #FFE6E6;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+	border-radius: 5px 0 0 5px;
+}
+.script-list-option-group ul {
+	margin: 0;
+	padding-left: 20px;
+}
+
+.translation_missing {
+	outline: dashed red;
+}
+
+#edit_user > div {
+	margin-bottom: 0.5em;
+}
+#edit_user > div > label:first-child {
+	font-weight: bold;
+}
+
+.inline-form {
+	display: inline;
+}

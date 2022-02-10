@@ -1,0 +1,52 @@
+<%- title t('.title', :resource => resource_class.model_name.human , :default => "Edit #{resource_name.to_s.humanize}") %>
+
+<h2><%= t('.title', :resource => resource_class.model_name.human , :default => "Edit #{resource_name.to_s.humanize}") %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :name %><br />
+  <%= f.text_field :name %></div>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <%- if devise_mapping.confirmable? && resource.pending_reconfirmation? -%>
+    <p>
+      <%= t('.currently_waiting_confirmation_for_email', :email => resource.unconfirmed_email, :default => "Currently waiting confirmation for: %{email}") %>
+    </p>
+  <%- end -%>
+
+	<div>
+		<%= f.label :profile %>
+		<span class="label-note">
+			<%=link_to t('common.allowed_elements_link'), help_allowed_markup_path, {:target => 'markup_choice'}%>
+			<%=f.radio_button(:profile_markup, 'html')%>HTML
+			<%=f.radio_button(:profile_markup, 'markdown')%><%=link_to 'Markdown', 'http://daringfireball.net/projects/markdown/basics', {:target => 'markup_choice'}%>
+			<button id="preview-user-profile" class="preview-button"><%=t('users.preview_profile')%></button>
+		</span>
+		<br>
+		<%= f.text_area :profile, {:class => 'previewable', 'data-preview-activate-id' => 'preview-user-profile', 'data-markup-option-name' => 'user[profile_markup]', 'data-preview-result-id' => 'preview-user-profile-results'} %>
+		<div id="preview-user-profile-results" class="preview-result"></div>
+	</div>
+
+	<div>
+		<%= f.label :author_email_notification_type_id %><br>
+		<%= f.radio_button(:author_email_notification_type_id, 1)%> <label for="user_author_email_notification_type_id_1"><%=t('users.author_email_notification_type.none')%></label><br>
+		<%= f.radio_button(:author_email_notification_type_id, 2)%> <label for="user_author_email_notification_type_id_2"><%=t('users.author_email_notification_type.discussion_only')%></label><br>
+		<%= f.radio_button(:author_email_notification_type_id, 3)%> <label for="user_author_email_notification_type_id_3"><%=t('users.author_email_notification_type.discussion_and_comment')%></label><br>
+		<i><%=t('users.author_email_notification_type.note')%></i>
+	</div>
+
+  <div><%= f.submit t('.update', :default => "Update") %></div>
+<% end %>
+
+<% if false 
+# disabled here and in routing
+%>
+	<h3><%= t('.cancel_my_account', :default => 'Cancel my account') %></h3>
+
+	<p><%= t('.unhappy', :default => 'Unhappy') %>? <%= link_to t('.cancel_my_account', :default => "Cancel my account"), registration_path(resource_name), :data => { :confirm => t('.are_you_sure', :default => "Are you sure?") }, :method => :delete %>.</p>
+<% end %>
+
+<%= link_to t('devise.shared.links.back', :default => "Back"), :back %>

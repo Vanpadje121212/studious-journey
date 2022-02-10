@@ -1,0 +1,27 @@
+<%- title t('home.title') %>
+<%- description 'Greasy Fork is a free site providing user scripts to improve your web browsing experience.' %>
+
+<p class="front-page-p"><%=t('home.welcome')%></p>
+
+<section class="front-page-box">
+	<h3><%=t('home.explain_user_scripts_heading')%></h3>
+
+	<p><%=t('home.explain_user_scripts_html', :how_to_install_link => link_to(t('home.explain_user_scripts_how_to_install_link'), help_installing_user_scripts_path).html_safe, :browse_link => link_to(t('home.explain_user_scripts_browse_link'), scripts_path).html_safe)%></p>
+</section>
+
+
+<section class="front-page-box">
+	<h3><%=t('home.greasy_fork_for_authors_heading')%></h3>
+
+	<p><%=t('home.greasy_fork_for_authors_html')%></p>
+</section>
+
+<section>
+	<h3><%=t('home.scripts_sample')%></h3>
+	<ul>
+		<% @highlighted_scripts.each do |script| %>
+			<li><%=link_to script.name, script%> - <%=script.description%></li>
+		<% end %>
+		<li><%=link_to t('home.scripts_sample_more'), scripts_path%></li>
+	</ul>
+</section>

@@ -1,0 +1,85 @@
+<%- title @script.name %>
+<%- description @script.description %>
+
+<% if @script.active? 
+	case @script.script_type_id
+		when 1, 2 %>
+			<div id="install-area">
+				<%=link_to t('scripts.install'), params[:version].nil? ? script_user_js_path(@script, :name => @script.url_name) : script_user_js_path(@script, :version => params[:version], :name => @script.url_name) + '&d=.user.js', {:class => 'install-link', 'data-ping-url' => url_for(script_install_ping_path(@script, :authenticity_token => session[:_csrf_token])), 'data-is-previous-version' => !params[:version].nil?, :rel => 'nofollow'}%><%=link_to t('scripts.install_help'), help_installing_user_scripts_path, {:class => 'install-help-link', :title => t('scripts.install_help_title'), :rel => 'nofollow'}%>
+			</div>
+		<% when 3 %>
+			<p>
+				<% if params[:version].nil?
+					library_code_snippet = "<code>// @require #{script_library_js_path(@script, :version => @script_version.id, :name => @script.url_name, :only_path => false)}</code>"
+				else
+					library_code_snippet = "<code>// @require #{script_library_js_path(@script, :version => params[:version], :name => @script.url_name, :only_path => false)}</code>"
+				end %>
+				<%=t('scripts.library_instructions_html', :code => library_code_snippet.html_safe)%>
+			</p>
+	<% end %>
+<% elsif @script.deleted? %>
+	<p><%=t('scripts.deleted_notice')%></p>
+<% elsif !params[:version].nil? %>
+	<p id="under-review-notice"><%=t('scripts.inactive_pending_changes_for_previous_version')%></p>
+<% else %>
+	<p id="under-review-notice"><%=t('scripts.inactive_pending_changes')%></p>
+<% end %>
+
+<div id="script-meta">
+	<dl id="script-stats">
+		<dt class="script-show-version"><%=t('scripts.version_number')%></dt>
+		<dd class="script-show-version"><%=@script_version.version%></dd>
+		<dt class="script-show-author"><%=t('scripts.author_name')%></dt>
+		<dd class="script-show-author"><%=link_to @script.user.name, @script.user%></dd>
+		<% if @script.script_type_id != 3 and params[:version].nil? %>
+		<dt class="script-show-daily-installs"><%=t('scripts.daily_installs')%></dt>
+		<dd class="script-show-daily-installs"><%=@script.daily_installs%></dd>
+		<dt class="script-show-total-installs"><%=t('scripts.total_installs')%></dt>
+		<dd class="script-show-total-installs"><%=@script.total_installs%></dd>
+		<% end %>
+		<dt class="script-show-created-date"><%=t('scripts.created_date')%></dt>
+		<dd class="script-show-created-date"><%=markup_date(@script.created_at)%></dd>
+		<dt class="script-show-updated-date"><%=t('scripts.updated_date')%></dt>
+		<dd class="script-show-updated-date"><%=markup_date(@script.code_updated_at)%></dd>
+		<dt class="script-show-license"><%=t('scripts.license')%></dt>
+		<dd class="script-show-license">
+			<%if @script.license.nil?%>
+				<% if @script.license_text.nil?%>
+					<i><%=t('scripts.no_license')%></i>
+				<% else %>
+					<%=@script.license_text%>
+				<% end %>
+			<% else %>
+				<%=@script.license.html.html_safe%>
+			<% end %>
+		</dd>
+	</dl>
+	<dl id="script-applies-to">
+		<dt class="script-show-applies-to"><%=t('scripts.applies_to')%></dt>
+		<dd class="script-show-applies-to">
+			<% if @script.script_applies_tos.empty? %>
+				<%=t('scripts.applies_to_all')%>
+			<% else %>
+				<%=
+					(
+					@script.script_applies_tos.select{|s|s.domain}.map{ |s|
+						# count of other scripts - take this one out of the count if it's a listable
+						script_count = @by_sites[s.text].nil? ? 0 : (@by_sites[s.text][:scripts] - (@script.listable? ? 1 : 0))
+						next link_to(h(s.text), by_site_scripts_path(:site => s.text), {:title => t('scripts.applies_to_link_title', {:count => script_count, :site => s.text})}) if script_count > 0
+						next h(s.text)
+					} +
+					@script.script_applies_tos.select{|s|!s.domain}.map{|s| "<code>#{h(s.text)}</code>".html_safe}
+					).join(', ').html_safe%>
+			<% end %>
+		</dd>
+	</dl>
+</div>
+
+<% if !@script.additional_info.nil? and !@script.additional_info.empty? %>
+	<div id="additional-info">
+		<h3><%=t('scripts.additional_info')%></h3>
+		<div>
+			<%=format_user_text(@script.additional_info, @script.additional_info_markup)%>
+		</div>
+	</div>
+<% end %>

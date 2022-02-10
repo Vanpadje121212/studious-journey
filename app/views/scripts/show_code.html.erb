@@ -1,0 +1,11 @@
+<%- title t('scripts.code_title', :script_name => @script.name) %>
+<%- description 'Source code for ' + @script.name %>
+<style>
+<%= CodeRay::Encoders[:html]::CSS.new(:default).stylesheet%>
+</style>
+<% if @code.length > 500.kilobytes and params[:highlight].nil? %>
+	<p><%=t('scripts.code_highlighting_disabled', :size => number_to_human_size(500.kilobytes))%></p>
+	<pre class="CodeRay"><%=@code%></pre>
+<% else %>
+	<%=CodeRay.scan(@code, :js).div({:css => :class, :line_numbers => :table}).html_safe%>
+<% end %>
