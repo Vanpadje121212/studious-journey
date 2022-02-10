@@ -1,0 +1,2 @@
+class ScriptCode < ApplicationRecord
+end

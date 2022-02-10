@@ -1,0 +1,2 @@
+class ScriptDeleteType < ApplicationRecord
+end

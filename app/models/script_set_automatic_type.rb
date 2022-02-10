@@ -1,0 +1,2 @@
+class ScriptSetAutomaticType < ApplicationRecord
+end
