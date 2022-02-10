@@ -1,0 +1,2 @@
+class BlockedScriptUrl < ApplicationRecord
+end
