@@ -1,0 +1,140 @@
+one:
+  id: 1
+  script_id: 1
+  script_code_id: 100
+  rewritten_script_code_id: 100
+  version: 1
+
+two:
+  id: 2
+  script_id: 2
+  script_code_id: 100
+  rewritten_script_code_id: 100
+  version: 1
+
+three:
+  id: 3
+  script_id: 3
+  script_code_id: 1
+  rewritten_script_code_id: 100
+  version: 1.1
+
+generated_version:
+  id: 4
+  script_id: 4
+  script_code_id: 2
+  rewritten_script_code_id: 100
+  version: 0.0.1.20140305183916
+
+explicit_version:
+  id: 5
+  script_id: 5
+  script_code_id: 3
+  rewritten_script_code_id: 100
+  version: 1.1
+
+with_namespace:
+  id: 6
+  script_id: 6
+  script_code_id: 4
+  rewritten_script_code_id: 5
+  version: 1.1
+
+url_sync_script:
+  id: 7
+  script_id: 7
+  script_code_id: 6
+  rewritten_script_code_id: 100
+  version: 1.1
+
+url_sync_script_unchanged:
+  id: 8
+  script_id: 8
+  script_code_id: 7
+  rewritten_script_code_id: 100
+  version: 1.1
+
+url_sync_script_no_description:
+  id: 9
+  script_id: 9
+  script_code_id: 8
+  rewritten_script_code_id: 9
+  version: 1.1
+
+url_sync_script_invalid:
+  id: 10
+  script_id: 10
+  script_code_id: 10
+  rewritten_script_code_id: 100
+  version: 1.1
+
+previous_with_description:
+  id: 11
+  script_id: 11
+  script_code_id: 11
+  rewritten_script_code_id: 12
+  version: 1
+
+meta_not_at_top:
+  id: 12
+  script_id: 12
+  script_code_id: 13
+  rewritten_script_code_id: 100
+  version: 1
+
+synced_and_localized:
+  id: 14
+  script_id: 14
+  script_code_id: 14
+  rewritten_script_code_id: 14
+  version: 1
+
+url_sync_script_with_screenshots:
+  id: 15
+  script_id: 17
+  script_code_id: 6
+  rewritten_script_code_id: 100
+  version: 1.1
+
+webhook_sync:
+  id: 18
+  script_id: 18
+  script_code_id: 18
+  rewritten_script_code_id: 18
+  version: 1.0
+
+library:
+  script_id: 19
+  script_code: library
+  rewritten_script_code: library
+  version: 1.0
+
+derivative_with_same_name:
+  script_id: 20
+  script_code_id: 20
+  rewritten_script_code_id: 20
+  version: 1.0
+
+copy_origin:
+  script_id: 21
+  script_code_id: 20
+  rewritten_script_code_id: 20
+  version: 1.0
+
+antifeatures:
+  script_id: 22
+  script_code_id: 21
+  rewritten_script_code_id: 21
+  version: 1.0
+
+style:
+  script_id: 23
+  script_code_id: 22
+  rewritten_script_code_id: 22
+  version: 1.0
+
+style_antifeatures:
+  script_id: 24
+  script_code_id: 23
+  rewritten_script_code_id: 23
+  version: 1.0

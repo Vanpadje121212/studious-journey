@@ -1,0 +1,1179 @@
+pl:
+  layouts:
+    application:
+      script_list: "Skrypty"
+      forum: "Forum"
+      help: "Pomoc"
+      sign_in: "Zaloguj się"
+      submenu: "Więcej"
+      advanced_search: "Wyszukiwanie zaawansowane"
+      user_list: "Lista użytkowników"
+      libraries: "Biblioteki"
+      moderator_log: "Logi moderatora"
+  scripts:
+    created_date: "Utworzono"
+    updated_date: "Zaktualizowano"
+    total_installs: "Wszystkich instalacji"
+    daily_installs: "Dziennych instalacji"
+    ratings: "Oceny"
+    author_name: "Autor"
+    version_number: "Wersja"
+    license: "Licencja"
+    no_license: "Brak licencji"
+    compatibility: "Kompatybilność"
+    compatible_with_browser: "Kompatybilny z przeglądarką %{browser}"
+    incompatible_with_browser: "Niekompatybilny z przeglądarką %{browser}"
+    applies_to: "Dotyczy"
+    applies_to_link_title:
+      one: "Zobacz %{count} inny skrypt dla %{site}"
+      few: "Zobacz %{count} innych skryptów dla %{site}"
+      many: "Zobacz %{count} inne skrypty dla %{site}"
+      other: "Zobacz %{count} inne skrypty dla %{site}"
+    applies_to_all: "Wszystkie strony"
+    install: "Zainstaluj skrypt"
+    install_css: "Zainstaluj jako styl"
+    install_help: "?"
+    install_help_title: "Jak zainstalować"
+    update: "Aktualizacja do wersji %{version}"
+    downgrade: "Powrót do wersji %{version}"
+    reinstall: "Ponowna instalacja wersji %{version}"
+    old_version_warning: "To nie jest aktualna wersja skryptu. Jeśli ją zainstalujesz, nie zostanie ona automatycznie zaktualizowana do nowszej. Zainstalować pomimo to?"
+    promoted: "Promowane skrypty"
+    author_promoted: "Skrypt zaproponowany przez autora"
+    promoted_text_html: "%{script_link}może Ci się również spodobać. "
+    library_instructions_html: "Ten skrypt nie powinien być instalowany bezpośrednio. Jest to biblioteka dla innych skyptów do włączenia dyrektywą meta %{code}"
+    deleted_notice: "Ten skrypt został usunięty."
+    deleted_notice_with_related: "Żądany skrypt został usunięty. Oto kilka podobnych skryptów."
+    deleted_undelete_notice_html: "Skrypt został zablokowany przez moderatora i nie można go usunąć. Podany powód to: \"<i>%{delete_reason}</i>\"."
+    deleted_author_notice: "Ten skrypt został usunięty i nie jest dostępny dla innych. Możesz go przywrócić poprzez podstronę \"Usuń\"."
+    version_notice_html: "Stan na %{date}. Zobacz %{latest_version_link}."
+    version_notice_latest_version_link: "najnowszą wersję"
+    reported_notice: "\"%{script_name}\" został zgłoszony i czeka na sprawdzenie przez moderatora."
+    reported_notice_for_author: "Ten skrypt jest niedostępny dla innych użytkowników, dopóki nie zostanie sprawdzony przez moderatora."
+    info_page: "Informacje"
+    code_page: "Kod"
+    history_page: "Historia"
+    feedback_page: "Opinie (%{count})"
+    stats_page: "Statystyki"
+    derivatives_page: "Pochodne"
+    update_page: "Aktualizuj"
+    delete_page: "Usuń"
+    delete_explanation: "Usunięcie skryptu spowoduje jego niedostępność dla wszystkich poza Tobą i moderatorami Greasy Fork. Możesz to cofnąć w dowolnym momencie."
+    delete_update_behaviour: "Co ma się stać z osobami, które wcześniej zainstalowały Twój skrypt?"
+    delete_update_behaviours:
+      keep: "Zachowaj to tak, jak jest."
+    delete_permanently_heading: "Trwałe usunięcie"
+    delete_permanently_explanation_html: >-
+        <p>Trwałe usunięcie skryptu usunie go wraz ze wszystkimi powiązanymi rekordami,
+        z wyjątkiem dyskusji na forum oraz logów działań moderatorów.</p> <p>Twój
+        skrypt zostanie trwale usunięty po 7 dniach od zgłoszenia. Możesz w tym czasie
+        anulować jego usunięcie. Po tym czasie przywrócenie skryptu jest niemożliwe
+        nawet przez moderatorów.</p>
+    delete_permanently_confirm: "Czy na pewno chcesz trwale usunąć swój skrypt?"
+    delete_permanently_submit: "Usuń trwale"
+    delete_permanently_immediate_submit: "Permanentnie usunięty"
+    delete_permanently_notice: "Prośba o usunięcie została zarejestrowana. Twój skrypt zostanie trwale usunięty w ciągu 7 dni."
+    delete_permanently_already_requested: "Poprosiłeś o trwałe usunięcie %{datetime}."
+    delete_permanently_notice_immediate: "Skrypt permanentnie usunięty."
+    cancel_delete_permanently_submit: "Wycofaj prośbę o trwałe usunięcie"
+    cancel_delete_permanently_notice: "Twoja prośba o trwałe usunięcie została anulowana. Twój skrypt nadal nie jest widoczny dla innych."
+    delete_permanently_rejected_locked: "Ten skrypt jest zablokowany i nie może być permanentnie usunięty"
+    admin_page: "Admin"
+    admin:
+      title: "%{script_name} - Admin"
+      promoted_heading: "Promowany skrypt"
+      promoted_explanation: "Po instalacji tego skryptu, %{site_name} może zaproponować użytkownikowi wypróbowanie innego wybranego przez ciebie skryptu."
+      promoted_script_label: "URL skryptu do promowania"
+      promoted_submit: "Ustaw promowany skrypt"
+      sync_heading: "Synchronizacja ze źródłem"
+      locale_heading: "Domyślny język"
+      locale_example_html: "Język tego tekstu: <i>%{text}</i>"
+      locale_multiple_note: "Zauważ, że %{meta_keys_link:możesz przetłumaczyć swój skrypt na wiele języków}."
+      update_locale: "Zaktualizuj język"
+      no_moderator_logs: "Moderatorzy nie podjęli żadnej akcji w sprawie tego skryptu."
+      compare_title: "Porównaj z innym skryptem"
+      compare_to: "Skrypt na %{site_name} do porównania (URL)"
+      compare_button: "Porównaj"
+      compare_must_be_local_url: "Skrypt do porównania musi mieć adres URL %{site_name}."
+    history_title: "%{script_name} — historia wersji"
+    history_only_code_changes_info: "To są wersje tego skryptu, gdzie kod został zaktualizowany."
+    history_all_changes_link: "Pokaż wszystkie wersje."
+    history_all_changes_info: "To są wszystkie wersje tego skryptu."
+    history_only_code_changes_link: "Pokaż tylko te wersje, gdzie kod został zmieniony."
+    diff_button: "Porównaj wybrane wersje"
+    list_all_script_versions: "Pokaż wszystkie wersje skryptu"
+    code_title: "%{script_name} — kod źródłowy"
+    feedback_title: "%{script_name} - opinie"
+    feedback_no_discussions_html: "Brak udostępnionych dyskusji. %{start_first_discussion_link}"
+    feedback_no_discussions_on_page_form: "Brak dyskusji."
+    feedback_report_instead: "Jeśli myślisz, że ten skrypt łamie %{rules_link: zasady %{site_name}}, możesz %{report_link:zgłosić go do usunięcia}."
+    feedback_start_first_discussion_link: "Bądź pierwszy, by rozpocząć dyskusję o tym skrypcie."
+    feedback_discussion_or_report: "%{new_discussion_link:Rozpocznij nową dyskusję nad tym skryptem} lub %{report_link:zgłoś do usunięcia}."
+    stats_title: "%{script_name} — statystyki"
+    stats_daily_installs_heading: "Dziennych instalacji"
+    stats_weekly_installs_heading: "Tygodniowe instalacje"
+    stats_daily_update_checks_heading: "Dziennych aktualizacji"
+    stats_daily_installs_date_column_heading: "Data"
+    stats_daily_installs_install_count_column_heading: "Instalacji"
+    stats_daily_installs_update_check_count_column_heading: "Ilość aktualizacji"
+    stats_raw_data_header: "Dane źródłowe"
+    stats_download_raw_data_html: "Pobierz wszystkie dane jako: %{links}"
+    stats_no_data: "Brak danych"
+    stats_filters: "Filtrowanie: %{filter_options}"
+    stats_filter_options:
+      month: Ostatnie 30 dni
+      year: Ostatnie 365 dni
+      all: Cały czas
+    derivatives_title: "%{script_name} — pochodne"
+    derivatives_intro: "Te skrypty mogą być bazowane na twoim skrypcie (lub twój może być bazowany na ich). Jeśli znajdziesz nieautoryzowane użycie twojego kodu, zgłoś go poprzez kartę opinii tego skryptu."
+    derivatives_script_html: "%{script}, autor: %{user}, licencja: %{license} %{diff_link:[Diff]}"
+    derivatives_exact_copies_heading: "Dokładne kopie"
+    derivatives_exact_copies_list_intro: "Poniższe skrypty mają dokładnie taki sam kod jak twój:"
+    derivatives_exact_copies_item_html: "%{script_link} przez %{author_links} - wersje: %{version_list}"
+    derivatives_exact_copes_none: "Na %{site_name} nie znajdują się żadne skrypty, które mają dokładnie ten sam kod co ten skrypt."
+    derivatives_similar_heading: "Podobne skrypty"
+    derivatives_similar_info: "Okresowo sprawdzamy najnowsze wersje wszystkich innych skryptów, aby znaleźć najbardziej podobne do twojego. Sprawdzamy także przy każdej nowej aktualizacji oraz na twoją prośbę."
+    similarity_score:
+      high: Bardzo podobne
+      medium: Średnio podobne
+      low: Trochę podobne
+      none: Niepodobne
+    derivatives_similar_none: "Brak skryptów podobnych do twojego."
+    derivatives_similar_item: "%{score}: %{diff_link:[Diff]} %{script}"
+    derivatives_similar_last_check_html: "Ostatnio sprawdziliśmy skrypty podobne do twojego %{date}."
+    derivatives_similar_last_check_soon: "Wkrótce sprawdzimy skrypty podobne do twojego."
+    derivatives_similar_last_check_again_soon_html: "Ostatnio sprawdziliśmy skrypty podobne do twojego %{date}. Za jakiś czas sprawdzimy ponownie."
+    derivatives_similar_check_now: "Sprawdź ponownie teraz"
+    listing_title_all_sites: "Skrypty użytkownika dla wszystkich stron"
+    listing_description_all_sites: "Skrypty użytkownika, które dodają funkcje i usuwają błędy dla wszystkich stron"
+    listing_title_for_site: "Skrypty użytkownika dla strony %{site}"
+    listing_description_for_site: "Skrypty użytkownika, które dodają funkcje i usuwają błędy dla strony %{site}"
+    listing_title_for_search: "'%{search_string}' skryptów użytkownika"
+    listing_title_for_code_search: "'%{search_string}' skryptów użytkownika"
+    listing_title_generic: "Skrypty użytkownika"
+    listing_title_for_favorites: "Kolekcja '%{set_name}' użytkownika %{user_name}"
+    listing_description_generic: "Skrypty użytkownika, które dodają funkcje i usuwają błędy na stronach, które odwiedzasz."
+    listing_sort_label: "Sortuj według:"
+    listing_sort_relevance: "Trafności"
+    listing_sort_daily_installs: "Dziennych instalacji"
+    listing_sort_total_installs: "Wszystkich instalacji"
+    listing_sort_ratings: "Oceny"
+    listing_sort_created: "Daty utworzenia"
+    listing_sort_updated: "Daty zaktualizowania"
+    listing_sort_name: "Nazwy"
+    listing_filter_by_site_label: "Pokaż skrypty dla:"
+    listing_filter_by_site_disable: "Dowolnych stron (wyłącza filtrowanie stron)"
+    listing_filter_by_site_all_sites: "Wszystkich stron"
+    listing_filter_by_language_label: "Język:"
+    listing_filter_by_site_more_sites: "Więcej..."
+    listing_no_scripts: "Nie znaleziono skryptów."
+    listing_created_feed: "Nowe skrypty"
+    listing_updated_feed: "Zaktualizowanych skryptów"
+    listing_none: "(brak)"
+    listing_set_locale_filter: "Wyświetlanie wyników dla wszystkich języków. %{set_filter_link:Pokaż wyniki tylko dla języka: %{language}} "
+    listing_remove_locale_filter: "Wyświetlanie wyników dla języka: %{language}. %{remove_filter_link:Pokaż wyniki dla wszystkich języków.}"
+    listing_language_all: "Wszystkie"
+    listing_language_js: "JavaScript"
+    listing_language_css: "CSS"
+    import: "Importuj skrypty"
+    new: "Opublikuj swój skrypt"
+    new_css: "Opublikuj swój styl"
+    support_site: "Odwiedź stronę pomocy autora tego skryptu."
+    support_email: "Napisz pocztówkę elektroniczną do autora tego skryptu, by uzyskać wsparcie."
+    contribution_no_amount: "Podziękuj użytkownikowi %{author} wykonując dotację."
+    contribution_with_amount: "Podziękuj użytkownikowi %{author} wykonując dotację. Proponowana dotacja wynosi %{amount}."
+    contribution_bitcoin_no_amount_html: "Podziękuj użytkownikowi  %{author} poprzez dotację Bitcoinami na %{address}"
+    contribution_bitcoin_with_amount_html: "Podziękuj użytkownikowi %{author} poprzez dotację w Bitcoinach na %{address}. Proponowana dotacja to %{amount}."
+    locale_explanation_html: "Powinien pasować do języka z linią <code>@name</code> oraz <code>@description</code> i pierwszą dodatkową informacją."
+    locale_auto_select: "(wykryj automatycznie)"
+    sets_label: "W kolekcjach skryptów:"
+    sets_label_no_sets: "Kolekcje skryptów:"
+    sets_remove_inclusion: "Usuń z kolekcji %{set_name}"
+    sets_remove_exclusion: "Usuń wykluczenie z kolekcji %{set_name}"
+    sets_add_inclusion: "Dodaj do kolekcji %{set_name}"
+    sets_add_exclusion: "Wyklucz z kolekcji %{set_name}"
+    sets_add_to_new: "Dodaj do nowego zestawu"
+    rules_summary_html: "Skrypty muszą być <strong>poprawnie opisane</strong>, nie mogą być <strong>skomplikowane</strong>, muszą przestrzegać <strong>prawa autorskiego</strong> i być ograniczone w wykorzystywaniu <strong>zewnętrznego kodu</strong>. %{full_rules_link}"
+    rules_summary_link_to_full: "Przeczytaj pełny regulamin."
+    syncing_notice_html: "Ten skrypt jest %{syncing_notice_sync_type}. Jakiekolwiek aktualizacje, których dokonujesz tutaj w kodzie będą nadpisane podczas synchronizacji."
+    syncing_notice_sync_type_manual: "ustawiony do ręcznej synchronizacji z %{sync_identifier}"
+    syncing_notice_sync_type_automatic: "ustawiony do automatycznej synchronizacji z %{sync_identifier}"
+    upload_label: "Lub prześlij:"
+    enable_source_code_editor_label: "Włącz podświetlanie składni w edytorze kodu"
+    changelog_note: "Jakie zmiany zaszły w tej wersji?"
+    additional_info_note: "Bardziej szczegółowy opis, instrukcje, itd."
+    post_new_script: "Opublikuj skrypt"
+    post_updated_script: "Udostępnij nową wersję"
+    type_1_html: "Publiczny skrypt użytkownika - wszyscy mogą go zobaczyć i używać."
+    type_2_html: "Niepubliczny skrypt użytkownika - do użytku prywatnego (lub półprywatnego). Dostępny przez bezpośredni dostęp. Nie jest nigdzie linkowany w %{site_name}."
+    type_3_html: "Biblioteka - skrypt nie jest przeznaczony do instalowania bezpośrednio, tylko do używania przez inne skrypty poprzez <code>@require</code>."
+    override_warning_checkbox_label: "Zapisz mimo to"
+    warning_version_not_incremented_html: "Zaktualizowałeś kod, ale nie zwiększyłeś liczby w linii <code>@version</code>. Ci, którzy zainstalowali wcześniej Twój skrypt mogą nie otrzymać zaktualizowanego kodu.."
+    warning_namespace_changed_html: "Twój <code> @namespace </ code> nie zmieniło. Spójne <code> @namespace </ code> pozwala użytkownikom ponownie zainstalować skrypt, aby go zaktualizować."
+    warning_potentially_minified_html: "Skrypt wygląda może on zawierać minified (z kompresją) kod. Jeśli używasz minified biblioteki, należy zamiast <code> @require </ code> to z %{allowed_requires_link} wymaga dozwolone. Skrypty z kodem minified podlegają usunięciu."
+    warning_automatic_sensitive_html: "Twój skrypt jest przeznaczony dla %{sensitive_domains} i będzie oznaczony jako zawartość dla osób dorosłych."
+    warning_potentially_minified_allowed_requires_link: "jedno z tych miejsc"
+    warning_license_missing_override_html: "Zapisz bez licencji"
+    additional_info_locale_prompt: "(wybierz język)"
+    additional_info_add_localized: "Dodaj dodatkowe informacje w innym języku"
+    additional_info_locale_repeated: "Zapewnienie tylko jedno dodatkowe informacje dla '% {locale_key} \"locale."
+    localized_additional_info_with_no_name: "Dodatkowa informacja została określona dla tłumaczenia '%{locale_code}', ale linia @name:%{locale_code} nie została wprowadzona."
+    code_syncing_from_url_html: "Kod tego skryptu został ustawiony, by synchronizować się z: %{field}"
+    provide_code_syncing_from_url_html: "%{site_name} może importować skrypty, które są hostowane w innym miejscu, na przykład w systemie kontroli wersji (jak GitHub), twój własny serwer lub z innej strony hostującej skrypty użytkownika. Aby włączyć synchronizację skryptu, podaj adres URL: %{field}"
+    sync_type_intro: "Ten skrypt będzie synchronizowany:"
+    sync_type_1:
+      name: Ręcznie
+      description: aktualizacje będą sprawdzane, tylko gdy je wymusisz
+    sync_type_2:
+      name: Automatycznie
+      description: aktualizacje będą sprawdzane okresowo
+    sync_type_3:
+      name: Webhook
+      description: zostanie zaktualizowany po wprowadzeniu zmian do tego pliku w repozytorium
+    sync_name_and_description: "%{name} - %{description}"
+    sync_failed_info_html: "Synchronizacji próbowano ostatnio %{date}, co przyczyniło się do %{error}."
+    sync_success_info_html: "Ostatnia sukcesywna synchronizacja była %{date}."
+    sync_never_succeeded: "Synchronizacja nigdy nie zakończyła się sukcesem."
+    sync_additional_info: Opcjonalnie możesz też zsynchronizować dodatkowe informacje o skrypcie.
+    add_synced_additional_info: Dodaj synchronizowane dodatkowe informacje w innym języku
+    update_and_sync: "Zaktualizuj i zsynchronizuj teraz"
+    update_no_sync: "Zaktualizuj"
+    turn_off_syncing: "Wyłącz synchronizację dla tego skryptu"
+    additional_info_default_sync_html: "Domyślne dodatkowe informacje (zgodność z językiem <code>@name</code>)"
+    additional_info_localized_sync_html: "Dla tłumaczeń (zgodność z linią <code><a href=\"http://wiki.greasespot.net/Metadata_Block#.40name\">@name:XX</a></code>)"
+    sync_url_placeholder: "(adres URL)"
+    screenshots_add: "Dodaj:"
+    screenshots_remove: "Usuń"
+    diff_title: "%{script} — różnice w wersjach"
+    diff_old_version: "Stary:"
+    diff_new_version: "Nowy:"
+    diff_lines_of_context: "Linii w kontekście:"
+    diff_ignore_whitespace: "Ignoruj zmiany w białych znakach"
+    diff_refresh: "Odśwież"
+    diff_no_change: "Nie znaleziono zmian."
+    good_rating_explanation: "Ilość osób, które oceniły jako 'Dobry' lub dodały do ulubionych."
+    ok_rating_explanation: "Ilość osób, które oceniły jako „Okej”."
+    bad_rating_explanation: "Ilość osób, które oceniły jako „Zły”."
+    write_your_own_html: "%{post_a_script_link} (lub %{learn_to_write_scripts_link})"
+    post_a_script_link_text: "Opublikuj swój skrypt"
+    learn_to_write_scripts_link_text: "dowiedz się, jak go napisać"
+    feedback_or_report: "%{feedback_link:Zadaj pytanie, napisz recenzję}, lub %{report_link:zgłoś ten skrypt}."
+    support_feedback_or_report: "%{support_url:Odwiedź stronę autora w celu uzyskania pomocy}, %{feedback_link:zadaj pytanie, napisz recenzję}, lub %{report_link:zgłoś skrypt}."
+    support_email_feedback_or_report: "%{support_url:Napisz email do autora w celu uzyskania pomocy}, %{feedback_link:zadaj pytanie, napisz recenzję}, lub %{report_link:zgłoś skrypt}."
+    adult_content: "Treści dla dorosłych"
+    adult_content_self_report: "Ten skrypt zawiera treści dla dorosłych lub został stworzony dla strony zawierającej treści dla dorosłych."
+    adult_content_self_report_explanation: "%{site_name} zezwala na skrypty zawierające treści dla dorosłych, ale musi to być odpowiednio oznakowane, aby użytkownicy mogli zdecydować czy chcą to zobaczyć."
+    not_adult_content_self_report_html: "Ten skrypt <strong>nie</strong> zawiera treści dla dorosłych i  <strong>nie</strong> jest przeznaczony dla strony zawierającej treści dla dorosłych."
+    not_adult_content_self_report_explanation: "%{site_name} zezwala na skrypty z treściami dla dorosłych, ale muszą być odpowiednio oznaczone, aby użytkownicy mogli zdecydować czy chcą je zobaczyć. Twój skrypt został oznaczony jako posiadający treści dla dorosłych. Możesz zgłosić jeśli uważasz, że nie zawiera. Wtedy zostanie to sprawdzone przez moderatora."
+    not_adult_content_self_report_explanation_automatic: "%{site_name} zezwala na skrypty z treściami dla dorosłych, ale muszą być odpowiednio oznaczone, aby użytkownicy mogli zdecydować czy chcą je zobaczyć. Twój skrypt został oznaczony jako dla dorosłych, jako że jest przeznaczony dla %{domain_list}"
+    adult_content_on_greasy_logged_in_error: "Ten skrypt jest już dostępna na tej stronie z aktualnym %{edit_account_link:Greasy Fork account settings}."
+    adult_content_on_greasy_not_logged_in_error: "Ten skrypt nie jest już dostępny anonimowo na tej stronie. %{login_link:Log in} i sprawdź swoje ustawienia konta Greasy Fork."
+    non_adult_content_on_sleazy: "Ten skrypt nie jest dostępny na tej stronie"
+    not_js_convertible_override_header: "Konwersja do JS"
+    not_js_convertible_override_explanation: "%{site_name} może automatycznie przekonwertować twój %{help_link:user CSS do user JS}. Ponieważ zachowanie przekonwertowanego skryptu może się różnić od oryginału, zalecamy przetestowanie czy działa poprawnie. Jeśli okaże się, że nie działa zgodnie z przeznaczeniem, możesz wyłączyć tę opcję, zaznaczając poniższe pole."
+    not_js_convertible_override_label_html: "To <strong>nie</strong> powinno być dostępne w formacie user JS"
+    adult_marker: "(Dla dorosłych)"
+    deleted_marker: "(Usunięty)"
+    locked_marker: "(Zablokowany)"
+    unlisted_marker: "(Niepubliczny)"
+    library_marker: "(Biblioteka)"
+    libraries_title: "Biblioteki"
+    libraries_description_html: "Tutaj znajdują się biblioteki zamieszczone przez użytkowników %{site_name}, które możesz użyć poprzez <code>@require</code> w swoich skryptach. W przypadku innych rodzajów bibliotek, które możesz dołączyć, przeczytaj %{policy_link:politykę %{site_name} dotyczącą <code>@require</code>}."
+    by_site_list_title: "Skrypty użytkownika dla %{site_name} pogrupowane według strony"
+    by_site_list_description: "Witryny wykorzystujące najbardziej popularne skrypty użytkowników. Większa czcionka oznacza bardziej popularne skrypty użytkowników."
+    by_site_list_filter: "Filtruj według nazwy strony:"
+    search_placeholder: "Szukaj skryptów"
+    updated: "Skrypt zaktualizowany."
+    preview_additional_info: "Podgląd"
+    must_confirm: "Musisz najpierw potwierdzić swoje konto, zanim zaczniesz publikować skrypty. Masz dwie opcje - dodaj logowanie zewnętrznym serwisem lub wyślij wiadomość e-mail z potwierdzeniem."
+    must_confirm_email_button: "Wyślij link potwierdzający na adres %{email}"
+    authors_heading: "Autorzy"
+    error_unauthorized_copy: "Ten kod wydaje się być nieautoryzowaną kopią %{script}. Zapoznaj się z %{rules_link:rules} o zamieszczaniu skryptów na %{site_name}."
+    invitations:
+      form_title: "Zaproś innych autorów"
+      explanation: "Możesz dodać innych użytkowników Greasy Fork jako autorów tego skryptu. Będą mieli takie same prawa do skryptu jak ty."
+      invited_user_url_label: "Zaproś użytkownika"
+      invited_user_placeholder: "Adres URL profilu użytkownika w %{site_name}"
+      submit: "Wyślij zaproszenie"
+      invalid_user_url: "Adres URL zaproszonego użytkownika jest nieprawidłowy."
+      already_author: "Podany użytkownik jest już autorem tego skryptu."
+      sent: "Zaproszenie zostało wysłane."
+      subject: "Zaproszenie do %{script_name}"
+      body: "Zostałeś zaproszony do bycia autorem %{script_name} (%{script_url}) w %{site_name}. By zaakceptować, przejdź tutaj %{accept_url} ."
+      current_user_already_author: "Jesteś już autorem tego skryptu."
+      invitation_not_found: "Nie znaleziono zaproszenia."
+      invitation_expired: "Zaproszenie wygasło."
+      invitation_accepted: "Jesteś teraz autorem tego skryptu."
+    remove_author:
+      heading: "Usuń autorów"
+      success: "%{user_name} został usunięty jako autor."
+      remove_button: "Usuń"
+      remove_confirm: "Czy na pewno chcesz usunąć %{user_name} jako autora?"
+      failure: "Nie można usunąć autora."
+    no_disposable_email: "Nie możesz publikować skryptów, jeśli używasz jednorazowego adresu e-mail."
+    rate_limited: "Ostatnio opublikowałeś zbyt wiele skryptów. Spróbuj ponownie później."
+    new_script_notice:
+      title: "Co próbujesz zrobić?"
+      install_link_html: "Chcę <b>zainstalować i użyć</b> skryptu."
+      share_link_html: "<b>Napisałem</b> skrypt i chcę <b>udostępnić</b> go innym."
+    new_title:
+      js: "Opublikuj nowy skrypt"
+      css: "Opublikuj nowy styl"
+    update_title: "Opublikuj nową wersję %{script}"
+    install_help_dialog:
+      js:
+        other: Aby zainstalować ten skrypt, musisz zainstalować rozszerzenie menedżera skryptów użytkownika.
+        bypass: (Mam już menedżera skryptów użytkownika, pozwól mi to zainstalować!)
+      css:
+        firefox: Musisz posiadać rozszerzenie, takie jak %{stylus_link:Stylus}, by zainstalować ten skrypt.
+        chrome: Musisz posiadać rozszerzenie, takie jak %{stylus_link:Stylus}, by zainstalować ten skrypt.
+        opera: Musisz posiadać rozszerzenie, takie jak %{stylus_link:Stylus}, by zainstalować ten skrypt.
+        safari: Aby zainstalować ten skrypt, potrzebujesz menedżera stylu.
+        other: Aby zainstalować ten skrypt, musisz zainstalować rozszerzenie menedżera stylów użytkownika.
+        bypass: (Mam już menedżera stylów użytkownika, pozwól mi to zainstalować!)
+      close_dialog: OK
+    antifeatures:
+      warning_title: Ten skrypt zawiera antyfunkcjonalności
+      author_explanation_intro: "Autor tego skryptu wyjaśnia:"
+      types:
+        ads:
+          title: Reklamy
+          description_html: Ten skrypt <b>wstrzykuje reklamy</b> na odwiedzanych przez ciebie stronach.
+        tracking:
+          title: Śledzenie
+          description_html: Ten skrypt zawiera kod, który <b>śledzi twoje przeglądanie</b>.
+        miner:
+          title: Koparka kryptowalut
+          description_html: Ten skrypt zawiera koparkę kryptowalut, która <b>wykorzystuje zasoby twojego urządzenia</b> podczas aktywności.
+        referral-link:
+          title: Linki partnerskie
+        membership:
+          title: Członkostwo
+        payment:
+          title: Płatność
+      install_anyway: Zainstaluj skrypt
+      cancel_install: Anuluj
+    badges:
+      js:
+        short: JS
+        long: Skrypt użytkownika
+      css:
+        short: CSS
+        long: Styl użytkownika
+  script_sets:
+    description: "Zestawy skryptów umożliwiają Ci stworzenie zmodyfikowanej listy skryptów do przeglądania Greasy Fork'a. Możesz dodać skrypty do Twojego zestawu poprzez dołączanie pojedynczych skryptów, zestawów innych użytkowników lub automatycznie generowanych zestawów. Możesz także usunąć skrypty z Twojego zestawów w taki sam sposób."
+    favorites_name: "Ulubione"
+    delete: "Usuń kolekcję skryptów"
+    delete_confirmation: "Czy na pewno chcesz usunąć tę kolekcję skryptów?"
+    site_default_sort: "(domyślne dla strony)"
+    edit_scripts:
+      heading: "Skrypty"
+      description: "Dołącz lub usuń pojedyncze skrypty w Twoim zestawie."
+      included: "Dołączone"
+      included_none: "(brak)"
+      remove_included: "Usuń zaznaczone"
+      excluded: "Usunięte"
+      excluded_none: "(brak)"
+      remove_excluded: "Usuń zaznaczone"
+      add_label: "Dodaj skrypty (adresy URL lub ID oddzielone spacją)"
+      add_include: "Dołącz"
+      add_exclude: "Usuń"
+    edit_sets:
+      heading: "Kolekcje skryptów"
+      description: "Dołącz lub usuń inne zestawy skryptów w Twoim zestawie."
+      included: "Dołączone"
+      included_none: "(brak)"
+      remove_included: "Usuń zaznaczone"
+      excluded: "Usunięte"
+      excluded_none: "(brak)"
+      remove_excluded: "Usuń zaznaczone"
+      add_label: "Dodaj skrypty (adresy URL i ID, oddzielone spacją)"
+      add_include: "Dołącz"
+      add_exclude: "Usuń"
+      user_label: "Lista zestawów skryptów należących do użytkownika (URL,ID oraz nazwa)"
+      user_no_sets: "(Użytkownik nie posiada zestawów)"
+      user_no_other_sets: "(Użytkownik nie posiada innych zestawów)"
+    edit_auto_sets:
+      heading: "Automatyczne zestawy skryptów"
+      description: "Dołącz lub usuń automatycznie generowaną listę w Twoim zestawie skryptów."
+      included: "Dołączone"
+      included_none: "(brak)"
+      remove_included: "Usuń zaznaczone"
+      excluded: "Usunięte"
+      excluded_none: "(brak)"
+      all_scripts_label: "Wszystkie skrypty"
+      all_scripts_include: "Dołącz"
+      for_sites_label: "Skrypty dla strony (np. example.com, zostaw puste dla \"Wszystkie strony\")"
+      for_sites_include: "Dołącz"
+      for_sites_exclude: "Usuń"
+      for_user_label: "Skrypty dodane przez użytkownika (URL,ID oraz nazwa)"
+      for_user_include: "Dołącz"
+      for_user_exclude: "Usuń"
+      for_language_label: "Skrypty w języku"
+      for_language_include: "Dołącz"
+      for_language_exclude: "Usuń"
+    calculated_list: "Obliczona lista skryptów"
+    calculated_list_none: "(brak)"
+    calculated_list_more:
+      one: "I %{count} więcej..."
+      few: "I %{count} więcej..."
+      many: "I %{count} więcej"
+      other: "I %{count} więcej..."
+    already_included: "'%{name}' już dołączone."
+    could_not_parse_script: "Nie można przeparsować skryptu '%{value}'"
+    save: "Zapisz"
+    saved: "Zestaw skryptów zapisany."
+    auto_set_types:
+      all_scripts: "Wszystkie skrypty"
+      site: "Skrypty dla %{site}"
+      all_sites: "Wszystkie strony"
+      user: "Skrypty użytkownika %{user}"
+      locale: "Skrypty w %{locale_name}"
+    new: Nowy zestaw skryptów
+  home:
+    title: "%{site_name} — bezpieczne i użyteczne skrypty użytkownika"
+    welcome: "Witaj na %{site_name}, stronie ze skryptami użytkownika."
+    sleazy_title: "%{site_name} - bezpieczne i użyteczne skrypty dorosłego użytkownika"
+    sleazy_welcome: "Witaj na %{site_name}, stronie ze skryptami dla dorosłego użytkownika."
+    search_placeholder: "Szukaj skryptów użytkownika"
+    scripts_for_label: "Skrypty dla:"
+    explain_user_scripts_heading: "Co to są skrypty użytkownika?"
+    explain_user_scripts_html: "Skrypty użytkownika pozwalają kontrolować twoje doświadczenie przeglądania stron internetowych. Po zainstalowaniu, automatycznie czynią strony lepszymi poprzez dodanie nowych funkcji, sprawiając, że korzysta się z nich łatwiej lub usuwają niechciane treści z odwiedzanych stron. Skrypty użytkownika na %{site_name} zostały napisane przez innych użytkowników i zamieszczone, by podzielić się nimi ze światem. Są darmowe i łatwe w użyciu."
+    installing_step1_header: "Krok 1: zainstaluj menedżera skryptów"
+    installing_step1_caption: "Tampermonkey w Chrome"
+    installing_step1_description_html: >
+        <p>Aby korzystać ze skryptów użytkownika, musisz najpierw zainstalować menedżera
+        skryptów. To, którego menedżera możesz użyć, zależy od posiadanej przez ciebie
+        przeglądarki.</p>
+
+        <ul>
+
+        <li>Chrome: %{chrome_tampermonkey_link:Tampermonkey} lub %{chrome_violentmonkey_link:Violentmonkey}</li>
+
+        <li>Firefox: %{firefox_greasemonkey_link:Greasemonkey}, %{firefox_tampermonkey_link:Tampermonkey},
+        lub %{firefox_violentmonkey_link:Violentmonkey}</li>
+
+        <li>Safari: %{safari_tampermonkey_link:Tampermonkey} lub %{safari_userscripts_link:Userscripts}</li>
+
+        <li>Microsoft Edge: %{edge_tampermonkey_link:Tampermonkey}</li>
+
+        <li>Opera: %{opera_tampermonkey_link:Tampermonkey} lub %{opera_violentmonkey_link:Violentmonkey}</li>
+
+        <li>Maxthon: %{maxthon_violentmonkey_link:Violentmonkey}</li>
+
+        <li>Dolphin: %{dolphin_tampermonkey_link:Tampermonkey}</li>
+
+        <li>UC: %{uc_tampermonkey_link:Tampermonkey}</li>
+
+        <li>AdGuard: (nie jest wymagane dodatkowe oprogramowanie)</li>
+
+        </ul>
+    installing_step2_header: "Krok 2: zainstaluj skrypt użytkownika"
+    installing_step2_caption: "Przycisk instalacji skryptu"
+    installing_step2_description_html: >
+        <p>%{browse_link:Przeglądaj tę witrynę}, by znaleźć skrypt użytkownika, który
+        chcesz wypróbować. Oto przykłady najbardziej popularnych skryptów:</p>
+
+        %{highlighted_scripts_list}
+
+        <p>Jak już znajdziesz skrypt użytkownika, to wciśnij zielony przycisk na stronie
+        skryptu użytkownika, a twój menedżer skryptów poprosi ciebie o potwierdzenie
+        zainstalowania.</p>
+    installing_step3_header: "Krok 3: używaj skryptu"
+    installing_step3_description_html: >
+        <p>Przejdź do strony, którą obejmuje skrypt użytkownika. Powinien on automatycznie
+        zrobić swoje. Po wypróbowaniu skryptu użytkownika przez chwilę, wróć z powrotem
+        tam gdzie go zainstalowałeś i zostaw opinię dla jego autora.</p>
+  users:
+    sign_in_title: "Zaloguj się na %{site_name}"
+    sign_in_description: "Zalogowanie się na %{site_name} umożliwi Ci publikowanie skryptów i opinii o innych skryptach. Nie musisz logować się, aby przeglądać lub instalować skrypty."
+    sign_in_external: "Zaloguj się za pomocą serwisu zewnętrznego"
+    sign_in_with: "Zaloguj się z %{provider}"
+    sign_in_password: "Zaloguj się z hasłem"
+    sign_in_email_used_no_external_services_html: "Adres poczty elektronicznej '%{email}' jest już użyty przez użytkownika '%{user_name}'. Jeśli to jesteś Ty i chcesz dodać dodatkową metodę logowania za pomocą serwisu %{provider}, %{sign_in_link} najpierw do Twojego konta, a następnie dodaj Twoje konto w serwisie %{provider} do Twojego konta %{site_name}, aby się zalogować."
+    sign_in_email_used_with_external_services_html: "'%{email}' jest już w użyciu przez użytkownika '%{user_name}', który loguje się za pomocą %{existing_providers}. Jeśli to jesteś Ty i chcesz dodać dodatkową metodę logowania za pomocą serwisu %{provider}, %{sign_in_link} najpierw do Twojego konta, potem dodaj twój %{provider} do logowania."
+    sign_in_email_used_sign_in_link: "zaloguj się"
+    sign_in_email_missing: "%{site_name} wymaga poczty elektronicznej do stworzenia nowego konta, ale serwis %{provider} nie podał jednego dla Ciebie. Możesz jednak później zaktualizować Twoje konto w serwisie %{provider}, by uzyskać jedno i spróbować zalogować się ponownie lub stworzyć normalne konto z pocztą elektroniczną i hasłem na %{site_name}, a później dodać Twoje konto w serwisie %{provider} do konta na %{site_name}."
+    sign_in_name_used: "Nazwa użytkownika '%{name}' już jest w użyciu. Wybierz inną."
+    sign_in_name_used_submit: "Zatwierdź"
+    control_panel: "Panel kontrolny"
+    discussions_on_scripts: "Dyskusje w Twoich skryptach"
+    discussions_on_scripts_feed_alt: "Kanał RSS"
+    discussions_on_scripts_none: "Brak dyskusji!"
+    discussions_on_scripts_more: "Więcej dyskusji..."
+    script_list: "Skrypty"
+    script_list_none: "Brak udostępnionych skryptów."
+    script_list_none_for_filter: "Brak skryptów dla obecnych filtrów."
+    script_list_none_same_user_html: "Nie napisałeś jeszcze żadnych skryptów. %{script_list_none_same_user_info_link}"
+    script_list_none_same_user_info_link_text: "Chcesz dowiedzieć się, jak to zrobić?"
+    deleted_script_list: "Usunięte skrypty"
+    unlisted_script_list: "Nie katalogowane skrypty"
+    sign_out: "Wyloguj się"
+    edit: "Edytuj konto"
+    edit_sign_in: "Edytuj metody logowania"
+    edit_sign_in_title: "Edytuj metody logowania"
+    edit_sign_in_password: "Hasło"
+    edit_notifications: "Edytuj powiadomienia"
+    no_password_set_info: "Twoje konto nie posiada skonfigurowanego hasła."
+    set_password: "Ustaw hasło"
+    update_password: "Zaktualizuj hasło"
+    update_password_no_match: "Hasła się nie zgadzają."
+    password_updated: "Hasło zaktualizowane."
+    remove_password_info: "Możesz usunąć Twoje hasło i polegać wyłącznie metodach logowania z innych serwisów."
+    remove_password: "Usuń hasło"
+    cant_remove_password: "Nie można usunąć hasła — nie masz innego sposobu na zalogowanie się!"
+    cant_remove_sign_in: "Nie można usunąć logowania za pomocą serwisu %{provider} — nie masz innego sposoby na zalogowanie się!"
+    password_removed: "Hasło usunięte."
+    edit_sign_in_external: "Serwisy, za pomocą których możesz się zalogować"
+    external_sign_in_info_no_sign_ins: "Możesz użyć kont z innych stron, aby zalogować się na %{site_name}."
+    external_sign_in_info_with_sign_ins: "Obecnie używasz zewnętrznych metod logowania wymienionych poniżej. Znacznik \"synchronizowane\" oznacza, że Twoje informacje z %{site_name} (takie jak nazwa użytkownika i email) będą aktualizowane wraz z Twoim logowaniem."
+    external_sign_in_added: "Logowanie za pomocą serwisu %{provider} zostało dodane."
+    external_sign_in_updated: "Logowanie za pomocą serwisu %{provider} zostało zaktualizowane."
+    external_sign_in_removed: "Logowanie za pomocą serwisu %{provider} zostało usunięte."
+    external_sign_in_failed: "Logowanie za pomocą serwisu %{provider} nie powiodło się: %{error}."
+    external_sign_in_already_used: "Dodanie logowania za pomocą serwisu %{provider} nie powiodło się: ta metoda jest już używana przez użytkownika '%{user_name}'."
+    external_sign_in_confirmation: "Nowe %{site_name} konto zostało utworzone na podstawie Twoich %{provider} szczegółów konta. Twoja publiczna nazwa użytkownika to %{username}."
+    syncing_indicator: "(synchronizowanie)"
+    enable_syncing: "Włącz synchronizację"
+    disable_syncing: "Wyłącz synchronizację"
+    remove_external_sign_in: "Usuń"
+    add_external_sign_in_info: "Dodaj metodę logowania:"
+    set_up_webhook: "Stwórz nowego webhooka"
+    author_email_notification_type:
+      none: "Nie otrzymuj e-maili o nowych dyskusjach na temat twoich skryptów"
+      discussion_only: "Otrzymuj e-maile o nowych dyskusjach na temat twoich skryptów"
+      discussion_and_comment: "Otrzymuj e-maile o nowych dyskusjach na temat twoich skryptów oraz gdy te dyskusje będą miały nowe komentarze"
+    list_display_html:
+      one: "%{user_link} — %{count} skrypt"
+      few: "%{user_link} — %{count} skrypty"
+      many: "%{user_link} — %{count} skryptów"
+      other: "%{user_link} — %{count} skryptów"
+    listing_number_of_scripts: "Liczby skryptów"
+    listing_new_scripts: "Nowych skryptów"
+    listing_updated_scripts: "Zaktualizowanych skryptów"
+    listing_registration_date: "Daty rejestracji"
+    listing_title: "Użytkownicy"
+    listing_banned_filter:
+      banned: "Zbanowani"
+      not_banned: "Niezbanowani"
+      all: "Wszyscy"
+    listing_author_filter:
+      script_author: "Autorzy skryptów"
+      not_script_author: "Bez autorów skryptów"
+      all: "Wszyscy"
+    search_placeholder: "Szukaj użytkowników"
+    locale_prompt: "(wybierz język)"
+    show_ads_description: "Wspomóż %{site_name} poprzez zezwolenie na wyświetlanie reklam"
+    show_sensitive_description: "Pokaż skrypty z treścią dla dorosłych"
+    preferred_markup_description: "Zostanie użyte dla nowych skryptów i postów."
+    filter_locale_default_description: "Domyślnie wyświetlaj treści dostępne tylko w bieżącym języku"
+    greasy_fork_scripts_link:
+      one: "%{user_name} ma %{count} skrypt na Greasy Fork."
+      few: "%{user_name} ma %{count} skryptów na Greasy Fork."
+      many: "%{user_name} ma %{count} skryptów na Greasy Fork."
+      other: "%{user_name} ma %{count} skryptów na Greasy Fork."
+    update_sync_warning:
+      one: "Twoja nazwa użytkownika i email są ustawione by być synchronizowane kiedy się zalogujesz przez %{providers}. %{edit_sign_in_link:Zmień swoje metody logowania, by usunąć synchronizację} jeśli chcesz na stałe ustawić niestandardową nazwę użytkownika lub email."
+      few: "Twoja nazwa użytkownika i email są ustawione by być synchronizowane kiedy się zalogujesz przez %{providers}. %{edit_sign_in_link:Zmień swoje metody logowania, by usunąć synchronizację} jeśli chcesz na stałe ustawić niestandardową nazwę użytkownika lub email."
+      many: "Twoja nazwa użytkownika i email są ustawione by być synchronizowane kiedy się zalogujesz przez %{providers}. %{edit_sign_in_link:Zmień swoje metody logowania, by usunąć synchronizację} jeśli chcesz na stałe ustawić niestandardową nazwę użytkownika lub email."
+      other: "Twoja nazwa użytkownika i email są ustawione by być synchronizowane kiedy się zalogujesz przez %{providers}. %{edit_sign_in_link:Zmień swoje metody logowania, by usunąć synchronizację} jeśli chcesz na stałe ustawić niestandardową nazwę użytkownika lub email."
+    delete_link: "Usuń konto"
+    delete:
+      intro: "Usunięcie twojego konta '%{user_name}' na %{site_name} będzie miało następujące efekty:"
+      password_effect: "Nie będziesz już mógł logować się za pomocą swojego hasła."
+      identities_effect:
+        one: "Zalogowanie się za pośrednictwem %{identities} spowoduje utworzenie nowego konta."
+        few: "Zalogowanie się za pośrednictwem %{identities} spowoduje utworzenie nowego konta."
+        many: "Zalogowanie się za pośrednictwem %{identities} spowoduje utworzenie nowego konta."
+        other: "Zalogowanie się za pośrednictwem %{identities} spowoduje utworzenie nowego konta."
+      scripts_effect:
+        one: "Twój %{count} skrypt zostanie usunięty."
+        few: "%{count} twoje skrypty zostaną usunięte."
+        many: "%{count} twoich skryptów zostanie usuniętych."
+        other: "%{count} twoich skryptów zostanie usunięte."
+      script_sets_effect:
+        one: "Twój %{count} zestaw skryptów zostanie usunięty."
+        few: "Twoje %{count} zestawy skryptów zostaną usunięte."
+        many: "Twoje %{count} zestawy skryptów zostaną usunięte."
+        other: "Twoje %{count} zestawy skryptów zostaną usunięte."
+      forum_effect: "Twój wkład w forum pozostanie, ale powiązana nazwa użytkownika zostanie zmieniona na \"%{user_name}\"."
+      email_confirmation: "Przed usunięciem konta, %{site_name} wyśle prośbę o potwierdzenie na e-mail %{email}"
+      submit: "Usuń konto"
+      confirmation_email_sent: "Email z potwierdzeniem usunięcia został wysłany."
+      confirmation_email:
+        subject: "Potwierdzenie usunięcia konta %{site_name}"
+        body: "Zażądano usunięcia twojego konta '%{user_name}' w %{site_name}. W celu potwierdzenia i usunięcia konta kliknij ten link %{url} . Należy to zrobić w przeciągu 24 godzin lub twoje żądanie będzie anulowane."
+      confirmation:
+        intro: "Zamierzasz usunąć konto '%{user_name}'. To działanie jest nieodwracalne."
+        confirm: "Usuń '%{user_name}'"
+        cancel: "Anuluj usuwanie"
+        key_mismatch: "Nie można usunąć użytkownika - klucze się nie zgadzają"
+        request_expired: "Nie można usunąć użytkownika - żądanie wygasło."
+        cancelled: "Usunięcie anulowane."
+        completed: "Twoje konto zostało usunięte."
+    banned_notice:
+      no_report_no_reason: "Twoje konto zostało zablokowane. Możesz %{delete_link:usunąć swoje konto}, jeśli tego chcesz."
+      with_report: "Twoje konto zostało zablokowane w odpowiedzi na %{report_link:przesłane zgłoszenie}. Możesz %{delete_link:usunąć swoje konto}, jeśli tego chcesz."
+      with_reason: "Twoje konto zostało zablokowane. Moderator przedstawił następujący powód: \"%{reason}\". Możesz %{delete_link:usunąć swoje konto}, jeśli tego chcesz."
+    banned_delete:
+      intro: "Usunięcie twojego konta spowoduje również usunięcie wszystkich udostępnionych przez ciebie skryptów. Twoja aktywność na forach pozostanie dostępna, ale nazwa użytkownika zostanie zanonimizowana. Nawet po usunięciu nie będzie możliwości ponownej rejestracji konta z tym samym adresem email. Zaloguj się poniżej, aby usunąć konto."
+      complete: "Twoje konto zostało usunięte."
+    badges:
+      banned:
+        short: Zbanowany
+        long: Zbanowany
+      moderator:
+        short: Mod
+        long: Moderator
+      author:
+        short: Autor
+        long: Autor tego skryptu
+    notifications:
+      discussion_defaults:
+        title: Powiadomienia forum
+        new_discussion: Domyślnie subskrybuj wszystkie rozpoczęte przez ciebie dyskusje
+        new_comment: Domyślnie subskrybuj wszystkie dyskusje, które komentujesz
+        mention: Otrzymuj powiadomienie, gdy zostaniesz wspomniany w dyskusji
+      conversation_defaults:
+        title: Powiadomienia o rozmowach
+        starter: Domyślnie subskrybuj wszystkie rozpoczęte przez ciebie rozmowy
+        receiver: Domyślnie subskrybuj wszystkie rozmowy z twoim udziałem, które nie są rozpoczęte przez ciebie
+      save_button: Zaktualizuj ustawienia powiadomień
+      title: Powiadomienia
+      current_discussion_subscriptions:
+        one: Odsubskrybuj %{discussions_link:%{count} dyskusję}, którą subskrybujesz
+        few: Odsubskrybuj z %{discussions_link:%{count} dyskusji}, które subskrybujesz
+        many: Odsubskrybuj z %{discussions_link:%{count} dyskusji}, które subskrybujesz
+        other: Odsubskrybuj z %{discussions_link:%{count} dyskusji}, które subskrybujesz
+      save_success: Twoje ustawienia powiadomień zostały zaktualizowane
+      unsubscribe_all: Wypisz się z wszystkich powiadomień
+      unsubscribe_all_success: Zostałeś wypisany ze wszystkich powiadomień
+  webhooks:
+    info:
+      title: Konfiguracja webhooka
+      synced_item_html: "%{script_name} - %{sync_type} synchronizuje się z %{sync_url}"
+  help:
+    sections:
+      usage: Używanie
+      development: Tworzenie
+      miscellaneous: Różne
+    open_source: "%{site_name} jest otwartoźródłowy (na licencji GPLv3). Możesz zobaczyć jego %{github_link:kod źródłowy na GitHubie}."
+    installing_user_scripts:
+      title: 'Jak zainstalować skrypty użytkownika'
+    installing_user_styles:
+      title: 'Jak zainstalować style użytkownika'
+    meta_keys:
+      title: "Meta klucze skryptu czytane przez %{site_name}"
+      intro_html: "Tutaj jest lista <a href=\"http://wiki.greasespot.net/Metadata_Block\">meta kluczy skryptu użytkownika</a>, które %{site_name} będzie czytała.  Klucze spoza tej listy mogą być dołączone w skryptach i będą obecne w zainstalowanym skrypcie, ale nie będą miały wpływu na interfejs użytkownika strony %{site_name}."
+      name: "(wymagane) Nazwa skryptu, która jest używana jako nagłówek i w linkach."
+      name_localized_html: "Nazwa skryptu w specyficznym języku, gdzie XX oznacza <a href=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\"> kod dwuliterowy ISO 639-1 </a>, a YY jest opcjonalnym <a href=\"https://www.iso.org/obp/ui/#search\"> kodem kraju ISO 3166 </a>.  Zastępuje <code>@name</code>, kiedy użytkownik przegląda z wybranym językiem."
+      description: "Opis funkcji skryptu.  Wyświetlany jako tekst pod nazwą skryptu. Wymagane."
+      description_localized_html: "Opis w specyficznym języku, gdzie XX oznacza <a href=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\"> kod dwuliterowy ISO 639-1 </a>, a YY jest opcjonalnym <a href=\"https://www.iso.org/obp/ui/#search\"> kodem kraju ISO 3166 </a>.  Zastępuje <code>@description</code>, kiedy użytkownik przegląda z wybranym językiem."
+      namespace_html: "Kombinacja <code>@namespace</code> i <code>@name</code> jest używana przez menedżerów skryptów użytkownika aby sprawdzić czy skrypt został już zainstalowany. %{site_name} wymaga tego pola i będzie ostrzegać jeżeli zostanie zmienione przy aktualizacji."
+      include_html: "Określa, na jakich stronach zostanie uruchomiony dany skrypt. Ich lista zostanie wyświetlona na stronie listingu skryptu, oraz użyta do ich kategoryzacji. Każdy skrypt musi posiadać co najmniej jedną deklarację <code>@match</code> lub <code>@include</code>. <a href=\"https://wiki.greasespot.net/Include_and_exclude_rules\">Więcej informacji o wymaganym formacie znajdziesz tutaj.</a>"
+      require_html: "Zawiera zewnętrzny JavaScript w skrypcie. Zobacz %{external_script_link}."
+      require_external_script_link_text: "zasady dla kodu zawierającego zewnętrzne skrypty"
+      updateURL: "Opisz, jak menedżerzy skryptu użytkownika powinni otrzymywać aktualizacje. %{site_name} usunie te klucze, co sprawi, że dowolny skrypt zainstalowany z%{site_name} będzie aktualizowany tylko z %{site_name}."
+      license: "Licencja opisuje, w jaki sposób użytkownicy mogą kopiować lub modyfikować skrypt. Używanie \"Pełnej nazwy\" lub \"Identyfikatora\" z %{spdx_link:listy licencji SPDX} jest zalecane. Brak licencji oznacza, że użytkownicy mogą zainstalować skrypt na własny użytek, ale nie mogą go rozpowszechniać. Licencja jest wyświetlana na stronie informacyjnej skryptu."
+      supportURL: "Adres URL dla strony gdzie użytkownik może otrzymać pomoc dotyczącą skryptu (np. śledzenie błędów, forum lub adres e-mail). Adres URL wsparcia jest wyświetlany na stronie z opiniami o skrypcie."
+      contributionURL_html: "Adres URL dla strony, gdzie użytkownicy mogą przekazać dotację autorowi skryptu. Adres URL datku jest wyświetlany na stronie opinii o danym skrypcie. Protokołem adresu URL może być http, https lub protokoły Bitcoin. Aby podać link to strony dotacji na PayPalu, użyj adresu URL w formacie <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=your.email.here@example.com&item_name=Greasy+Fork+donation\">https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=Twój_adres_poczty_elektronicznej&item_name=Dotacja+Greasy+Fork</a>, zamieniając przykładowy adres poczty elektronicznej na swój własny."
+      contributionAmount_html: "Sugerowana kwota dotacji, używana wraz z <code>@contributionURL</code>."
+      compatible_html: "Oznacza ten skrypt jako kompatybilny z przeglądarką. Informacje o zgodności zostaną pokazane na stronie skryptu. Uwagi dotyczące zgodności mogą zostać dołączone w formacie<code>@compatible firefox Należy wyłączyć blokowanie wyskakujących okien.</code>. Rozpoznawane przeglądarki to: %{browsers}."
+      incompatible_html: "Oznacza ten skrypt jako niezgodny z przeglądarką. Informacje o kompatybilności zostaną wyświetlone na stronie skryptu. Opcjonalne komentarze dotyczące kompatybilności mogą zostać dołączone w formacie <code>@incompatible firefox Niezgodne od Firefox'a w wersji 23</code>. Rozpoznawane przeglądarki to: %{browsers}."
+      antifeature_localized_html: "<code>@antifeature</code> opisany w innym języku, gdzie XX oznacza <a href=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\">dwuliterowy kod ISO 639-1</a>, a YY jest opcjonalnym <a href=\"https://www.iso.org/obp/ui/#search\">kodem kraju ISO 3166</a>. Nadpisuje <code>@antifeature</code> gdy użytkownik przegląda w pasującym języku."
+    writing_user_scripts:
+      title: "Jak pisać skrypty użytkownika"
+      content_html: "<p>Pisanie skryptów użytkownika wymaga znajomości JavaScriptu. <a href=\"http://wiki.greasespot.net/Tutorials\">Poradniki na Wiki GreaseSpot</a> powinny Ci dać rozbieg na JavaScript zarówno ogólnie, jak i relatywnie do skryptów użytkownika. Inspekcja skryptów innych osób może być pomocna. Zainteresuj się %{code_rules_link} i %{meta_keys_link}. Jeśli potrzebujesz pomocy z tworzeniem Twojego skryptu, możesz %{ask_in_forum_link}.</p><p>Aby udostępniać na %{site_name}, musisz stworzyć konto. Z Twojej %{user_page_link} możesz %{post_new_script_link}.</p>"
+      ask_in_forum_link_text: 'napisać o tym na forum'
+      user_page_link_text: 'strony użytkownika'
+      post_new_script_link_text: 'udostępnić nowy skrypt'
+    code_rules:
+      title: "Zasady publikacji skryptów na %{site_name}"
+      preamble: 'Tutaj znajdują się wymagania dotyczące skryptów publikowanych na %{site_name}. Mające na celu utrzymanie %{site_name} bezpiecznym i użytecznym miejscem dla skryptów użytkownika. Skrypty niespełniające tych wymagań mogą zostać usunięte przez moderatorów %{site_name}. '
+      functionality_header: Funkcjonalność
+      description: Skrypty muszą zawierać opis tego, co robią oraz nie powinny celowo robić innych rzeczy niezawartych w opisie. Użytkownik powinien wiedzieć, co robi skrypt przed jego instalacją.
+      reason: 'Skrypt musi mieć powód do bycia skryptem. Na przykład skrypt, który
+
+        po prostu przekierowuje użytkownika na stronę internetową, nie musi być skryptem; może to być link. Dozwolone są skrypty, które wykorzystują usługę sieciową do wykonania akcji na bieżącej stronie (np. w celu jej konwersji).'
+      monetization_html: 'Skrypty, które zawierają funkcje przynoszące korzyść <em>autorowi</em>, nie użytkownikowi (jak skrypty śledzące, reklamy, koparki kryptowalut) są dozwolone, jednak muszą zostać oznaczone %{antifeature_link: kluczem <code>@antifeature</code>}.'
+      code_header: Kod
+      libraries_html: Biblioteki, których używa skrypt, powinny zostać dodane poprzez <code>@require</code>, chyba że istnieje wyraźny techniczny powód, by tego nie robić. Jeśli kod źródłowy biblioteki jest zawarty w kodzie skryptu, należy również dodać informację o źródle biblioteki (np. komentarz zawierający adres URL i/lub nazwę oraz wersję).
+      updates: Skrypty nie powinny sprawdzać dostępności aktualizacji częściej niż raz dziennie. Należy pamiętać, że większość menedżerów skryptów użytkownika obsługuje automatyczne aktualizacje, więc wykonywanie tego w skrypcie nie jest konieczne. Skrypty również nie powinny dynamicznie wstrzykiwać do strony innych skryptów hostowanych na %{site_name}, ponieważ omija to pamięć podręczną w menedżerach skryptów.
+      external_js: "%{external_scripts_link:Korzystanie z zewnętrznego kodu JavaScript jest ograniczone.}"
+      copyright_header: Prawa autorskie
+      reposts: Nawet jeśli prawa autorskie nie są naruszone to ponowne publikowanie skryptów, które znajdują się na %{site_name}, jest zabronione, chyba że wprowadzają usprawnienia różniące się od oryginału.
+      miscellaneous_header: Inne
+      keywords_html: Skrypty nie mogą zawierać <code>@include</code>, <code>@match</code>, lub słów kluczowych, do których stron nie wprowadzają żadnej funkcjonalności.
+      adult_content_rule: Skrypty, które zawierają treści dla dorosłych lub są przeznaczone do stron dla dorosłych, muszą być oznaczone jako takie, aby użytkownicy mogli zdecydować czy chcą je zobaczyć.
+      reporting: Jeśli zauważysz skrypt, który nie przestrzega wyżej wymienionych zasad, zgłoś go na stronie skryptu, przechodząc na podstronę Opinie, a następnie klikając "zgłoś ten skrypt".
+    external_scripts:
+      title: "Polityka %{site_name} dot. zewnętrznych skryptów"
+      test_url:
+        label: Testuj adres URL
+        result_ok: URL jest dozwolony
+        result_not_ok: URL jest niedozwolony
+    script_rewriting:
+      title: "Jak %{site_name} przepisze udostępnione skrypty"
+      content_html: >
+          <p>Skrypty zamieszczone na %{site_name} zostaną przepisane w następujący
+          sposób:</p> <ul>
+
+          <li>Jeśli występują dyrektywy </code>@updateURL</code>, <code>@installURL</code>,
+          i <code>@downloadURL</code> , to zostaną usunięte. Brak tych dyrektyw oznacza,
+          iż jakikolwiek skrypt zainstalowany z %{site_name} zostanie zaktualizowany
+          z %{site_name}.</li>
+
+          <li>Jeśli skrypt nie posiada dyrektyw </code>@version</code> i <code>@namespace</code>,
+          to zostaną dopisane. Te dyrektywy są potrzebne dla prawidłowego aktualizowania.</li>
+
+          <li>Jeśli nowa wersja skryptu nie posiada dyrektywy </code>@description</code>,
+          a poprzednia wersja ją miała, to zostanie dopisana.</li>
+
+          <li>Znaki końca linii CRLF i CR zostaną zamienione na standardowy styl końca
+          linii/styl końca linii systemu Unix.</li>
+
+          </ul>
+    site_feedback_link: "Zgłoś problem lub podziel się pomysłem na %{site_name}"
+    credits:
+      title: "Twórcy"
+      authors_credit: "%{site_name} nie byłby możliwy bez twórców dodających swoje skrypty."
+      developers_credit: "Sam %{site_name} jest tworzony przez %{developers_link:tych ludzi} razem z pomocą wszystkich, którzy zgłaszają błędy i proponują poprawki."
+      translators_credit: "%{site_name} został przetłumaczony przez %{translators_link:Zespół Greasy Tłumaczy na Transifex}:"
+      icons_credit: "Ikony przeglądarek pochodzą z %{browserlogos}."
+    help_with_greasymonkey: "Pomoc z Greasemonkey"
+    contact:
+      title: "Skontaktuj się z kimś"
+      content_html: >
+          <p> Jest wiele możliwości aby porozmawiać o %{site_name} i rzeczach na niej.</p>
+          <p> Czy masz pytanie lub komentarz dotyczący specyficznego skryptu udostępnionego
+          na stronie? Jeżeli tak, to udostępnij dyskusję z linku w karcie Opinie na
+          stronie skryptu. Autorzy skryptu dostaną powiadomienie o każdej z dyskusji
+          dotyczących skryptu na ich stronie profilowej. </p>
+
+          <p> Czy masz pytanie lub komentarz dotyczący %{site_name} tworzenia skryptów
+          lub chcesz, aby ktoś stworzył Ci skrypt? %{forum_link:Pisanie na forum}  da
+          Ci możliwość większego zasięgu Twojej dyskusji.</p> <p> Czy chcesz zgłosić
+          błąd lub zasugerować ideę dotyczącą %{site_name} (i nie dotyczącą specyficznego
+          skryptu <em> udostępnionego na </em> %{site_name})? %{github_link: Opublikuj
+          ją na GitHub.} </p>
+
+          <p> Czy masz prywatne pytanie lub komentarz i chcesz, aby zobaczył je tylko
+          administrator? %{admin_email_link:Wyślij e-mail.} </p>
+    privacy_policy:
+      title: "Polityka prywatności"
+      content_html: >
+          Ta strona opisuje jak %{site_name} będzie zapisywać lub śledzić użytkowników.
+
+          Jeżeli masz jakiekolwiek wątpliwości, %{admin_email_link:e-mail the admin}.
+
+          <h2>Logi serwerowe</h2><p>%{site_name} loguje wszelkie zapytania w sposób
+          standardowy. Informacje logowane zawierają odwiedzone strony, adres IP oraz
+          odnośnik User Agent. Logi zostają użyte w celu odpluskwiania oraz analizy
+          kondycji serwera. Dane są przechowywane przez okres jednego tygodnia. Dane
+          nie są udostępniane osobom trzecim oraz upubliczniane.</p>
+
+          <h2>Statystyki skryptów</h2>
+
+          <p>W celu generowania statystyk, %{site_name} zapisuje informacje o żądania
+          instalacji oraz aktualizacji  wraz z adresem IP. Ta informacja jest przetrzymywana
+          przez jeden dzień, po tym okresie czasu jest agregowana bez informacji o
+          adresie IP. Specyficzne dla danego adresu IP dane nie są udostępniane oraz
+          upubliczniane, lecz zagregowane dane są.</p> <h2>Pliki cookie (kiedy nie
+          jest się zalogowanym)</h2> <p>%{site_name} może ustawić tymczasowe pliki
+          cookie, aby umożliwić dostęp do specyficznych cech witryny. Pliki cookie
+          nie są stałe i mogą zostać usunięte przy wyłączaniu przeglądarki (w zależności
+          od ustawień).</p> <h2>Konta użytkowników</h2> <p>%{site_name} wymaga od
+          użytkowników aby utworzyli konto w celu udostępniania skryptów, brania udziału
+          w dyskusjach , oraz dostępu do innych części wityrny. Przy tworzeniu konta
+          informacje takie jak adres IP ,adres  e-mail , oraz odnośnik User agent
+          może być przechowywany permamantnie. Niektóre z tych informacji mogą być
+          widoczne dla innych użytkowników.</p> <p>Akcje wykonywane na zalogowanym
+          koncie takie jak udostępnianie skryptów i komentarzy, będą widoczne dla
+          innych użytkowników</p> <p>Jeżeli opcja "Zapamiętaj mnie" zostanie oznaczona
+          podczas logowania do konta, %{site_name} ustawi a trwały plik cookie aby
+          przetrzymać stan logowania</p> <h2>Skrypty udostępnione na %{site_name}</h2>
+          <p>%{site_name} zawiera treści udostępniane przez użytkowników, i udostępnione
+          skrypty mogą być w stanie śledzić użytkownika jeżeli zostaną zainstalowane.</p>
+          <h2>Biblioteki osób trzecich</h2> <p>%{site_name} może zawierać biblioteki
+          osób trzecich aby zbierać statystyki i wyświetlać reklamy. Te biblioteki
+          mogą zawierać moduły śledzące.</p>
+    user_css_to_user_js:
+      title: Konwersja user CSS do user JS
+    antifeatures:
+      title: Antyfunkcje
+  search:
+    script_search:
+      title: "Wyszukiwanie skryptów"
+      description: "Szukaj skryptów. Szuka nazw skryptów, opisów, dodatkowych informacji i nazw autorów. %{sphinx_link:Rozszerzona składnia zapytań Sphinx.}"
+    library_search:
+      title: "Wyszukiwanie bibliotek"
+      description: "Szukaj bibliotek. Szuka nazw bibliotek, opisów, dodatkowych informacji i nazw autorów. %{sphinx_link:Rozszerzona składnia zapytań Sphinx.}"
+    code_search:
+      title: "Wyszukiwanie kodu"
+      description: "Szukaj kodu skryptu. Brak rozróżniania wielkości liter, zwykły tekst bez symboli wieloznacznych."
+    user_search:
+      title: "Wyszukiwanie użytkownika"
+      description: "Znajdź użytkowników według nazwy (operator SQL LIKE)."
+  moderator_logs:
+    date_column: "Data"
+    moderator_column: "Moderator"
+    item_column: "Obiekt"
+    action_column: "Akcja"
+    reason_column: "Powód"
+    item_script_html: "Skrypt: %{script_link}"
+    item_deleted_script: "Usunięto skrypt %{id}"
+    item_user_html: "Użytkownik: %{user_link}"
+    item_report: "%{report_link: Zgłoszenie #%{report_id}}"
+    item_script_lock_appeal: "%{appeal_link:Odwołanie #%{appeal_id}}"
+  notifications:
+    consecutive_bad_ratings:
+      one: "%{script_names} otrzymał konsekwentnie negatywne oceny. Prosimy, przejrzyj swój skrypt oraz ustosunkuj się do zarzutów podniesionych w opiniach."
+      few: "%{script_names} otrzymały konsekwentnie negatywne oceny. Prosimy, przejrzyj swoje skrypty oraz ustosunkuj się do zarzutów podniesionych w opiniach."
+      many: "%{script_names} otrzymały konsekwentnie negatywne oceny. Prosimy, przejrzyj swoje skrypty oraz ustosunkuj się do zarzutów podniesionych w opiniach."
+      other: "%{script_names}otrzymały konsekwentnie negatywne oceny. Prosimy, przejrzyj swoje skrypty oraz ustosunkuj się do zarzutów podniesionych w opiniach."
+  reports:
+    name: "Zgłoszenie #%{id}"
+    report_filed: "Twoje zgłoszenie zostanie sprawdzone przez moderatora."
+    new_report_title:
+      user: "Zgłoś %{user}"
+      comment: "Zgłoś komentarz użytkownika %{user}"
+      message: "Zgłoś wiadomość użytkownika %{user}"
+      script: "Zgłoś %{script}"
+    new_report_notes_html: >
+        <p>Przed zgłoszeniem należy pamiętać, że:</p> <ul>
+
+        <li>Moderator sprawdzi twoje zgłoszenie i odpowiednio się do niego odniesie.</li>
+
+        <li>Niezgadzanie się z treścią lub uważanie, że jest nieprawdziwe, nie jest
+        uzasadnionym powodem do zgłoszenia.</li>
+
+        <li>Nadużywanie opcji zgłaszania może doprowadzić <i>cię</i> do bana.</li>
+
+        </ul>
+    new_script_report_notes_html: >
+        <p>Przed zgłoszeniem należy pamiętać, że:</p> <ul>
+
+        <li>Skrypt zostanie usunięty wyłącznie z powodu naruszenia %{rules_link:zasad
+        %{site_name}}. Jeśli skrypt jest zepsuty albo niefunkcjonalny, %{feedback_link:prześlij
+        zamiast tego opinię.}.</li>
+
+        <li>Moderator sprawdzi twoje zgłoszenie i odpowiednio się do niego odniesie.</li>
+
+        <li>Nadużywanie opcji zgłaszania może doprowadzić <i>cię</i> do bana.</li>
+
+        </ul>
+    new_user_report_notes_html: >
+        <p>Przed zgłoszeniem należy pamiętać, że:</p> <ul>
+
+        <li>Jeśli zgłoszenie dotyczy treści skryptu lub komentarza, zamiast tego zgłoś
+        ten konkretny skrypt lub komentarz.</li>
+
+        <li>Moderator sprawdzi twoje zgłoszenie i odpowiednio się do niego odniesie.</li>
+
+        <li>Nadużywanie opcji zgłaszania może doprowadzić <i>cię</i> do bana.</li>
+
+        </ul>
+    reason:
+      non_functional: "Skrypt nie działa"
+      spam: "Spam"
+      abuse: "Obraźliwe lub nienawistne treści"
+      illegal: "Nielegalne treści"
+      unauthorized_code: "Nieautoryzowana kopia"
+      malware: "Szkodliwy kod"
+      minified: "Zminifikowany kod"
+      external_code: "Niedozwolony zewnętrzny kod"
+      wrong_category: "Niewłaściwa kategoria"
+      wrong_category_with_suggestion: "Niewłaściwa kategoria (sugestia: %{suggested_category})"
+      other: "Inne"
+    non_functional_feedback: "Prosimy o zgłaszanie niefunkcjonalnych skryptów korzystając z opcji %{feedback_link:pozostawienia opinii} o skrypcie."
+    unauthorized_code_original_placeholder: "Adres URL oryginalnego kodu"
+    explanation_placeholder: "Podaj dodatkowe szczegóły (opcjonalne)"
+    create_button: "Utwórz zgłoszenie"
+    report_user: "Zgłoś użytkownika"
+    report_comment: "Zgłoś komentarz"
+    report_message: "Zgłoś wiadomość"
+    result_dismissed: "Twoje zgłoszenie zostało odrzucone przez moderatora."
+    result_upheld: "Twoje zgłoszenie zostało uznane przez moderatora."
+    result_pending: "Twoje zgłoszenie oczekuje na sprawdzenie przez moderatora."
+    rebuttal_placeholder: 'Wyjaśnij moderatorowi, dlaczego ten skrypt nie powinien zostać usunięty.'
+    submit_rebuttal: "Prześlij odwołanie"
+    delete_script: "Usuń skrypt"
+    view_discussion: "Zobacz dyskusję"
+    load_diff: "Załaduj diff"
+    loading_diff: "Ładowanie..."
+    reported_user_activity_html: "%{user} (zgłoszony użytkownik) zrobił:"
+  discussions:
+    title: Dyskusje
+    comment_date: "Napisano: %{date}"
+    comment_edit_date: "Edytowano: %{date}"
+    posted_by_html: "%{user} %{date}"
+    last_comment: "Ostatni: %{user} %{date}"
+    new_discussion_heading: "Napisz recenzję, komentarz lub pytanie"
+    new_discussion_submit: "Opublikuj komentarz"
+    new_comment_heading: "Odpowiedz"
+    new_comment_submit: "Odpowiedz"
+    back_to_feedback: "< Opinie na %{script}"
+    edit_comment_link: "Edytuj"
+    edit_comment_header: "Edytuj komentarz"
+    delete_comment: "Usuń"
+    delete_comment_confirm: Czy na pewno chcesz usunąć ten komentarz?
+    delete_discussion: "Usuń"
+    delete_discussion_confirm: Czy na pewno chcesz usunąć tę dyskusję?
+    update_comment_submit: "Zaktualizuj komentarz"
+    cancel_update_comment: "Anuluj"
+    quote_comment: "Cytat"
+    question_heading_html: "Pytanie/komentarz"
+    review_heading_html: "Ocena: %{rating}"
+    update_rating_note: "(Możesz później zmienić swoją ocenę, publikując nowy komentarz.)"
+    update_rating: "Zaktualizuj swoją ocenę o %{script_name}"
+    ratings:
+      question: "Bez oceny - samo pytanie, komentarz lub prośba o dodanie funkcji"
+      bad: "Słaby - skrypt nie działa"
+      ok: "OK - skrypt działa, ale ma błędy"
+      good: "Dobry - skrypt działa"
+    ratings_short:
+      question: "Pytanie/komentarz"
+      bad: "Słaby"
+      ok: "OK"
+      good: "Dobry"
+    sign_in_to_post_discussion: "Zaloguj się, by napisać recenzję, komentarz lub pytanie."
+    sign_in_to_post_comment: "Zaloguj się, by odpowiedzieć."
+    user_filter:
+      label: "Dyskusje z moim udziałem"
+      all: "Wszystkie dyskusje"
+      discussion_by_me: "Rozpoczęte przeze mnie"
+      comment_by_me: "Skomentowane przeze mnie"
+      on_my_scripts: "Na moich skryptach"
+      subscribed: "Subskrybowane"
+    other_user_filter:
+      all: "Wszystkie dyskusje"
+      comments_by: "Skomentowane przez %{user}"
+    category_filter:
+      label: Kategoria
+      all: Wszystkie kategorie
+    read_filter:
+      label: Status przeczytania
+      all: Wszystkie
+      read: Przeczytane
+      unread: Nieprzeczytane
+    locale_filter:
+      label: Język
+      all: Wszystkie
+    user_activity:
+      title: "Ostatnie komentarze"
+      no_recent_activity: "Ten użytkownik nie opublikował ostatnio żadnych komentarzy."
+      see_all_activity: "Zobacz całą aktywność użytkownika."
+      script_review:
+        posted_html: "Napisano recenzję o <i>%{script}</i>"
+        replied_html: "Odpowiedziano na recenzję o <i>%{script}</i>"
+      script_question:
+        posted_html: "Napisano pytanie/komentarz o <i>%{script}</i>"
+        replied_html: "Odpowiedziano na pytanie/komentarz o <i>%{script}</i>"
+      discussion:
+        posted_html: "Napisano dyskusję: <i>%{title}</i>"
+        replied_html: "Odpowiedziano na dyskusję: <i>%{title}</i>"
+    review_title: "Recenzja o %{script_name}"
+    question_title: "Pytanie o %{script_name}"
+    subscribe: Subskrybuj
+    unsubscribe: Odsubskrybuj
+    notify: Powiadom mnie o wszelkich odpowiedziach
+    notifying_on_script: Otrzymasz powiadomienie gdy ktoś odpowie, zgodnie z  %{notifications_link:script notification settings}.
+    categories:
+      greasyfork:
+        name: Greasy Fork Feedback
+        description: Raporty o błędach, zgłaszanie propozycji i inne rzeczy dotyczące samego Greasy Fork.
+      development:
+        name: Tworzenie skryptów
+        description: Dyskusje techniczne na temat tworzenia skryptów i stylów użytkownika.
+      requests:
+        name: Propozycje stworzenia skryptu/stylu
+        description: Poproś kogoś o napisanie skryptu lub stylu użytkownika.
+      script-discussions:
+        name: Dyskusje o skryptach
+        description: Dyskusje na temat istniejących skryptów i stylów użytkownika.
+      no-scripts:
+        name: Wszystko oprócz dyskusji o skryptach
+      moderators:
+        name: Moderatorzy
+        description: Prywatna dyskusja dla moderatorów.
+    category_display: "%{name} - %{description}"
+    new_title: Nowa dyskusja
+    new_button: Nowa dyskusja
+    script_notice: Jeśli chcesz skomentować konkretny skrypt, przejdź do podstrony "Opinie" tego skryptu i rozpocznij dyskusję.
+    no_discussions: Nie znaleziono dyskusji.
+    mark_all_read: Oznacz wszystkie jako przeczytane
+    pending_moderator_review: Ta dyskusja jest niedostępna dla innych użytkowników, dopóki nie zostanie sprawdzona przez moderatora.
+  conversations:
+    user_input_note: Wprowadź nazwę użytkownika lub adres URL do jego profilu.
+    new_title: Utwórz nową rozmowę
+    new_link: Utwórz nową rozmowę
+    new_button: Utwórz rozmowę
+    title_html:
+      one: Rozmowa z %{users}
+      few: Rozmowa z %{users}
+      many: Rozmowa z %{users}
+      other: Rozmowa z %{users}
+    send_message: Wyślij wiadomość
+    conversation_list_title: Rozmowy
+    conversation_link_html:
+      one: Rozmowa z %{users}.
+      few: Rozmowa z %{users}.
+      many: Rozmowa z %{users}.
+      other: Rozmowa z %{users}.
+    conversation_info_html: Ostatnia wiadomość o %{date} od %{user}.
+    no_conversations: Nie masz jeszcze żadnych rozmów.
+    no_recent_conversations: Nie masz żadnych ostatnio przeprowadzanych rozmów.
+    recent:
+      title: Ostatnie rozmowy
+      more: Zobacz wszystkie rozmowy
+    edit_message_header: Edytuj wiadomość
+    update_message_submit: Zaktualizuj wiadomość
+  screenshots:
+    requirements: "Maksymalnie %{number} obrazów PNG, GIF, JPEG, lub WebP, mniejszych niż %{size} każdy."
+  common:
+    allowed_elements_link: "(zobacz dozwolony kod)"
+    allowed_elements_and_attributes_title: "Dozwolone elementy dla zawartości HTML"
+    allowed_elements_intro: "Dozwolone są następujące elementy i atrybuty. Dotyczy to zarówno HTML jak i makr (po konwersji do HTML)"
+    allowed_elements_extra_info: "Puste pola zostaną zamienione na elementy p lub br. Adresy URL będą automatycznie zamienione w linki."
+    allowed_css_intro: "Następujące właściwości CSS są dozwolone we wszystkich elementach."
+    user_references_html: "Możesz oznaczać innych użytkowników %{site_name} poprzez <code>@UserName</code> lub <code>@\"User Name\"</code> (Jeśli ma spację w nazwie)."
+    not_found_text: "Błąd 404 — nie znaleziono strony."
+    not_found_title: "Błąd 404 — nie znaleziono strony"
+    not_found_link_home: "Wróć do strony głównej."
+    suggest_locale: "%{site_name} dostępny jest w języku polskim."
+    incomplete_locale: "Tłumaczenie %{site_name}a na język polski jest ukończone w %{percent}. Możesz to zmienić."
+    expander_show_more: "Rozwiń"
+    expander_show_less: "Zwiń"
+    advertisement_note: Reklama
+    preview_tab: Podgląd
+    write_tab: Napisz
+    listing_options_title: "Opcje wyszukiwania"
+    quote:
+      prefix_html: "%{user} napisał:"
+      anonymous_reporter_html: "Osoba zgłaszająca napisała:"
+  activerecord:
+    models:
+      script:
+        one: "%{count} skrypt"
+        few: "%{count} skrypty"
+        many: "%{count} skryptów"
+        other: "%{count} skryptów"
+      comment:
+        one: "%{count} komentarz"
+        few: "%{count} komentarze"
+        many: "%{count} komentarzy"
+        other: "%{count} komentarzy"
+    attributes:
+      user:
+        name: "Imię"
+        profile: "Profil"
+        locale: "Preferowany język"
+        author_email_notification_type_id: "Powiadomienia o dyskusjach skryptu"
+        show_ads: "Pokaż reklamy"
+        show_sensitive: "Zawartość dla pełnoletnich"
+        preferred_markup: "Preferowany znacznik"
+        filter_locale_default: "Filtruj według języka"
+        current_password: "Aktualne hasło"
+        new_password: "Nowe hasło"
+        new_password_confirmation: "Potwierdź nowe hasło"
+      script:
+        name: "Nazwa"
+        description: "Opis"
+        locale: "Języki"
+        code: "Kod"
+        changelog: "Dziennik zmian"
+        type: "Typ skryptu"
+        additional_info: "Dodatkowe informacje"
+        screenshots: "Zrzuty ekranu"
+        replaced_by_script_id: "Skrypt zastępczy"
+      script_set:
+        name: "Nazwa"
+        description: "Opis"
+        default_sort: "Sortowanie domyślne"
+      report:
+        reason: "Powód zgłoszenia"
+      discussion:
+        rating: "Ocena"
+        category: "Kategoria"
+        title: Tytuł
+      conversation:
+        user_input: Użytkownik
+      message:
+        content: Wiadomość
+  errors:
+    messages:
+      script_missing_name: "jest wymagana - wybierz jedną z dostępnych jako „@name”"
+      script_missing_description: "jest wymagana — wybierz jedną z dostępnych jako „@description”"
+      script_name_same_as_description: "nie może być taki sam jak nazwa"
+      script_sync_identifier_bad_protocol: "musi to być adres URL nieszyfrowany (HTTP) lub szyfrowany (HTTPS)"
+      script_too_many_screenshots: "Zawarto zbyt wiele zrzutów ekranu — maksymalna ilość to %{number}"
+      cannot_be_self_reference: "nie może być tym samym skryptem"
+      cannot_be_deleted_reference: "nie może być usuniętym skryptem"
+      cannot_be_used_with_this_script: "nie może być użyte z tym skryptem"
+      must_be_greasy_fork_script: "musi być adresem URL dla skryptu na %{site_name}u"
+      script_update_not_utf8: "wymaga kodowania UTF-8"
+      script_disallowed_require: "używa niezatwierdzonego zewnętrznego skryptu: %{code}"
+      script_rate_limit: "Przekroczono limit udostępniania. Spróbuj ponownie później."
+      missing_include_or_match: "musi zawierać co najmniej jeden klucz @match lub @include"
+      file_size_out_of_range: "rozmiar musi być mniejszy niż 200KB"
+      meta_too_long: "%{key} jest zbyt długi (maksymalna dozwolona ilość znaków to %{count})"
+  opensearch:
+    short_name: "%{site_name} wyszukaj"
+    description: "Szukaj skryptów użytkownika na %{site_name}."
+    long_name: "%{site_name} szukanie skryptu użytkownika"
+    attribution: "Prawa autorskie dla autorów skryptów, zobacz pojedynczy skrypt aby zobaczyć licencjonowanie"
+  importing:
+    title: Importuj skrypty
+    intro: "%{site_name} może importować skrypty, które są hostowane w innym miejscu, na przykład w systemie kontroli wersji (jak GitHub), twój własny serwer lub z innej strony hostującej skrypty użytkownika."
+    submit: Importuj
+    previously_imported:
+      heading: Wcześniej zaimportowane skrypty
+      unknown_date: "(nieznany)"
+    results:
+      title: "Wynik importu"
+      success: "Następujące skrypty zostały pomyślnie zaimportowane:"
+      failure: "Nie udało się zaimportować następujących skryptów:"
+  mailers:
+    script_report:
+      report_created_offender:
+        subject: "Twój skrypt %{script_name} dla %{site_name} został zgłoszony"
+        text: "Twój skrypt %{script_name} został zgłoszony jako stanowiący naruszenie zasad %{site_name}. Przedstawiony powód: %{reason}. Możesz zapoznać się z tym zgłoszeniem pod %{report_url}, oraz przesłać odwołanie. Jeśli masz jakieś pytania, odwiedź https://greasyfork.org/forum/."
+      report_upheld_offender:
+        subject: "Twój skrypt %{script_name} dla %{site_name} został usunięty"
+      report_dismissed_offender:
+        subject: "Zgłoszenie odnośnie Twojego skryptu %{script_name} dla %{site_name} zostało odrzucone"
+        text: "Zgłoszenie odnośnie Twojego skryptu %{script_name} dla %{site_name} zostało odrzucone przez moderatora. Twój skrypt pozostanie dostępny. Możesz zapoznać się ze zgłoszeniem pod %{report_url}. Jeśli masz jakieś pytania, odwiedź https://greasyfork.org/forum/."
+      report_rebutted_reporter:
+        subject: "Twoje zgłoszenie odnośnie skryptu %{script_name} dla %{site_name} otrzymało odpowiedź"
+        text: "Twoje zgłoszenie odnośnie skryptu %{script_name} dla %{site_name} otrzymało odpowiedź. Możesz zapoznać się z odpowiedzią pod %{report_url}. Moderator zapozna się z Twoim zgłoszeniem oraz odpowiedzią na nie, oraz zadecyduje o dalszym postępowaniu. Jeśli masz jakieś pytania, odwiedź https://greasyfork.org/forum/."
+      report_upheld_reporter:
+        subject: "Twoje zgłoszenie odnośnie skryptu %{script_name} dla %{site_name} zostało podtrzymane"
+        text: "Twoje zgłoszenie odnośnie skryptu %{script_name} dla %{site_name} zostało uznane przez moderatora, a skrypt został usunięty. Możesz zapoznać się ze zgłoszeniem pod %{report_url}. Jeśli masz jakieś pytania, odwiedź https://greasyfork.org/forum/."
+      report_script_deleted_reported:
+        subject: "Twoje zgłoszenie odnośnie skryptu %{script_name} dla %{site_name} zostało zamknięte"
+        text: "Twoje zgłoszenie odnośnie skryptu %{script_name} dla %{site_name}zostało zamknięte, ponieważ skrypt został usunięty przez jego autora. Możesz zapoznać się ze zgłoszeniem pod %{report_url}. Jeśli masz jakieś pytania, odwiedź https://greasyfork.org/forum/."
+      report_dismissed_reporter:
+        subject: "Twoje zgłoszenie odnośnie skryptu %{script_name} dla %{site_name} zostało odrzucone"
+        text: "Twoje zgłoszenie odnośnie skryptu %{script_name} dla %{site_name} zostało odrzucone przez moderatora, a skrypt pozostanie dostępny. Możesz zapoznać się ze zgłoszeniem pod %{report_url}. Jeśli masz jakieś pytania, odwiedź https://greasyfork.org/forum/. "
+    consecutive_bad_ratings:
+      notify:
+        subject: "Twój skrypt %{script_name} na %{site_name} został oceniony przez wielu jako \"Słaby\"."
+        text: |
+            Twój skrypt '%{script_name}' na %{site_name} (%{script_url}) otrzymał wiele negatywnych recenzji pod rząd.
+
+            Opinie, które otrzymałeś na %{feedback_url} mogą wskazywać na problem ze skryptem, tymczasową awarię lub zmiany na stronie, do której skrypt się odnosi. Zapoznaj się z opiniami, rozwiąż wszelkie problemy i odpowiedz na zgłoszone wątpliwości.
+
+            %{site_name} stara się utrzymywać wysokiej jakości listę skryptów dla użytkowników. By radzić sobie z zepsutymi, porzuconymi skryptami te, które zostały ocenione wiele razy jako "Słaby", zostaną ukryte. Aby uniknąć ukrycia twojego skryptu, opublikuj nową wersję lub odpowiedz na dyskusje przed %{delete_date}. Jeśli nie podejmiesz żadnych działań, nadal będziesz mieć możliwość przywrócenia go po tej dacie.
+    script_comment:
+      subject: "Twój skrypt %{script_name} na %{site_name} został skomentowany."
+    subscribed_discussion:
+      subject: "Dyskusja o %{discussion_title} na %{site_name} otrzymała komentarz."
+    comment_mentioned:
+      subject: "Użytkownik '%{commenter_name}' wspomniał o tobie na %{site_name}."
+    new_message:
+      subject: "Użytkownik %{user} wysłał ci wiadomość na %{site_name}"
+    script_lock_appeal:
+      dismiss:
+        moderator_notes: "Moderator skomentował:"
+      unlock:
+        moderator_notes: "Moderator skomentował:"

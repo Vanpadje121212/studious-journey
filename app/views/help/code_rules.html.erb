@@ -1,0 +1,42 @@
+<%- title t('help.code_rules.title', site_name: site_name) %>
+<%- description "Rules and restrictions for code posted to #{site_name}." %>
+
+<p><%= t('help.code_rules.preamble', site_name: site_name) %></p>
+
+<h4><%= t('help.code_rules.functionality_header') %></h4>
+
+<ul>
+  <li><%= t('help.code_rules.description') %></li>
+  <li><%= t('help.code_rules.reason') %></li>
+  <li><%= it('help.code_rules.monetization_html', antifeature_link: help_antifeatures_path) %></li>
+</ul>
+
+<h4><%= t('help.code_rules.code_header') %></h4>
+
+<ul>
+  <li><%= t('help.code_rules.obfuscation', site_name: site_name) %></li>
+  <li><%= it('help.code_rules.size_html', max_code_size: number_to_human_size(ScriptVersion::MAX_CODE_LENGTH), webpack_externals_link: 'https://webpack.js.org/configuration/externals/') %></li>
+  <li><%= t('help.code_rules.libraries_html') %></li>
+  <li><%= it('help.code_rules.external_js', external_scripts_link: help_external_scripts_path) %></li>
+  <li><%= t('help.code_rules.updates', site_name: site_name) %></li>
+  <li><%= t('help.code_rules.hosting', site_name: site_name) %></li>
+</ul>
+
+<h4><%= t('help.code_rules.copyright_header') %></h4>
+
+<ul>
+  <li><%= it('help.code_rules.licensing_html', tldr_legal_link: It.link('https://tldrlegal.com/', target: 'tldrlegal')) %></li>
+  <li><%= t('help.code_rules.reposts', site_name: site_name) %></li>
+</ul>
+
+<h4><%= t('help.code_rules.miscellaneous_header') %></h4>
+
+<ul>
+  <li><%= t('help.code_rules.keywords_html') %></li>
+  <% unless sleazy? %>
+    <li><%= t('help.code_rules.adult_content_rule') %></li>
+  <% end %>
+  <li><%= t('help.code_rules.reposting_deleted') %></li>
+</ul>
+
+<p><%= t('help.code_rules.reporting') %></p>

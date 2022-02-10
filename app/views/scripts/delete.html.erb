@@ -1,0 +1,104 @@
+<%- title "Delete #{@script.name}" %>
+
+<% moderator_view = current_user.moderator? && @script.user_ids.exclude?(current_user.id) %>
+
+<% if @script.deleted? %>
+
+  <% if @script.locked? && !moderator_view %>
+    <p><%= t('scripts.deleted_undelete_notice_html', delete_reason: delete_reason(@script)) %></p>
+  <% else %>
+    <%= form_tag(do_undelete_script_path) do |f| %>
+      <% if moderator_view %>
+        <p>
+          <label for="reason">Why are you undeleting this?</label><br>
+          <textarea id="reason" name="reason" rows="5" cols="100" maxlength="500" required></textarea>
+        </p>
+        <% users_to_unban = @script.users.select(&:banned?) %>
+        <% if users_to_unban.any? %>
+          <p>
+            <label for="unbanned">Unban <%= users_to_unban.map { |u| link_to(u.name, u) }.to_sentence.html_safe %>?</label> <input type="checkbox" id="unbanned" name="unbanned" value="1">
+          </p>
+        <% end %>
+      <% end %>
+      <input type="submit" value="Undelete">
+    <% end %>
+  <% end %>
+
+  <% if !moderator_view %>
+    <%= render partial: 'permanently_delete', locals: {script: @script} %>
+  <% end %>
+
+<% else %>
+
+  <%= form_tag(do_delete_script_path) do |f| %>
+
+    <% if !@script.errors.empty? %>
+      <div class="alert">
+        <p><%= t('common.error_preamble') %></p>
+        <ul class="errors">
+          <% @script.errors.full_messages.each do |e| %>
+            <li><%= e %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <p><%= t('scripts.delete_explanation') %></p>
+
+    <div class="form-control">
+      <%= t('scripts.delete_update_behaviour') %><br>
+        <% Script.delete_types.keys.each do |k|
+          if params[:delete_type].nil?
+            selected = k == 'blanked' && moderator_view
+          else
+            selected = params[:delete_type] == k
+          end %>
+          <input type="radio" required id="delete_type_<%= k %>" name="delete_type" value="<%= k %>" <% if selected %> checked<% end %>> <label for="delete_type_<%= k %>" class="radio-label"><%= t("scripts.delete_update_behaviours.#{k}") %></label><br>
+        <% end %>
+    </div>
+    <div class="form-control">
+      <label for="replaced_by_script_id"><%= t('scripts.replacement_script_explanation') %></label>
+      <input id="replaced_by_script_id" name="replaced_by_script_id" value="<%= params[:replaced_by_script_id] || @script.replaced_by_script_id %>">
+    </div>
+    <% if moderator_view %>
+      <p>
+        <label for="reason">Why are you deleting this?</label><br>
+        <textarea id="reason" name="reason" rows="5" cols="100" maxlength="500" required></textarea>
+      </p>
+      <p>
+        <label for="locked">Lock the script to prevent undelete by the <%= 'author'.pluralize(@script.users.count) %>?</label> <input type="checkbox" id="locked" name="locked" value="1" checked>
+      </p>
+
+      <% banned_users, users_to_ban = @script.users.partition(&:banned?) %>
+      <% if users_to_ban.any? %>
+        <p>
+          <label for="banned">Ban <%= users_to_ban.map { |u| link_to(u.name, u) }.to_sentence.html_safe %>?</label> <input type="checkbox" id="banned" name="banned" value="1">
+        </p>
+      <% end %>
+      <% if banned_users.any? %>
+        <p>(<%= banned_users.map { |u| link_to(u.name, u) }.to_sentence.html_safe %> already banned.)</p>
+      <% end %>
+
+      <% unless @script.deleted? %>
+        <% @script.users.each do |user| %>
+          <% other_scripts = Script.joins(:authors).where(authors: { user_id: user.id }).where.not(id: @script.id) %>
+          <p>
+            <%= user.name %> has <%= link_to("#{other_scripts.count} other scripts, #{other_scripts.where(locked: true).count} of which are locked", user) %>.
+          </p>
+        <% end %>
+      <% end %>
+    <% end %>
+    <input type="submit" value="Delete">
+  <% end %>
+
+  <% if !moderator_view && !@script.locked %>
+    <%= render partial: 'permanently_delete', locals: {script: @script} %>
+  <% end %>
+
+<% end %>
+
+<% if moderator_view && !@script.permanent_deletion_request_date.nil? %>
+  <h3>Permanent deletion</h3>
+
+  <p>The <%= 'author'.pluralize(@script.users.count) %> requested permanent deletion for this script. It will be permanently deleted <%= markup_date(@script.permanent_deletion_request_date + ScriptDeleteJob::PERMANENT_DELETION_DELAY) %>.</p>
+<% end %>

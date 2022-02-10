@@ -1,0 +1,223 @@
+one:
+  id: 1
+  default_name: A Test!
+  code_updated_at: 2014-01-01
+  version: 1
+
+two:
+  id: 2
+  default_name: A Test!
+  code_updated_at: 2014-01-01
+  version: 1
+
+three:
+  id: 3
+  default_name: A Test!
+  code_updated_at: 2014-01-01
+  version: 1
+
+script_with_generated_version:
+  id: 4
+  default_name: A Test!
+  code_updated_at: 2014-01-01
+  version: 1
+
+script_with_explicit_version:
+  id: 5
+  default_name: A Test!
+  code_updated_at: 2014-01-01
+  version: 1
+
+with_namespace:
+  id: 6
+  default_name: A Test!
+  code_updated_at: 2014-01-01
+  version: 1
+
+url_sync_script:
+  id: 7
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  script_sync_type_id: 1
+  last_attempted_sync_date: 2000-01-01
+  last_successful_sync_date: 2000-01-01
+  sync_identifier: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @version 1.1
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  version: 1
+
+url_sync_script_unchanged:
+  id: 8
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  script_sync_type_id: 1
+  last_attempted_sync_date: 2000-01-01
+  last_successful_sync_date: 2000-01-01
+  sync_identifier: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @version 1.1
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  version: 1
+
+url_sync_script_new_has_no_description:
+  id: 9
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  script_sync_type_id: 1
+  last_attempted_sync_date: 2000-01-01
+  last_successful_sync_date: 2000-01-01
+  sync_identifier: |-
+    // ==UserScript==
+    // @name		A Test!
+    // @version 1.1
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  version: 1
+
+url_sync_script_invalid:
+  id: 10
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  script_sync_type_id: 1
+  last_attempted_sync_date: 2000-01-01
+  last_successful_sync_date: 2000-01-01
+  sync_identifier: |
+    // ==UserScript==
+    // ==/UserScript==
+    var foo = 1;
+  version: 1
+
+previous_with_description:
+  id: 11
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  version: 1
+
+meta_not_at_top:
+  id: 12
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  version: 1
+
+previous_with_name_and_description:
+  id: 13
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  version: 1
+
+synced_and_localized:
+  id: 14
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  script_sync_type_id: 1
+  sync_identifier: |
+    // ==UserScript==
+    // @name		A Test!
+    // @name:fr		Un test!
+    // @namespace		http://example.com/1
+    // @description		Unit test.
+    // @description:fr		Test d'unit.
+    // @version		1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    foo.baz();
+  version: 1
+
+http_sync:
+  id: 15
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  script_sync_type_id: 1
+  sync_identifier: http://www.example.com/sync
+  version: 1
+
+http_ai_sync:
+  id: 16
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  version: 1
+
+url_sync_script_with_screenshots:
+  id: 17
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  script_sync_type_id: 1
+  last_attempted_sync_date: 2000-01-01
+  last_successful_sync_date: 2000-01-01
+  sync_identifier: |
+    // ==UserScript==
+    // @name		A Test!
+    // @description		Unit test.
+    // @version 1.1
+    // @namespace http://greasyfork.local/users/1
+    // @include *
+    // @license MIT
+    // ==/UserScript==
+    var foo = 1;
+  version: 1
+
+webhook_sync:
+  id: 18
+  default_name: A Test!
+  code_updated_at: 2000-01-01
+  version: 1
+  locale_id: 1
+  sync_identifier: https://github.com/JasonBarnabe/webhooktest/raw/master/test.user.js
+
+library:
+  id: 19
+  default_name: jQuery
+  script_type_id: 3
+  code_updated_at: 2000-01-01
+  version: 1
+
+derivative_with_same_name:
+  id: 20
+  default_name: A Test!
+  code_updated_at: 2014-01-01
+  version: 1
+
+copy_origin:
+  id: 21
+  default_name: A Test!
+  code_updated_at: 2014-01-01
+  version: 1
+
+antifeatures:
+  id: 22
+  default_name: A Test with antifeatures!
+  code_updated_at: 2014-01-01
+  version: 1
+
+style:
+  id: 23
+  default_name: CSS test
+  code_updated_at: 2014-01-01
+  version: 1
+  language: css
+  css_convertible_to_js: true
+
+style_antifeatures:
+  id: 24
+  default_name: CSS test with antifeatures!
+  code_updated_at: 2014-01-01
+  version: 1
+  language: css
+  css_convertible_to_js: true

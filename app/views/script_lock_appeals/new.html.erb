@@ -1,0 +1,16 @@
+<% title t('appeals.new.title') %>
+
+<p>
+  <%= t('appeals.new.intro', reason: delete_reason(@script)) %>
+</p>
+
+<%= form_with(model: @script_lock_appeal, url: script_script_lock_appeals_path(script_id: @script_lock_appeal.script_id)) do |f| %>
+  <div class="form-control">
+    <%= f.label :text %>
+    <%= with_user_text_preview_for_form(form: f, markup_name: :text_markup) do
+      f.text_area :text, required: true
+    end %>
+  </div>
+  <%= f.hidden_field :report_id %>
+  <%= f.submit t('appeals.new.submit') %>
+<% end %>

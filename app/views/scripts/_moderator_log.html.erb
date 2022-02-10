@@ -1,0 +1,42 @@
+<section class="multiform-page">
+  <h3><%= t('layouts.application.moderator_log') %></h3>
+
+  <% actions = ModeratorAction.where(script: @script).load %>
+  <% if actions.any? %>
+    <table class="log-table">
+      <thead>
+        <tr>
+          <th><%= t('moderator_logs.date_column') %></th>
+          <th><%= t('moderator_logs.moderator_column') %></th>
+          <th><%= t('moderator_logs.action_column') %></th>
+          <th><%= t('moderator_logs.reason_column') %></th>
+        </tr>
+      </thead>
+      <% actions.each do |action| %>
+        <tr>
+          <td><%= markup_date action.created_at %></td>
+          <td><%= render_user action.moderator, action.moderator_id, skip_badge: true %></td>
+          <td><%= action.action %></td>
+          <td>
+            <div class="possibly-long-text">
+              <% if action.report %>
+                <%= it('moderator_logs.item_report', report_id: action.report_id, report_link: report_path(action.report)) %>
+              <% end %>
+              <% if !action.script_lock_appeal.nil? %>
+                <%= it('moderator_logs.item_script_lock_appeal', appeal_id: action.script_lock_appeal_id, appeal_link: script_script_lock_appeal_path(action.script_lock_appeal.script, action.script_lock_appeal)) %>
+              <% end %>
+              <%= action.reason %>
+            </div>
+            <% if current_user&.moderator? && action.private_reason %>
+              <div class="possibly-long-text"><%= action.private_reason %></div>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <p>
+      <%= t('scripts.admin.no_moderator_logs') %>
+    </p>
+  <% end %>
+</section>
