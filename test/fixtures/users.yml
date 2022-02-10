@@ -1,0 +1,31 @@
+one:
+  id: 1
+  name: Timmy O'Toole
+  email: timmy@example.com
+  webhook_secret: 31dc177d015ad5668f34698209b13ef9edc3f877
+  confirmed_at: 2018-01-01
+  disposable_email: false
+
+consumer:
+  id: 2
+  email: consumer@example.com
+  name: Gordon J. Canada
+
+geoff:
+  id: 3
+  email: geoff@example.com
+  name: Geoffrey
+
+junior:
+  id: 4
+  name: Junior J. Junior, Sr.
+  email: jr@example.com
+  confirmed_at: 2018-01-01
+  disposable_email: false
+
+banned:
+  id: 5
+  name: Ban-man
+  email: bannedguy@gmail.com
+  canonical_email: bannedguy@gmail.com
+  banned: true

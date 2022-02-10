@@ -1,0 +1,30 @@
+language: ruby
+rvm:
+  - 2.6.2
+env:
+  - DB=mysql
+sudo: required
+services:
+  - mysql
+addons:
+  chrome: stable
+before_install: gem install bundler
+install:
+  - wget -N https://chromedriver.storage.googleapis.com/2.42/chromedriver_linux64.zip -P ~/
+  - unzip ~/chromedriver_linux64.zip -d ~/
+  - rm ~/chromedriver_linux64.zip
+  - sudo mv -f ~/chromedriver /usr/local/share/
+  - sudo chmod +x /usr/local/share/chromedriver
+  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+  - wget http://sphinxsearch.com/files/sphinx-3.1.1-612d99f-linux-amd64.tar.gz
+  - tar -xvf sphinx-3.1.1-612d99f-linux-amd64.tar.gz
+  - export PATH=$PATH:$PWD/sphinx-3.1.1/bin/
+before_script:
+  - cp test/travisconfig/database.yml config/database.yml
+  - cp test/travisconfig/secrets.yml config/secrets.yml
+  - mysql -e 'create database greasyforktest'
+  - mysql greasyforktest < db/structure.sql
+  - mkdir -p tmp/sockets
+script:
+  - bundle install
+  - bundle exec rails db:environment:set test test:system
