@@ -1,0 +1,34 @@
+<%- title @title %>
+<%- description @description %>
+
+<%= render partial: 'list_options', :locals => {:by_sites => @by_sites, :scripts => @scripts}%>
+
+<% if defined?(@set) and !@set.nil? %>
+	<h3>
+		<%=@set.display_name%> by <%=link_to @set.user.name, @set.user%>
+		<% if user_signed_in? and current_user == @set.user%>
+			<%=link_to('Edit', edit_user_script_set_path(current_user, @set))%>
+		<% end %>
+	</h3>
+	<% if !@set.favorite %>
+		<p><%=@set.description%></p>
+	<% end %>
+<% end %>
+
+<% if defined?(@page_description) %>
+	<p><%=@page_description%></p>
+<% end %>
+
+<% if @scripts.empty? %>
+	<p><%=t('scripts.listing_no_scripts')%></p>
+<% else %>
+	<ol id="browse-script-list" class="script-list">
+		<%= render partial: 'script', collection: @scripts, locals: {:translation_cache => translate_keys(['scripts.author_name', 'scripts.daily_installs', 'scripts.total_installs', 'scripts.ratings', 'scripts.created_date', 'scripts.updated_date']) } %>
+	</ol>
+<% end %>
+
+<% if !defined?(@paginate) or @paginate %>
+	<%= will_paginate @scripts %>
+<% end %>
+
+<p><%=t('scripts.write_your_own_html', post_a_script_link: link_to(t('scripts.post_a_script_link_text'), new_script_version_path), learn_to_write_scripts_link: link_to(t('scripts.learn_to_write_scripts_link_text'), help_writing_user_scripts_path)) %></p>

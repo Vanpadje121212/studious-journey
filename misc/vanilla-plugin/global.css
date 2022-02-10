@@ -1,0 +1,21 @@
+/* Index rating image - move to left of title  */
+.rating-image {
+	float: left;
+	margin-right: 5px;
+}
+/* Override mobile theme */
+.rating-image {
+	height: 16px !important;
+	width: 16px !important;
+}
+
+/* Form rating options */
+label[for*="Rating"] {
+	display: block !important;
+}
+
+/* https://github.com/vanilla/vanilla/pull/2369 */
+.TextBoxWrapper input[type=radio] {
+	width: auto;
+	display: inline;
+}
