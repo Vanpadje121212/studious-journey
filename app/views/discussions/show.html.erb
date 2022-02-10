@@ -1,0 +1,143 @@
+<% if @script %>
+  <%- title t('scripts.feedback_title', script_name: @script.name(request_locale)) %>
+  <%- description "Feedback on #{@script.name(request_locale)}" %>
+<% else %>
+  <%- title @discussion.title %>
+<% end %>
+
+<% if @discussion.script %>
+  <p class="discussion-up-level">
+    <%= link_to t('discussions.back_to_feedback', script: @discussion.script.name(request_locale)), feedback_script_path(@discussion.script) %>
+  </p>
+<% end %>
+
+<div class="discussion-header <%= @discussion.script ? 'discussion-header-script' : 'discussion-header-no-script' %>">
+  <div>
+    <% unless @discussion.script %>
+      <p class="discussion-up-level">
+        <%= link_to t('discussions.title'), discussions_path %>
+        »
+        <%= link_to t("discussions.categories.#{@discussion.discussion_category.category_key}.name"), category_discussion_index_path(category: @discussion.discussion_category) %>
+      </p>
+    <% end %>
+    <h2>
+      <% if @discussion.title %>
+        <%= @discussion.title %>
+      <% elsif @discussion.actual_rating? %>
+        <%= t('discussions.review_heading_html', user: render_poster(@discussion), rating: t("discussions.ratings.#{@discussion.rating_key}")) %>
+      <% else %>
+        <%= t('discussions.question_heading_html', user: render_poster(@discussion)) %>
+      <% end %>
+    </h2>
+  </div>
+  <% if current_user %>
+    <div class="discussion-actions">
+      <div class="discussion-subscription-links <%= current_user.subscribed_to?(@discussion) ? 'discussion-subscribed' : 'discussion-not-subscribed' %>">
+        <%= link_to t('discussions.subscribe'), scoped_subscribe_path(@discussion), method: :POST, remote: true, class: 'discussion-subscribe' %>
+        <%= link_to t('discussions.unsubscribe'), scoped_unsubscribe_path(@discussion), method: :POST, remote: true, class: 'discussion-unsubscribe' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% if @discussion.review_reason %>
+  <p id="reported-note"><%= t('discussions.pending_moderator_review') %></p>
+<% end %>
+
+<% @discussion.comments.not_deleted.reject(&:new_record?).each do |comment| %>
+  <% by_current_user = comment.poster && current_user == comment.poster %>
+  <div class="comment" id="comment-<%= comment.id %>">
+    <div class="comment-meta">
+      <div class="comment-meta-item comment-meta-item-main">
+        <%= render_poster(comment) %>
+      </div>
+      <div class="comment-meta-item">
+        <%= link_to('§', { anchor: "comment-#{comment.id}" }, { class: 'self-link' }) %>
+      </div>
+      <div class="comment-meta-item">
+        <%= t('discussions.comment_date', date: markup_date(comment.created_at)).html_safe %>
+      </div>
+      <% if comment.edited_at %>
+        <div class="comment-meta-item">
+          <%= t('discussions.comment_edit_date', date: markup_date(comment.edited_at)).html_safe %>
+        </div>
+      <% end %>
+      <div class="comment-meta-spacer"></div>
+      <% if comment.editable_by?(current_user) %>
+        <div class="comment-meta-item">
+          <%= link_to t('discussions.edit_comment_link'), '#', class: 'edit-comment', data: { comment_container: "comment-#{comment.id}" } %>
+        </div>
+      <% end %>
+      <% if current_user %>
+        <div class="comment-meta-item">
+          <%= link_to t('discussions.quote_comment'), '#', class: 'quote-comment' %>
+        </div>
+      <% end %>
+      <% if current_user&.moderator? || comment.deletable_by?(current_user) %>
+        <div class="comment-meta-item">
+          <% if comment.first_comment? %>
+            <%= link_to t('discussions.delete_discussion'), comment.discussion.path, method: :DELETE, data: { confirm: t('discussions.delete_discussion_confirm') } %>
+          <% else %>
+            <%= link_to t('discussions.delete_comment'), scoped_comment_path(comment), method: :DELETE, data: { confirm: t('discussions.delete_comment_confirm') } %>
+          <% end %>
+        </div>
+      <% end %>
+      <% unless by_current_user || comment.new_record? %>
+        <div class="comment-meta-item">
+          <%= link_to t('reports.report_comment'), new_report_path(item_class: 'comment', item_id: comment.id), class: 'report-link' %>
+        </div>
+      <% end %>
+    </div>
+    <div class="user-content">
+      <%= format_user_text(comment.text, comment.text_markup, mentions: comment.mentions) %>
+      <%= render partial: 'screenshots/show', locals: { attachable: comment } %>
+    </div>
+    <% if comment.editable_by?(current_user) %>
+      <div class="edit-comment-form">
+        <%= form_with(model: comment, url: scoped_comment_path(comment), method: :PATCH) do |f| %>
+          <h3><%= t('discussions.edit_comment_header') %></h3>
+          <% if comment.first_comment? && !comment.discussion.for_script? %>
+            <%= f.fields_for comment.discussion do |df| %>
+              <div class="form-control">
+                <%= df.label :title %>
+                <%= df.text_field :title, required: true, maxlength: 255, size: nil %>
+              </div>
+            <% end %>
+          <% end %>
+          <%= render partial: 'discussions/comment_entry', locals: { f: f } %>
+          <% if comment.first_comment? && comment.discussion.for_script? %>
+            <%= f.fields_for comment.discussion do |df| %>
+              <%= render partial: 'discussions/rating_entry', locals: { f: df } %>
+            <% end %>
+          <% end %>
+          <%= f.submit t('discussions.update_comment_submit') %>
+          <%= f.submit t('discussions.cancel_update_comment'), class: 'cancel-edit-comment', data: { comment_container: "comment-#{comment.id}" } %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<div id="post-reply" class="post-reply">
+  <h3><%= t('discussions.new_comment_heading') %></h3>
+  <% if current_user && @comment %>
+
+    <%= render partial: 'shared/errors', locals: { resource: @comment } %>
+
+    <%# Use an anchor so that on failure (with no redirect, we scroll down here) %>
+    <%= form_with(model: @comment, url: scoped_comment_create_path(@discussion, anchor: 'post-reply'), method: :POST) do |f| %>
+      <%= render partial: 'discussions/comment_entry', locals: { f: f } %>
+      <% if @script && @script.users.include?(current_user) && current_user.author_email_notification_type_id == User::AUTHOR_NOTIFICATION_COMMENT %>
+        <p class="form-note">
+          <%= it('discussions.notifying_on_script', notifications_link: notifications_user_path(current_user)) %>
+        </p>
+      <% else %>
+        <%= render partial: 'discussions/subscribe', locals: { subscribe: @subscribe} %>
+      <% end %>
+      <%= f.submit t('discussions.new_comment_submit') %>
+    <% end %>
+  <% else %>
+    <p>
+      <%= link_to t('discussions.sign_in_to_post_comment'), new_user_session_path(return_to: request.fullpath) %>
+    </p>
+  <% end %>
+</div>

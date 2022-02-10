@@ -1,0 +1,64 @@
+<% if script.active?
+  case script.script_type_id
+    when 1, 2 %>
+      <div id="install-area">
+        <% if script.css? %>
+          <% if script.css_convertible_to_js? %>
+            <%= render partial: 'install_button', locals: {script_version: script_version, version_param: params[:version], format_override: 'js'} %><%= link_to t('scripts.install_help'), help_installing_user_scripts_path, {class: 'install-help-link', title: t('scripts.install_help_title'), rel: 'nofollow'} %>
+          <% end %>
+          <%= render partial: 'install_button', locals: {script_version: script_version, version_param: params[:version]} %><%= link_to t('scripts.install_help'), help_installing_user_styles_path, {class: 'install-help-link', title: t('scripts.install_help_title'), rel: 'nofollow'} %>
+        <% else %>
+          <%= render partial: 'install_button', locals: {script_version: script_version, version_param: params[:version]} %><%= link_to t('scripts.install_help'), help_installing_user_scripts_path, {class: 'install-help-link', title: t('scripts.install_help_title'), rel: 'nofollow'} %>
+        <% end %>
+        <% if promoted_script(@script) %>
+          <div class="post-install">
+            <div class="post-install-label"><%= t(@script.promoted_script ? 'scripts.author_promoted' : 'scripts.promoted') %></div>
+            <div class="post-install-text"><p><%= t('scripts.promoted_text_html', script_link: link_to(promoted_script(@script).name(request_locale), promoted_script(@script))) %></p></div>
+            <div class="post-install-button">
+              <%= render partial: 'install_button', locals: {script_version: promoted_script(@script).script_versions.last} %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    <% when 3 %>
+      <p>
+        <% library_code_snippet = if params[:version].nil?
+          "<code>// @require #{library_js_script_url(script, version: script_version.id, name: script.url_name, locale_override: nil)}</code>"
+        else
+          "<code>// @require #{library_js_script_url(script, version: params[:version], name: script.url_name, locale_override: nil)}</code>"
+                               end %>
+        <%= t('scripts.library_instructions_html', code: library_code_snippet.html_safe) %>
+      </p>
+  <% end %>
+<% end %>
+
+<% if script.antifeatures.any? %>
+  <div id="preinstall-modal" class="modal micromodal-slide" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true">
+        <header class="modal__header" aria-labelledby="preinstall-modal-title">
+          <h3 class="modal__title" id="preinstall-modal-title">
+            <%= t('scripts.antifeatures.warning_title') %>
+          </h3>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="preinstall-modal-content">
+          <% script.best_antifeatures_for_locale(request_locale).each do |antifeature| %>
+            <p>
+              <%= t("scripts.antifeatures.types.#{antifeature.antifeature_type}.description_html") %>
+              <% if antifeature.description %>
+                <%= t('scripts.antifeatures.author_explanation_intro') %>
+                <q><%= antifeature.description %></q>
+              <% end %>
+            </p>
+          <% end %>
+        </main>
+        <footer class="modal__footer">
+          <button class="modal__btn" data-micromodal-close><%= t('scripts.antifeatures.cancel_install') %></button>
+          <button class="modal__btn modal__btn-primary" data-micromodal-close data-micromodal-accept><%= t('scripts.antifeatures.install_anyway') %></button>
+        </footer>
+      </div>
+    </div>
+  </div>
+<% end %>

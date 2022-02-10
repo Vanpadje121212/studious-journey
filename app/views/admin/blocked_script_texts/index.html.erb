@@ -1,0 +1,49 @@
+<h1>Blocked Script Text</h1>
+
+<p>If a script contains any of this text, the script will be marked for moderator review.</p>
+
+<% if current_user.administrator? %>
+  <p><%= link_to 'Add new', new_admin_blocked_script_text_path %></p>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Text</th>
+      <th>Result</th>
+      <th>Public Reason</th>
+      <th>Private Reason</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @blocked_script_texts.each do |blocked_script_text| %>
+      <tr>
+        <td><%= blocked_script_text.id %></td>
+        <td><%= blocked_script_text.text %></td>
+        <td><%= blocked_script_text.result %></td>
+        <td><%= blocked_script_text.public_reason %></td>
+        <td><%= blocked_script_text.private_reason %></td>
+        <td>
+          <%= link_to('Edit', edit_admin_blocked_script_text_path(blocked_script_text)) if current_user.administrator? %>
+          <%= link_to('Delete', admin_blocked_script_text_path(blocked_script_text), method: :delete) if current_user.administrator? %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2 id="to-review">Scripts to Review</h2>
+
+<ul>
+  <% Script.not_deleted.where(review_state: :required).each do |script| %>
+    <li>
+      <%= render_script(script) %> - <%= script.users.map { |u| render_user(u, u.id) }.join(', ').html_safe %>
+      <%= form_with(url: approve_script_path(script), method: :PATCH) do |f| %>
+        <%= hidden_field_tag :return_to, admin_blocked_script_texts_path(anchor: 'to-review') %>
+        <%= f.submit 'Approve' %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
