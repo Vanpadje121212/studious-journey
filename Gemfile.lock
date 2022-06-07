@@ -264,7 +264,7 @@ GEM
     io-wait (0.2.1)
     it (2.0.0)
       actionpack (>= 3.0.0)
-    jmespath (1.4.0)
+    jmespath (1.6.1)
     joiner (0.6.0)
       activerecord (>= 6.1.0)
     json (2.6.1)
